@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BebidasNav from '../../components/BebidasNav.astro';
+
+import barrilData from '../../data/barril.json';
+import beersData from '../../data/beers.json';
+
+const cervezasBarril = barrilData.filter((beer: any) => beer.available !== false);
+const cervezasBotella = beersData.filter((beer: any) => beer.available !== false);
+---
+
+<Layout title="Cerveza - Lucky Luke">
+  <main class="min-h-screen bg-black px-4 pb-28 text-white">
+    <BebidasNav />
+
+    <section class="py-6">
+      <div id="barril" class="mb-14">
+        <div class="mb-8 flex items-center">
+          <div class="h-px flex-1 bg-gray-700"></div>
+
+          <h2 class="mx-3 text-center font-burford text-2xl text-red-600">
+            CERVEZAS DE BARRIL
+          </h2>
+
+          <div class="h-px flex-1 bg-gray-700"></div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+          {cervezasBarril.map((beer: any) => (
+            <article class="overflow-hidden rounded-xl border border-gray-800 bg-zinc-950 shadow-lg">
+              {beer.image && (
+                <div class="aspect-[16/9] w-full overflow-hidden bg-zinc-900">
+                  <img
+                    src={beer.image}
+                    alt={beer.name}
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              )}
+
+              <div class="p-5">
+                <h3 class="mb-2 font-burford text-2xl text-red-600">
+                  {beer.name}
+                </h3>
+
+                <p class="mb-4 text-sm leading-relaxed text-gray-300">
+                  {beer.description}
+                </p>
+
+                <div class="mb-4 grid grid-cols-2 gap-2 text-sm">
+                  {beer.style && (
+                    <p>
+                      <span class="font-semibold text-white">Estilo:</span>{' '}
+                      <span class="text-gray-400">{beer.style}</span>
+                    </p>
+                  )}
+
+                  {beer.country && (
+                    <p>
+                      <span class="font-semibold text-white">País:</span>{' '}
+                      <span class="text-gray-400">{beer.country}</span>
+                    </p>
+                  )}
+
+                  {beer.abv !== undefined && (
+                    <p>
+                      <span class="font-semibold text-white">Alcohol:</span>{' '}
+                      <span class="text-gray-400">{beer.abv}%</span>
+                    </p>
+                  )}
+
+                  {beer.ibu !== undefined && beer.ibu !== null && (
+                    <p>
+                      <span class="font-semibold text-white">IBU:</span>{' '}
+                      <span class="text-gray-400">{beer.ibu}</span>
+                    </p>
+                  )}
+                </div>
+
+                {beer.prices?.length > 0 && (
+                  <div class="flex flex-wrap gap-2">
+                    {beer.prices.map((item: any) => (
+                      <div class="rounded-lg border border-red-800 bg-red-950/40 px-4 py-2">
+                        <span class="mr-2 text-sm text-gray-300">
+                          {item.label}
+                        </span>
+
+                        <strong class="text-red-500">
+                          {item.price}
+                        </strong>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div id="botella" class="mb-14">
+        <div class="mb-8 flex items-center">
+          <div class="h-px flex-1 bg-gray-700"></div>
+
+          <h2 class="mx-3 text-center font-burford text-2xl text-red-600">
+            CERVEZAS DE BOTELLA
+          </h2>
+
+          <div class="h-px flex-1 bg-gray-700"></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+          {cervezasBotella.map((beer: any) => (
+            <article class="flex flex-col overflow-hidden rounded-lg border border-gray-800 bg-zinc-950">
+              <div class="flex aspect-square items-center justify-center bg-zinc-900 p-3">
+                <img
+                  src={beer.image}
+                  alt={beer.name}
+                  class="h-full w-full object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="flex flex-1 flex-col p-3">
+                <h3 class="mb-1 font-burford text-lg leading-tight text-white">
+                  {beer.name}
+                </h3>
+
+                {beer.style && (
+                  <p class="mb-2 text-xs text-gray-400">
+                    {beer.style}
+                  </p>
+                )}
+
+                <div class="mt-auto flex items-end justify-between gap-2">
+                  <span class="text-xs text-gray-500">
+                    {beer.format}
+                  </span>
+
+                  <strong class="text-base text-red-500">
+                    {beer.price}
+                  </strong>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

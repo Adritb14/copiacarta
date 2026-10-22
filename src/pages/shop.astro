@@ -1,0 +1,673 @@
+---
+import Layout from '../layouts/Layout.astro';
+import products from '../data/shop.json';
+
+const WHATSAPP_NUMBER = "34744786202";
+const visibleProducts = products.filter(p => p.available);
+---
+
+<Layout title="Shop - Lucky Luke" showMenuButton={false} showMarquee={false}>
+
+  <!-- ── Topbar propia ─────────────────────────────── -->
+  <header class="shop-topbar">
+    <a href="/" class="back-btn" aria-label="Volver">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      <span>Carta</span>
+    </a>
+
+    <div class="topbar-brand">
+      <img src="/images/logos/Lucky_Simple_principal.webp" alt="Lucky Luke" class="topbar-logo" />
+      <div class="topbar-texts">
+        <span class="topbar-name font-burford">LUCKY LUKE</span>
+        <span class="topbar-sub">MERCH STORE</span>
+      </div>
+    </div>
+
+    <!-- Botón carrito en topbar (móvil) -->
+    <button class="topbar-cart-btn" id="topbarCartBtn" aria-label="Ver carrito">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+      <span class="topbar-cart-count" id="topbarCartCount">0</span>
+    </button>
+  </header>
+
+  <main class="shop-main">
+
+    <!-- Hero sección -->
+    <div class="shop-hero">
+      <h1 class="shop-title font-burford">MERCH<br/><span class="shop-title-accent">STORE</span></h1>
+      <p class="shop-tagline">Llévatelo puesto · Recógelo en el local</p>
+    </div>
+
+    <!-- Grid de productos -->
+    <div class="products-grid">
+      {visibleProducts.map(product => (
+        <div class="product-card">
+          <div class="product-img-wrap">
+            <img src={product.image} alt={product.name} class="product-img" loading="lazy" />
+            <span class="product-category">{product.category}</span>
+          </div>
+          <div class="product-info">
+            <h2 class="product-name">{product.name}</h2>
+            <p class="product-desc">{product.description}</p>
+            <div class="product-footer">
+              <span class="product-price">
+                {product.price > 0 ? `${product.price.toFixed(2).replace('.', ',')}€` : 'Precio a confirmar'}
+              </span>
+              <button
+                class="btn-add"
+                data-id={product.id}
+                data-name={product.name}
+                data-price={product.price}
+              >
+                + Añadir
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </main>
+
+  <!-- ── FAB carrito (desktop) ───────────────────────── -->
+  <button class="cart-fab" id="cartFab" aria-label="Ver carrito">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+      <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+    </svg>
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <!-- ── Overlay ─────────────────────────────────────── -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- ── Drawer del carrito ─────────────────────────── -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2 class="cart-title font-burford">TU PEDIDO</h2>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+
+    <div class="cart-body">
+      <p class="cart-empty" id="cartEmpty">Tu carrito está vacío.</p>
+      <ul class="cart-list" id="cartList"></ul>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Total estimado</span>
+        <span class="cart-total-val" id="cartTotal">—</span>
+      </div>
+      <p class="cart-note">Confirmaremos disponibilidad y precio definitivo por WhatsApp.</p>
+      <a class="btn-whatsapp" id="btnWhatsapp" href="#" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+        Reservar y recoger en local
+      </a>
+    </div>
+  </aside>
+
+</Layout>
+
+<style>
+  /* ── Reset layout ────────────────────────────────── */
+  :global(main.page-under-marquee) { padding-top: 0 !important; }
+
+  /* ── Topbar ──────────────────────────────────────── */
+  .shop-topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 60;
+    height: 60px;
+    background: rgba(8,8,8,0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 16px;
+  }
+
+  .back-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 150ms ease;
+    justify-self: start;
+  }
+  .back-btn:hover { color: #fff; }
+
+  .topbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-self: center;
+  }
+  .topbar-logo {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    object-fit: cover;
+  }
+  .topbar-texts { display: flex; flex-direction: column; line-height: 1.1; }
+  .topbar-name  { font-size: 18px; letter-spacing: 0.08em; color: #fff; }
+  .topbar-sub   {
+    font-size: 8px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #dc2626;
+    font-family: 'Bratton', 'Roboto', sans-serif;
+  }
+
+  .topbar-cart-btn {
+    position: relative;
+    justify-self: end;
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: rgba(220,38,38,0.15);
+    border: 1px solid rgba(220,38,38,0.3);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: background 150ms ease;
+  }
+  .topbar-cart-btn:hover { background: rgba(220,38,38,0.3); }
+
+  .topbar-cart-count {
+    position: absolute;
+    top: -6px; right: -6px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: #dc2626;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+  .topbar-cart-count.visible { opacity: 1; transform: scale(1); }
+
+  /* ── Main ────────────────────────────────────────── */
+  .shop-main {
+    padding-top: 60px;
+    padding-bottom: calc(32px + env(safe-area-inset-bottom));
+    min-height: 100svh;
+    background: #0a0a0a;
+  }
+
+  /* ── Hero ────────────────────────────────────────── */
+  .shop-hero {
+    text-align: center;
+    padding: 40px 20px 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 24px;
+    background: linear-gradient(180deg, rgba(220,38,38,0.06) 0%, transparent 100%);
+  }
+  .shop-title {
+    font-size: clamp(52px, 14vw, 110px);
+    line-height: 0.85;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+  .shop-title-accent { color: #dc2626; }
+  .shop-tagline {
+    margin-top: 14px;
+    font-size: clamp(10px, 2.5vw, 13px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── Grid ────────────────────────────────────────── */
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  @media (min-width: 480px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 768px) {
+    .products-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      background: none;
+      padding: 0 20px;
+      border-top: none;
+    }
+  }
+  @media (min-width: 1100px) {
+    .products-grid {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+  }
+
+  /* ── Tarjeta — móvil: fila horizontal ──────────── */
+  .product-card {
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    transition: background 200ms ease;
+  }
+  .product-card:active { background: rgba(220,38,38,0.06); }
+
+  /* Tablet/desktop: columna vertical */
+  @media (min-width: 480px) {
+    .product-card {
+      flex-direction: column;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      transition: border-color 200ms ease, transform 200ms ease;
+    }
+    .product-card:hover {
+      border-color: rgba(220,38,38,0.4);
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.03);
+    }
+  }
+
+  /* Imagen — móvil: cuadrado pequeño a la izquierda */
+  .product-img-wrap {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: rgba(255,255,255,0.04);
+  }
+  @media (min-width: 480px) {
+    .product-img-wrap {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+    }
+  }
+
+  .product-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 300ms ease;
+  }
+  .product-card:hover .product-img { transform: scale(1.04); }
+
+  .product-category {
+    position: absolute;
+    top: 8px; left: 8px;
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(6px);
+    padding: 2px 7px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* Info */
+  .product-info {
+    flex: 1;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+  @media (min-width: 480px) {
+    .product-info { padding: 14px; }
+  }
+
+  .product-name {
+    font-family: 'Burford', 'Bebas Neue', sans-serif;
+    font-size: clamp(17px, 4vw, 20px);
+    letter-spacing: 0.03em;
+    color: #fff;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  @media (min-width: 480px) {
+    .product-name { white-space: normal; }
+  }
+
+  .product-desc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.4;
+    /* En móvil solo 2 líneas */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  @media (min-width: 480px) {
+    .product-desc {
+      -webkit-line-clamp: unset;
+      flex: 1;
+    }
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 6px;
+  }
+  .product-price {
+    font-family: 'Burford', 'Bebas Neue', sans-serif;
+    font-size: 17px;
+    color: #dc2626;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .btn-add {
+    font-family: 'Bratton', 'Roboto', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #dc2626;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background 150ms ease, transform 120ms ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .btn-add:hover { background: #b91c1c; transform: scale(1.04); }
+  .btn-add:active { transform: scale(0.97); }
+
+  /* ── FAB (solo desktop) ──────────────────────────── */
+  .cart-fab {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .cart-fab {
+      display: flex;
+      position: fixed;
+      bottom: 32px; right: 32px;
+      z-index: 50;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: #dc2626;
+      border: none;
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(220,38,38,0.5);
+      transition: transform 200ms ease, background 200ms ease;
+    }
+    .cart-fab:hover { background: #b91c1c; transform: scale(1.07); }
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -4px; right: -4px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    color: #dc2626;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+  .cart-count.visible { opacity: 1; transform: scale(1); }
+
+  /* ── Overlay ─────────────────────────────────────── */
+  .cart-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(4px);
+    z-index: 80;
+    opacity: 0; pointer-events: none;
+    transition: opacity 250ms ease;
+  }
+  .cart-overlay.open { opacity: 1; pointer-events: all; }
+
+  /* ── Drawer ──────────────────────────────────────── */
+  .cart-drawer {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    /* Móvil: full width; desktop: 400px */
+    width: 100%;
+    background: #111;
+    border-left: 1px solid rgba(255,255,255,0.08);
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @media (min-width: 480px) {
+    .cart-drawer { width: min(420px, 92vw); }
+  }
+  .cart-drawer.open { transform: translateX(0); }
+
+  .cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    flex-shrink: 0;
+    padding-top: calc(18px + env(safe-area-inset-top));
+  }
+  .cart-title { font-size: 28px; letter-spacing: 0.08em; color: #fff; }
+  .cart-close {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    cursor: pointer;
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 150ms ease, color 150ms ease;
+  }
+  .cart-close:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+  .cart-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cart-empty {
+    text-align: center;
+    color: rgba(255,255,255,0.25);
+    font-size: 13px;
+    padding: 60px 0;
+    letter-spacing: 0.08em;
+  }
+
+  .cart-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+  }
+  .cart-item-name { flex: 1; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.9); }
+  .cart-item-price {
+    font-family: 'Burford', 'Bebas Neue', sans-serif;
+    font-size: 17px; color: #dc2626; white-space: nowrap;
+  }
+  .cart-qty { display: flex; align-items: center; gap: 10px; }
+  .qty-btn {
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff; font-size: 18px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 150ms ease;
+  }
+  .qty-btn:hover { background: rgba(220,38,38,0.3); border-color: rgba(220,38,38,0.5); }
+  .qty-num { font-size: 15px; font-weight: 700; color: #fff; min-width: 20px; text-align: center; }
+
+  /* ── Footer drawer ───────────────────────────────── */
+  .cart-footer {
+    padding: 16px 20px;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(255,255,255,0.07);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #0e0e0e;
+  }
+  .cart-total-row { display: flex; align-items: center; justify-content: space-between; }
+  .cart-total-label { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+  .cart-total-val { font-family: 'Burford','Bebas Neue',sans-serif; font-size: 28px; color: #fff; letter-spacing: 0.04em; }
+  .cart-note { font-size: 10px; color: rgba(255,255,255,0.25); line-height: 1.5; }
+
+  .btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #25d366;
+    color: #fff;
+    font-family: 'Bratton','Roboto',sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 20px;
+    border-radius: 12px;
+    transition: background 180ms ease, transform 150ms ease;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.25);
+  }
+  .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
+  .btn-whatsapp:active { transform: scale(0.98); }
+</style>
+
+<script is:inline define:vars={{ WHATSAPP_NUMBER }}>
+  const cart = {};
+
+  const overlay       = document.getElementById('cartOverlay');
+  const drawer        = document.getElementById('cartDrawer');
+  const closeBtn      = document.getElementById('cartClose');
+  const cartList      = document.getElementById('cartList');
+  const cartEmpty     = document.getElementById('cartEmpty');
+  const cartTotal     = document.getElementById('cartTotal');
+  const btnWA         = document.getElementById('btnWhatsapp');
+  const cartFab       = document.getElementById('cartFab');
+  const topbarCartBtn = document.getElementById('topbarCartBtn');
+  const cartCount     = document.getElementById('cartCount');
+  const topbarCount   = document.getElementById('topbarCartCount');
+
+  function openDrawer()  { drawer.classList.add('open'); overlay.classList.add('open'); }
+  function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); }
+
+  cartFab?.addEventListener('click', openDrawer);
+  topbarCartBtn?.addEventListener('click', openDrawer);
+  closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  document.querySelectorAll('.btn-add').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id    = btn.dataset.id;
+      const name  = btn.dataset.name;
+      const price = parseFloat(btn.dataset.price);
+
+      if (!cart[id]) cart[id] = { name, price, qty: 0 };
+      cart[id].qty++;
+
+      renderCart();
+      openDrawer();
+
+      btn.textContent = '✓';
+      btn.style.background = '#16a34a';
+      setTimeout(() => { btn.textContent = '+ Añadir'; btn.style.background = ''; }, 900);
+    });
+  });
+
+  function renderCart() {
+    const items = Object.entries(cart).filter(([, v]) => v.qty > 0);
+    const total = items.reduce((s, [, v]) => s + v.price * v.qty, 0);
+    const count = items.reduce((s, [, v]) => s + v.qty, 0);
+
+    // Badges
+    if (cartCount)  { cartCount.textContent = count;  cartCount.classList.toggle('visible', count > 0); }
+    if (topbarCount){ topbarCount.textContent = count; topbarCount.classList.toggle('visible', count > 0); }
+
+    cartEmpty.style.display = items.length ? 'none' : 'block';
+    cartList.innerHTML = '';
+
+    items.forEach(([id, item]) => {
+      const li = document.createElement('li');
+      li.className = 'cart-item';
+      li.innerHTML = `
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-qty">
+          <button class="qty-btn" data-action="dec" data-id="${id}">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" data-action="inc" data-id="${id}">+</button>
+        </div>
+        <span class="cart-item-price">${item.price > 0 ? (item.price * item.qty).toFixed(2).replace('.', ',') + '€' : '—'}</span>
+      `;
+      cartList.appendChild(li);
+    });
+
+    cartList.querySelectorAll('.qty-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.id;
+        if (btn.dataset.action === 'inc') cart[id].qty++;
+        else { cart[id].qty--; if (cart[id].qty <= 0) delete cart[id]; }
+        renderCart();
+      });
+    });
+
+    cartTotal.textContent = total > 0 ? total.toFixed(2).replace('.', ',') + '€' : '—';
+
+    const hasItems = items.length > 0;
+    const lineas = items.map(([, v]) => `• ${v.qty}x ${v.name}${v.price > 0 ? ` (${(v.price * v.qty).toFixed(2).replace('.', ',')}€)` : ''}`).join('%0A');
+    const totalTxt = total > 0 ? `%0A%0A*Total estimado: ${total.toFixed(2).replace('.', ',')}€*` : '';
+    const msg = `Hola! 👋 Quiero hacer un pedido de merchandising:%0A%0A${lineas}${totalTxt}%0A%0A¿Cuándo puedo pasar a recogerlo?`;
+    btnWA.href = hasItems ? `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}` : '#';
+    btnWA.style.opacity = hasItems ? '1' : '0.4';
+    btnWA.style.pointerEvents = hasItems ? 'auto' : 'none';
+  }
+
+  renderCart();
+</script>

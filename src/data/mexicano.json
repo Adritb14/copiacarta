@@ -1,0 +1,106 @@
+[
+  {
+    "id": "mexicano",
+    "title": "MEXICANO",
+    "description": "Platos de la cocina mexicana y sureña de EE. UU., seleccionados para el disfrute de los sentidos.",
+    "available": true,
+    "items": [
+      {
+        "available": true,
+        "name": "Chimichanga",
+        "featured": true,
+        "image": "images/comida/platos/mexicano/chimi.webp",
+        "price": "12,90€",
+        "description": "Burrito relleno de guiso mexicano de carne y verduras, cubierto de salsa pico de gallo y mezcla de quesos, gratinado al horno.",
+        "allergens": [
+          "Gluten",
+          "Lácteos",
+          "Apio"
+        ]
+      },
+      {
+        "available": false,
+        "name": "Empanadas",
+        "featured": true,
+        "image": "images/comida/platos/mexicano/empanadas.webp",
+        "price": "11,90€",
+        "description": "3 empanadas artesanas al estilo mexicano: al pastor, tinga y pulled pork.",
+        "allergens": [
+          "Gluten",
+          "Lácteos",
+          "Soja",
+          "Mostaza",
+          "Cacahuetes",
+          "Sulfitos",
+          "Pescado",
+          "Moluscos"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Burritos (6 u.)",
+        "featured": true,
+        "image": "images/comida/platos/mexicano/burritos.webp",
+        "price": "15,90€",
+        "description": "Surtido: 1 de chili con carne, 2 de pulled pork, 1 de carne al pastor y 2 de pollo con guacamole. Acompañados de nachos, salsa mexicana y guacamole.",
+        "allergens": [
+          "Gluten",
+          "Lácteos",
+          "Soja",
+          "Mostaza",
+          "Cacahuetes",
+          "Sulfitos",
+          "Pescado",
+          "Moluscos"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Mix Quesadillas",
+        "featured": true,
+        "image": "images/comida/platos/mexicano/quesadillas.webp",
+        "price": "10,90€",
+        "description": "Combinado de quesadillas de bacon & cheddar, pulled pork & BBQ y mezcla de quesos con pico de gallo. Cargadas de mucho queso.",
+        "allergens": [
+          "Gluten",
+          "Lácteos",
+          "Soja",
+          "Mostaza",
+          "Sulfitos"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Southern Chicken Waffles (3 u.)",
+        "featured": true,
+        "image": "images/comida/platos/mexicano/shouthern.webp",
+        "price": "11,90€",
+        "description": "3 gofres con pollo frito crujiente al estilo tejano, guacamole, pico de gallo y salsa ranchera.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sulfitos",
+          "Frutos secos",
+          "Cacahuetes"
+        ]
+      },
+      {
+        "available": false,
+        "name": "Enchilada",
+        "featured": true,
+        "image": "images/comida/platos/COMING-SOON.webp",
+        "price": "10,90€",
+        "description": "2 tortitas rellenas de guiso mexicano, salsa de queso, salsa mexicana, guacamole y nachos",
+        "allergens": [
+          "Gluten",
+          "Lácteos",
+          "Sulfitos",
+          "Moluscos",
+          "Pescado"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,298 @@
+[
+  {
+    "id": "burgers",
+    "title": "BURGERS",
+    "description": "Sólo la mejor carne puede traer estas burgers. Hechas en parrilla, con pan brioche casero y acompañadas de patatas.",
+    "allergenNotice": {
+      "text": "TODAS ESTAS BURGERS CONTIENEN:",
+      "allergens": [
+        "Gluten",
+        "Huevo",
+        "Lácteos",
+        "Soja",
+        "Sésamo",
+        "Sulfitos",
+        "Mostaza"
+      ]
+    },
+    "subtitle": "TOP BURGERS",
+    "available": true,
+    "items": [
+      {
+        "available": false,
+        "name": "La Nazarena",
+        "featured": true,
+        "special": true,
+        "theme": "nazarena",
+        "image": "images/comida/platos/burgers/nazarena.webp",
+        "price": "13,90€",
+        "description": "Pan brioche de vino tinto, 200g de ternera premium, queso blanco, pringá, chips de berenjena, confitura de cebolla y salsa nazarena. Glaseada en miel, picado de pestiño y polvo de oro.",
+        "badge": "Edición Semana Santa",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "RIBS BURGER",
+        "featured": true,
+        "image": "images/comida/platos/burgers/ribs.webp",
+        "price": "13,90€",
+        "description": "De costillas de cerdo a la BBQ a baja temperatura, coleslaw americana, delicioso Mac&Cheese y aros de cebolla.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Bolw's Burger",
+        "featured": true,
+        "image": "/images/comida/platos/burgers/bowl.webp",
+        "price": "14,90€",
+        "description": "Cheese&Bacon empanada y frita dentro de un bowl de queso fundido.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Sweet Candy",
+        "featured": true,
+        "image": "/images/comida/platos/burgers/sweetcandy.webp",
+        "price": "13,90€",
+        "description": "Pan de Croissant, doble smash, queso Jack, mermelada de bacon y Mayo Japonesa.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Jumper's Chicken",
+        "featured": true,
+        "image": "images/comida/platos/COMING-SOON.webp",
+        "price": "12,90€",
+        "description": "Burger de pollo crujiente con queso cheddar, bacon, mézclum, tomate, cebolla morada y salsa Jumpers.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Emmily",
+        "featured": true,
+        "image": "/images/comida/platos/burgers/emily.webp",
+        "price": "13,90€",
+        "description": "Carne, doble de queso cheddar, bacon laqueado en sirope de arce, pepinillos y salsa emmy",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "London",
+        "featured": true,
+        "image": "/images/comida/platos/burgers/london.webp",
+        "price": "14,90€",
+        "description": "Carne, queso Monterrey Jack, pastrami, pepinillo, lechuga, tomate, cebolla y salsa BBQ Jack Daniel's cubierta de la niebla del propio London City.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "La Cabra",
+        "featured": true,
+        "image": "images/comida/platos/burgers/cabra.webp",
+        "price": "11,90€",
+        "description": "200g de ternera premium, queso rulo de cabra, champiñón portobello a la brasa, cebolla caramelizada, mezclum de lechuga y tomate.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Con un Par",
+        "featured": true,
+        "image": "images/comida/platos/burgers/con-un-par.webp",
+        "price": "11,90€",
+        "description": "200g de ternera premium, queso monterrey Jack, bacon ahumado, 2 huevos fritos, mezclum de lechuga, tomate y cebolla.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Jack Daniel's",
+        "featured": true,
+        "image": "/images/comida/platos/burgers/jack.webp",
+        "price": "13,90€",
+        "description": "200g de ternera premium macerada en Jack Daniel's, doble de bacon ahumado, doble de queso y salsa BBQ Jack Daniel's con mezclum de lechuga, tomate y cebolla.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "La Rubia Gallega",
+        "featured": true,
+        "image": "images/comida/platos/burgers/rubia.webp",
+        "price": "13,90€",
+        "description": "200g de Rubia Gallega macerada en cerveza 1906, queso Monterrey Jack y pastrami con mezclum de lechuga, tomate, cebolla y BBQ de cerveza.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Crazy Cheese",
+        "featured": true,
+        "image": "/images/comida/platos/burgers/crazy.webp",
+        "price": "13,90€",
+        "description": "200g de ternera premium, queso cheddar y monterrey Jack, doble bacon, mezclum, tomate y cebolla bañada en salsa cheddar.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Waffle Smash",
+        "featured": true,
+        "image": "images/comida/platos/burgers/waffle-smash.webp",
+        "price": "14,90€",
+        "description": "¡Una locura! 2 carnes de 100g smasheadas de ternera premium, queso cheddar y monterrey Jack, bacon, confitura de tomate y cebolla, fingers de mozzarella y sirope de arce, todo dentro de 2 gofres.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Chicken Ranch Kentucky",
+        "featured": true,
+        "image": "/images/comida/platos/burgers/chicken-ranch.webp",
+        "price": "12,90€",
+        "description": "Pollo frito Kentucky crujiente con queso monterrey Jack, bacon ahumado, salsa ranchera, jalapeños rellenos de queso, mezclum, tomate y cebolla.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Angus Nebraska",
+        "featured": true,
+        "image": "images/comida/platos/burgers/angus.webp",
+        "price": "12,90€",
+        "description": "200g de Angus de EEUU, 2 de bacon, queso monterrey Jack y cheddar, salsa del Tío Sam, mezclum de lechuga, tomate y cebolla.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Smash Tower",
+        "featured": true,
+        "image": "/images/comida/platos/burgers/smashtower.webp",
+        "price": "17,90€",
+        "description": "400g de ternera premium smasheada en 4 capas con cebolla, queso cheddar, bacon, pepinillos y salsa Smash Tower.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo",
+          "Sulfitos",
+          "Mostaza"
+        ]
+      }
+    ]
+  }
+]

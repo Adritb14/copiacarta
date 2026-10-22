@@ -1,0 +1,2306 @@
+[
+  {
+    "image": "/images/botella/sake.webp",
+    "name": "Sake Japonés",
+    "format": "33l",
+    "country": "Japón",
+    "style": "Sake",
+    "color": "Transparente",
+    "abv": 14,
+    "ibu": 0,
+    "pairing": "Sushi, arroz, cocina japonesa",
+    "description": "Bebida japonesa de arroz con perfil suave, limpio y ligeramente afrutado.",
+    "price": "8,00€",
+    "available": false,
+    "tags": [
+      "SAKE",
+      "FUERTE",
+      "PAIS_JAPON"
+    ]
+  },
+  {
+    "image": "/images/botella/mort-subite-kriek.webp",
+    "name": "Mort Subite Kriek",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Kriek Lambic",
+    "color": "Rojo rubí",
+    "abv": 4,
+    "ibu": 12,
+    "pairing": "Postres, ensaladas, quesos suaves",
+    "description": "Cerveza lambic belga con cerezas, dulce, afrutada y muy refrescante con toque ácido clásico.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "name": "Estrella Galicia-Rivera Reposada",
+    "format": "33cl",
+    "price": "3.00€",
+    "image": "/images/botella/rivera.webp",
+    "description": "Cerveza artesanal de color ámbar intenso, equilibrada y con carácter. Destacan las notas maltosas y un amargor suave que la hace muy fácil de beber, con un final limpio y ligeramente tostado.",
+    "abv": "5,6",
+    "ibu": "28",
+    "style": "Amber Ale",
+    "country": "España",
+    "tags": [
+      "RUBIA",
+      "SUAVE",
+      "PAIS_ESPANA"
+    ],
+    "available": false
+  },
+  {
+    "image": "/images/botella/saigon.webp",
+    "name": "Saigon Export",
+    "format": "33cl",
+    "country": "Vietnam",
+    "style": "Pale Lager",
+    "color": "Dorado claro",
+    "abv": 4.9,
+    "ibu": 18,
+    "pairing": "Comida asiática, pollo, platos especiados",
+    "description": "Lager vietnamita suave y ligera, muy refrescante, con final limpio y ligeramente dulce.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_VIETNAM"
+    ]
+  },
+  {
+    "image": "/images/botella/bourgogne.webp",
+    "name": "Bourgogne des Flandres",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Flanders Red Ale",
+    "color": "Caoba oscuro",
+    "abv": 5,
+    "ibu": 16,
+    "pairing": "Carnes, quesos maduros, postres afrutados",
+    "description": "Mezcla de cerveza oscura con lambic envejecida. Perfil agridulce con notas de madera, frutos rojos y caramelo.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "TOSTADA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/ciucas.webp",
+    "name": "Ciucas",
+    "format": "33cl",
+    "country": "Rumanía",
+    "style": "Pale Lager",
+    "color": "Dorado suave",
+    "abv": 4.6,
+    "ibu": 10,
+    "pairing": "Aperitivos, pollo, pescado",
+    "description": "Cerveza ligera rumana muy fácil de beber, refrescante y con final suave.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_RUMANIA"
+    ]
+  },
+  {
+    "image": "/images/botella/asahi.webp",
+    "name": "Asahi Super Dry",
+    "format": "33cl",
+    "country": "Japón",
+    "style": "Dry Lager",
+    "color": "Dorado pálido",
+    "abv": 5,
+    "ibu": 18,
+    "pairing": "Sushi, pollo, platos frescos",
+    "description": "Lager japonesa extremadamente seca, limpia y refrescante, con final nítido y suave.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_JAPON"
+    ]
+  },
+  {
+    "image": "/images/botella/carlsberg.webp",
+    "name": "Carlsberg",
+    "format": "33cl",
+    "country": "Dinamarca",
+    "style": "Pilsner",
+    "color": "Dorado claro",
+    "abv": 5,
+    "ibu": 20,
+    "pairing": "Hamburguesas, pollo, aperitivos",
+    "description": "Cerveza danesa equilibrada con ligero amargor, aroma herbal y cuerpo refrescante.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_DINAMARCA"
+    ]
+  },
+  {
+    "image": "/images/botella/negramodelo.webp",
+    "name": "Negra Modelo",
+    "format": "35.5cl",
+    "country": "México",
+    "style": "Munich Dunkel",
+    "color": "Ámbar oscuro",
+    "abv": 5.4,
+    "ibu": 19,
+    "pairing": "Carnes, tacos, comidas especiadas",
+    "description": "Cerveza oscura mexicana con notas tostadas y caramelizadas, suave y muy equilibrada.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "MEDIA",
+      "PAIS_MEXICO"
+    ]
+  },
+  {
+    "image": "/images/botella/belztriple.webp",
+    "name": "Belzebuth Triple",
+    "format": "33cl",
+    "country": "Francia",
+    "style": "Strong Golden Ale",
+    "color": "Dorado intenso",
+    "abv": 8.5,
+    "ibu": 18,
+    "pairing": "Carnes, quesos, platos potentes",
+    "description": "Cerveza fuerte con notas dulces, especiadas y ligeramente afrutadas.",
+    "price": "5.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_FRANCIA"
+    ]
+  },
+  {
+    "image": "/images/botella/bieredudemon.webp",
+    "name": "Bière du Démon",
+    "format": "33cl",
+    "country": "Francia",
+    "style": "Strong Lager",
+    "color": "Dorado profundo",
+    "abv": 12,
+    "ibu": 12,
+    "pairing": "Carnes intensas, quesos fuertes",
+    "description": "Una de las lagers más fuertes del mundo. Sabor potente, alcohólico y dulce.",
+    "price": "6.00€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_FRANCIA"
+    ]
+  },
+  {
+    "image": "/images/botella/palma.webp",
+    "name": "Palma Cristal",
+    "format": "33cl lata",
+    "country": "Cuba",
+    "style": "Pale Lager",
+    "color": "Dorado pálido",
+    "abv": 4.9,
+    "ibu": 10,
+    "pairing": "Mariscos, pollo, comida latina",
+    "description": "Cerveza cubana ligera, muy refrescante, con perfil suave y notas a cereal.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_CUBA"
+    ]
+  },
+  {
+    "image": "/images/botella/chouffe-houblon.webp",
+    "name": "Chouffe Houblon IPA",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian IPA",
+    "color": "Rubio dorado",
+    "abv": 9,
+    "ibu": 45,
+    "pairing": "Carnes, quesos, picante",
+    "description": "IPA belga potente, aromática y lupulada, con final amargo equilibrado por notas afrutadas.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/duvel.webp",
+    "name": "Duvel",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Golden Ale",
+    "color": "Dorado brillante",
+    "abv": 8.5,
+    "ibu": 30,
+    "pairing": "Carnes blancas, quesos, pescados",
+    "description": "Una de las cervezas más famosas del mundo: seca, afrutada, especiada y muy potente.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/sapporo.webp",
+    "name": "Sapporo",
+    "format": "33cl",
+    "country": "Japón",
+    "style": "Pale Lager",
+    "color": "Dorado claro",
+    "abv": 4.9,
+    "ibu": 18,
+    "pairing": "Sushi, pollo, tempura",
+    "description": "Lager japonesa limpia y refrescante con final seco y suave.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_JAPON"
+    ]
+  },
+  {
+    "image": "/images/botella/chapeau-pina-exotic.webp",
+    "name": "Chapeau Piña",
+    "format": "25cl",
+    "country": "Bélgica",
+    "style": "Fruit Lambic",
+    "color": "Dorado afrutado",
+    "abv": 3.5,
+    "ibu": 8,
+    "pairing": "Postres, platos frescos, ensaladas",
+    "description": "Lambic afrutada de piña, dulce, ligera y muy refrescante.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/cherie-granada.webp",
+    "name": "Chérie Grenade",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Fruit Beer",
+    "color": "Rosado",
+    "abv": 3.5,
+    "ibu": 6,
+    "pairing": "Postres, comida ligera",
+    "description": "Cerveza afrutada con granada, dulce, ligera y muy fresca.",
+    "price": "5.00€",
+    "available": false,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/cherie-melocoton.webp",
+    "name": "Chérie Pêche",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Fruit Beer",
+    "color": "Dorado melocotón",
+    "abv": 3.5,
+    "ibu": 6,
+    "pairing": "Postres, crepes, aperitivos dulces",
+    "description": "Sabor dulce y fresco a melocotón con cuerpo ligero y toque afrutado.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/shofferhofer-grapefruit.webp",
+    "name": "Schöfferhofer Grapefruit",
+    "format": "50cl",
+    "country": "Alemania",
+    "style": "Weissbier con pomelo",
+    "color": "Naranja turbio",
+    "abv": 2.5,
+    "ibu": 8,
+    "pairing": "Postres, ensaladas, platos frescos",
+    "description": "Cerveza de trigo mezclada con zumo de pomelo. Dulce, cítrica y extremadamente refrescante.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "TRIGO",
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_ALEMANIA"
+    ]
+  },
+  {
+    "image": "/images/botella/pink-killer.webp",
+    "name": "Pink Killer",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Fruit Beer",
+    "color": "Rosa claro",
+    "abv": 5,
+    "ibu": 10,
+    "pairing": "Postres, platos ligeros",
+    "description": "Cerveza afrutada con pomelo rosa, dulce y refrescante, con un ligero toque cítrico amargo.",
+    "price": "4.00€",
+    "available": false,
+    "tags": [
+      "FRUTAS",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/cuvee-des-trolls.webp",
+    "name": "Cuvée des Trolls",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Blond Ale",
+    "color": "Dorado turbio",
+    "abv": 7,
+    "ibu": 18,
+    "pairing": "Burgers potentes, quesos semicurados, carnes a la parrilla",
+    "description": "Rubia belga afrutada y especiada, con notas de levadura y cítricos, final suave y ligeramente dulce.",
+    "price": "4.00€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/victoria-diez.webp",
+    "name": "Victoria Diez",
+    "format": "33cl",
+    "country": "España",
+    "style": "Helles Bock",
+    "color": "Dorado intenso",
+    "abv": 6.2,
+    "ibu": 22,
+    "pairing": "Carnes blancas, schnitzel, tapas fritas",
+    "description": "Lager fuerte de cuerpo medio, maltosa, con final ligeramente dulce y amargor moderado.",
+    "price": "3.00€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_ESPANA"
+    ]
+  },
+  {
+    "image": "/images/botella/budweisser.webp",
+    "name": "Budweiser",
+    "format": "33cl",
+    "country": "Estados Unidos",
+    "style": "American Lager",
+    "color": "Dorado claro",
+    "abv": 5,
+    "ibu": 12,
+    "pairing": "Hamburguesas, alitas, barbacoa",
+    "description": "Lager ligera y muy bebible, con notas suaves de cereal y un final limpio y refrescante.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_ESTADOS_UNIDOS"
+    ]
+  },
+  {
+    "image": "/images/botella/affligem-triple.webp",
+    "name": "Affligem Triple",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Tripel",
+    "color": "Dorado profundo",
+    "abv": 9.5,
+    "ibu": 22,
+    "pairing": "Carnes asadas, quesos curados, platos especiados",
+    "description": "Tripel clásica, muy aromática, con fruta madura, especias de levadura y un final cálido alcohólico.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/stsebastiaan.webp",
+    "name": "St. Sebastiaan Grand Cru",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Golden Ale",
+    "color": "Dorado",
+    "abv": 7.6,
+    "ibu": 20,
+    "pairing": "Carnes blancas, mariscos, quesos suaves",
+    "description": "Ale fuerte dorada, maltosa y ligeramente especiada, con final seco y cálido.",
+    "price": "12.00€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/rochefort8.webp",
+    "name": "Trappistes Rochefort 8",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Dark Strong Ale",
+    "color": "Marrón oscuro",
+    "abv": 9.2,
+    "ibu": 22,
+    "pairing": "Estofados, queso azul, postres de chocolate",
+    "description": "Trappense oscura rica en notas de frutas pasas, caramelo y especias, con cuerpo denso y final cálido.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/eggenberger.webp",
+    "name": "Eggenberger Urbock 23°",
+    "format": "33cl",
+    "country": "Austria",
+    "style": "Strong Lager / Doppelbock",
+    "color": "Ámbar dorado",
+    "abv": 9.6,
+    "ibu": 24,
+    "pairing": "Carnes rojas, quesos curados, postres caramelizados",
+    "description": "Lager muy fuerte, licorosa, con notas intensas de malta, miel y frutas maduras.",
+    "price": "5.00€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "FUERTE",
+      "PAIS_AUSTRIA"
+    ]
+  },
+  {
+    "image": "/images/botella/leffe-brune.webp",
+    "name": "Leffe Brune",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Abbey Dubbel",
+    "color": "Marrón oscuro",
+    "abv": 6.5,
+    "ibu": 20,
+    "pairing": "Platos especiados, guisos, postres de chocolate",
+    "description": "Cerveza de abadía tostada, con notas de caramelo, café suave y frutos secos.",
+    "price": "4.00€",
+    "available": false,
+    "tags": [
+      "NEGRA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/cobra.webp",
+    "name": "Cobra",
+    "format": "33cl",
+    "country": "Reino Unido / India",
+    "style": "Premium Lager",
+    "color": "Dorado claro",
+    "abv": 4.5,
+    "ibu": 15,
+    "pairing": "Comida india, picantes, frituras",
+    "description": "Lager suave y sedosa, diseñada para acompañar platos picantes sin tapar los sabores.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "SUAVE",
+      "PAIS_REINO_UNIDO_INDIA"
+    ]
+  },
+  {
+    "image": "/images/botella/monkscafe.webp",
+    "name": "Monk's Cafe Grand Cru",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Flemish Sour Red Ale",
+    "color": "Rojo caoba",
+    "abv": 5.5,
+    "ibu": 12,
+    "pairing": "Carnes grasas, quesos fuertes, platos agridulces",
+    "description": "Cerveza roja flamenca de acidez moderada, con notas de vino tinto, madera y fruta roja.",
+    "price": "5.50€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/barbar.webp",
+    "name": "Barbar",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Golden Ale con miel",
+    "color": "Dorado miel",
+    "abv": 8,
+    "ibu": 18,
+    "pairing": "Carnes especiadas, quesos curados, postres",
+    "description": "Ale fuerte con miel, dulce al inicio, especiada y con final cálido y ligeramente herbal.",
+    "price": "5.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/perla.webp",
+    "name": "Perla",
+    "format": "50cl",
+    "country": "Polonia",
+    "style": "Pale Lager",
+    "color": "Dorado",
+    "abv": 5,
+    "ibu": 18,
+    "pairing": "Tapas, pizza, snacks salados",
+    "description": "Lager polaca refrescante, de amargor moderado y perfil maltoso sencillo.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_POLONIA"
+    ]
+  },
+  {
+    "image": "/images/botella/tarot-dor.webp",
+    "name": "Tarot d'Or",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Blond Ale",
+    "color": "Dorado",
+    "abv": 8,
+    "ibu": 20,
+    "pairing": "Carnes blancas, quesos semicurados, cocina belga",
+    "description": "Rubia belga intensa, maltosa y afrutada, con presencia de levadura y final especiado.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/ijipa.webp",
+    "name": "IJ IPA",
+    "format": "33cl",
+    "country": "Países Bajos",
+    "style": "India Pale Ale",
+    "color": "Ámbar anaranjado",
+    "abv": 6.8,
+    "ibu": 55,
+    "pairing": "Carnes a la parrilla, platos picantes, burgers potentes",
+    "description": "IPA holandesa con marcado lúpulo cítrico y resinoso sobre una base de malta ligeramente caramelo.",
+    "price": "4.00€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "FUERTE",
+      "PAIS_PAISES_BAJOS"
+    ]
+  },
+  {
+    "image": "/images/botella/hoegaarden.webp",
+    "name": "Hoegaarden",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Witbier",
+    "color": "Rubio turbio",
+    "abv": 4.9,
+    "ibu": 15,
+    "pairing": "Ensaladas, pescados, marisco suave",
+    "description": "Trigo belga clásica con notas de cilantro, piel de naranja y un final fresco y cítrico.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "TRIGO",
+      "RUBIA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/kirin-ichiban.webp",
+    "name": "Kirin Ichiban",
+    "format": "33cl",
+    "country": "Japón",
+    "style": "Pale Lager",
+    "color": "Dorado pálido",
+    "abv": 5,
+    "ibu": 18,
+    "pairing": "Sushi, tempura, platos asiáticos ligeros",
+    "description": "Lager japonesa limpia y seca, muy equilibrada, con suave dulzor de malta y amargor contenido.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_JAPON"
+    ]
+  },
+  {
+    "image": "/images/botella/kapittel.webp",
+    "name": "Kapittel Pater",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Dubbel",
+    "color": "Marrón rojizo",
+    "abv": 6.5,
+    "ibu": 20,
+    "pairing": "Guisos, carnes al horno, quesos intensos",
+    "description": "Ale oscura de abadía, con matices de caramelo, fruta pasa y especias de levadura.",
+    "price": "4.00€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/charlesquint.webp",
+    "name": "Charles Quint Ruby",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Dark Ale",
+    "color": "Rojo rubí",
+    "abv": 8.5,
+    "ibu": 22,
+    "pairing": "Carnes rojas, quesos curados, postres de frutos rojos",
+    "description": "Cerveza intensa de color rubí, compleja, con notas de malta tostada, fruta oscura y especias.",
+    "price": "5.50€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/13hophouse.webp",
+    "name": "Hop House 13",
+    "format": "33cl",
+    "country": "Irlanda",
+    "style": "Lager lupulada",
+    "color": "Dorado",
+    "abv": 5,
+    "ibu": 28,
+    "pairing": "Burgers, nachos, comida de pub",
+    "description": "Lager irlandesa con más protagonismo del lúpulo, notas florales y cítricas sobre malta ligera.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_IRLANDA"
+    ]
+  },
+  {
+    "image": "/images/botella/pellong.webp",
+    "name": "Pellong Ale",
+    "format": "33cl",
+    "country": "Corea del Sur",
+    "style": "Pale Ale",
+    "color": "Dorado",
+    "abv": 5.2,
+    "ibu": 30,
+    "pairing": "Carnes a la parrilla, comida asiática, burgers",
+    "description": "Cerveza artesanal coreana tipo Pale Ale, equilibrada y aromática. Presenta notas cítricas y florales de lúpulo, con una base maltosa suave y un amargor moderado, muy fácil de beber.",
+    "price": "4.00€",
+    "available": true,
+    "tags": [
+      "LUPULO",
+      "EQUILIBRADA",
+      "PAIS_COREA_SUR"
+    ]
+  },
+  {
+    "image": "/images/botella/gueuze.webp",
+    "name": "Lindemans Gueuze",
+    "format": "37.5cl",
+    "country": "Bélgica",
+    "style": "Gueuze Lambic",
+    "color": "Dorado turbio",
+    "abv": 5,
+    "ibu": 10,
+    "pairing": "Mariscos, quesos de cabra, platos grasos",
+    "description": "Mezcla de lambics jóvenes y viejos, de perfil ácido, funky y muy refrescante.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/corona.webp",
+    "name": "Corona",
+    "format": "33cl",
+    "country": "México",
+    "style": "Pale Lager",
+    "color": "Dorado pálido",
+    "abv": 4.5,
+    "ibu": 18,
+    "pairing": "Tacos, nachos, comida mexicana suave",
+    "description": "Lager ligera y muy refrescante, ideal con lima y para acompañar comidas informales.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "SUAVE",
+      "PAIS_MEXICO"
+    ]
+  },
+  {
+    "image": "/images/botella/florismango.webp",
+    "name": "Floris Mango",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Fruit Beer",
+    "color": "Dorado anaranjado",
+    "abv": 3.6,
+    "ibu": 18,
+    "pairing": "Postres, platos picantes, ensaladas de fruta",
+    "description": "Cerveza de fruta con intenso aroma y sabor a mango, dulce y muy fácil de beber.",
+    "price": "4.00€",
+    "available": false,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/florischoco.webp",
+    "name": "Floris Choco",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Spiced / Chocolate Beer",
+    "color": "Marrón",
+    "abv": 4.2,
+    "ibu": 12,
+    "pairing": "Postres, brownies, helados",
+    "description": "Cerveza aromatizada al chocolate, dulce y golosa, con protagonismo del cacao.",
+    "price": "4.00€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/magma.webp",
+    "name": "Troubadour Magma",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian IPA",
+    "color": "Ámbar anaranjado",
+    "abv": 9,
+    "ibu": 18,
+    "pairing": "Carnes a la parrilla, platos picantes, quesos fuertes",
+    "description": "IPA belga potente, mezcla maltosa belga con lúpulos cítricos y un final amargo notable.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/chouffeblanche.webp",
+    "name": "Chouffe Blanche",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Witbier fuerte",
+    "color": "Rubio turbio",
+    "abv": 6.5,
+    "ibu": 18,
+    "pairing": "Pescados, mariscos, ensaladas",
+    "description": "Trigo belga más alcohólico, con notas de especias, cítricos y un cuerpo algo más denso.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "TRIGO",
+      "RUBIA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/chouffelite.webp",
+    "name": "Chouffe Lite",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Blond Ale baja graduación",
+    "color": "Dorado claro",
+    "abv": 4,
+    "ibu": 18,
+    "pairing": "Tapas ligeras, ensaladas, pollo",
+    "description": "Versión más ligera de La Chouffe, refrescante, afrutada y menos alcohólica.",
+    "price": "4.00€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "SUAVE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/kasteel.webp",
+    "name": "Barista Chocolate Quad",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Quadrupel",
+    "color": "Marrón muy oscuro",
+    "abv": 11,
+    "ibu": 18,
+    "pairing": "Postres de chocolate, quesos azules, sobremesa",
+    "description": "Quadrupel intensa con notas de café, chocolate negro y caramelo tostado.",
+    "price": "5.50€",
+    "available": false,
+    "tags": [
+      "NEGRA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/chimay.webp",
+    "name": "Chimay Azul",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Trappist Strong Dark Ale",
+    "color": "Marrón oscuro",
+    "abv": 9,
+    "ibu": 18,
+    "pairing": "Quesos trappistas, carnes estofadas, postres ricos",
+    "description": "Clásico trappense oscuro, muy complejo, con fruta madura, caramelo, especias y final cálido.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "NEGRA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/brugse.webp",
+    "name": "Brugse Zot Dubbel",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Dubbel",
+    "color": "Marrón rojizo",
+    "abv": 7.5,
+    "ibu": 18,
+    "pairing": "Carnes asadas, guisos flamencos, quesos semicurados",
+    "description": "Versión oscura de Brugse Zot, con malta tostada, fruta oscura y toques de caramelo.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/cassis.webp",
+    "name": "Lindemans Cassis",
+    "format": "25cl",
+    "country": "Bélgica",
+    "style": "Fruit Lambic",
+    "color": "Violeta oscuro",
+    "abv": 3.5,
+    "ibu": 18,
+    "pairing": "Postres, quesos suaves, aperitivo",
+    "description": "Lambic con grosella negra, muy afrutada, dulce-ácida y de baja graduación.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/cornet.webp",
+    "name": "Cornet",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Golden Ale envejecida en madera",
+    "color": "Dorado intenso",
+    "abv": 8.5,
+    "ibu": 18,
+    "pairing": "Carnes a la parrilla, costillas, quesos curados",
+    "description": "Ale fuerte con notas de vainilla y madera, cuerpo pleno y final cálido.",
+    "price": "5.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/mythos.webp",
+    "name": "Mythos",
+    "format": "33cl",
+    "country": "Grecia",
+    "style": "Pale Lager",
+    "color": "Dorado",
+    "abv": 5,
+    "ibu": 18,
+    "pairing": "Comida griega, pescados, mariscos",
+    "hidehdie": "Comida griega, pescados, mariscos",
+    "description": "Lager mediterránea refrescante, ligera y fácil de beber, ideal para clima cálido.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_GRECIA"
+    ]
+  },
+  {
+    "image": "/images/botella/westmalle.webp",
+    "name": "Westmalle Dubbel",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Trappist Dubbel",
+    "color": "Marrón oscuro",
+    "abv": 7,
+    "ibu": 18,
+    "pairing": "Carnes guisadas, quesos intensos, panes oscuros",
+    "description": "Dubbel trappense de referencia, con notas de caramelo, plátano maduro y levadura especiada.",
+    "price": "4.00€",
+    "available": false,
+    "tags": [
+      "NEGRA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/shinga.webp",
+    "name": "Singha",
+    "format": "33cl",
+    "country": "Tailandia",
+    "style": "Pale Lager",
+    "color": "Dorado",
+    "abv": 5,
+    "ibu": 18,
+    "pairing": "Comida tailandesa, currys, platos picantes",
+    "description": "Lager tailandesa algo más maltosa y seca, pensada para acompañar cocina especiada.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_TAILANDIA"
+    ]
+  },
+  {
+    "image": "/images/botella/deliriumargentum.webp",
+    "name": "Delirium Argentum",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "IPA belga / Amber IPA",
+    "color": "Ámbar",
+    "abv": 7.8,
+    "ibu": 18,
+    "pairing": "Carnes a la brasa, quesos curados, platos intensos",
+    "description": "Cerveza ámbar lupulada, mezcla de carácter belga con lúpulos modernos intensos.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "TOSTADA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/corne.webp",
+    "name": "La Corne",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Blond Ale",
+    "color": "Dorado",
+    "abv": 5.9,
+    "ibu": 22,
+    "pairing": "Carnes blancas, quesos semicurados, cocina de pub",
+    "description": "Rubia belga de alta graduación, afrutada, maltosa y con final especiado.",
+    "price": "4.00€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/bollecke.webp",
+    "name": "Bolleke",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Amber Ale",
+    "color": "Ámbar",
+    "abv": 5.2,
+    "ibu": 24,
+    "pairing": "Embutidos, carnes a la parrilla, quesos",
+    "description": "Ale ámbar belga equilibrada, con malta tostada suave y amargor moderado.",
+    "price": "4.00€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/peroni.webp",
+    "name": "Peroni Nastro Azzurro",
+    "format": "33cl",
+    "country": "Italia",
+    "style": "Italian Lager",
+    "color": "Dorado pálido",
+    "abv": 5.1,
+    "ibu": 18,
+    "pairing": "Pasta, pizza, platos mediterráneos",
+    "description": "Lager italiana seca y crujiente, muy refrescante y fácil de maridar.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_ITALIA"
+    ]
+  },
+  {
+    "image": "/images/botella/nocturnum.webp",
+    "name": "Delirium Nocturnum",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Dark Strong Ale",
+    "color": "Marrón muy oscuro",
+    "abv": 8.5,
+    "ibu": 18,
+    "pairing": "Carnes rojas, quesos azules, postres de chocolate",
+    "description": "Versión oscura de Delirium, con notas de caramelo, frutas oscuras, cacao y especias.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/rince.webp",
+    "name": "Rince Cochon",
+    "format": "33cl",
+    "country": "Bélgica / Francia",
+    "style": "Belgian Strong Blond Ale",
+    "color": "Dorado intenso",
+    "abv": 8.5,
+    "ibu": 18,
+    "pairing": "Carnes grasas, quesos curados, platos fuertes",
+    "description": "Rubia fuerte, dulce al inicio, con final cálido y un punto especiado.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA_FRANCIA"
+    ]
+  },
+  {
+    "image": "/images/botella/anvers.webp",
+    "name": "Tripel d'Anvers",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Tripel",
+    "color": "Dorado",
+    "abv": 8,
+    "ibu": 24,
+    "pairing": "Carnes al horno, marisco, quesos",
+    "description": "Tripel belga aromática, con fruta madura, especias y final seco y cálido.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/trappe.webp",
+    "name": "La Trappe Blond",
+    "format": "33cl",
+    "country": "Países Bajos",
+    "style": "Trappist Blond Ale",
+    "color": "Dorado",
+    "abv": 6.5,
+    "ibu": 18,
+    "pairing": "Pescados, quesos suaves, platos ligeros",
+    "description": "Trappense rubia equilibrada, con notas afrutadas, levadura especiada y final moderadamente amargo.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_PAISES_BAJOS"
+    ]
+  },
+  {
+    "image": "/images/botella/augustinj.webp",
+    "name": "Augustijn",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Golden Ale",
+    "color": "Dorado intenso",
+    "abv": 7.5,
+    "ibu": 22,
+    "pairing": "Carnes blancas, quesos, platos especiados",
+    "description": "Ale belga potente, afrutada y especiada con buena presencia de malta.",
+    "price": "4.80€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/stbernarduswit.webp",
+    "name": "St. Bernardus Wit",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Witbier",
+    "color": "Rubio turbio",
+    "abv": 5.5,
+    "ibu": 18,
+    "pairing": "Ensaladas, marisco, platos ligeros",
+    "description": "Trigo belga refrescante, con notas cítricas y especias suaves, muy fácil de beber.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "TRIGO",
+      "RUBIA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/sagres.webp",
+    "name": "Sagres",
+    "format": "33cl",
+    "country": "Portugal",
+    "style": "Pale Lager",
+    "color": "Dorado pálido",
+    "abv": 5,
+    "ibu": 18,
+    "pairing": "Marisco, pescado a la brasa, tapas",
+    "description": "Lager portuguesa ligera y refrescante, ideal para acompañar comida marinera.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_PORTUGAL"
+    ]
+  },
+  {
+    "image": "/images/botella/fruit-defendu.webp",
+    "name": "Fruit Défendu",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Dark Ale",
+    "color": "Caoba oscuro",
+    "abv": 8.5,
+    "ibu": 22,
+    "pairing": "Carnes asadas, quesos curados, postres especiados",
+    "description": "Cerveza belga intensa, compleja y especiada, con notas de caramelo oscuro, fruta madura y final cálido.",
+    "price": "5.00€",
+    "available": false,
+    "tags": [
+      "NEGRA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/loki-hidromiel.webp",
+    "name": "Loki (hidromiel)",
+    "format": "33cl",
+    "country": "España",
+    "style": "Mead",
+    "color": "Ámbar miel",
+    "abv": 6,
+    "ibu": 0,
+    "pairing": "Quesos, postres, carnes ahumadas",
+    "description": "Hidromiel suave y aromática, con dulzor de miel equilibrado y final cálido.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "HIDROMIEL",
+      "MEDIA",
+      "PAIS_ESPANA"
+    ]
+  },
+  {
+    "image": "/images/botella/guinness-draught.webp",
+    "name": "Guinness Draught",
+    "format": "44cl",
+    "country": "Irlanda",
+    "style": "Irish Stout",
+    "color": "Negro",
+    "abv": 4.2,
+    "ibu": 40,
+    "pairing": "Carnes rojas, estofados, postres de chocolate",
+    "description": "Stout irlandesa cremosa con notas de café, cacao y malta tostada.",
+    "price": "4.00€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "MEDIA",
+      "PAIS_IRLANDA"
+    ]
+  },
+  {
+    "image": "/images/botella/pacifico.webp",
+    "name": "Pacifico",
+    "format": "35.5cl",
+    "country": "México",
+    "style": "Pale Lager",
+    "color": "Dorado claro",
+    "abv": 4.5,
+    "ibu": 18,
+    "pairing": "Tacos, mariscos, frituras",
+    "description": "Lager mexicana ligera y muy refrescante, ideal para beber bien fría.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "SUAVE",
+      "PAIS_MEXICO"
+    ]
+  },
+  {
+    "image": "/images/botella/orval.webp",
+    "name": "Orval",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Trappist Pale Ale",
+    "color": "Ámbar cobrizo",
+    "abv": 6.2,
+    "ibu": 36,
+    "pairing": "Quesos curados, carnes blancas, platos especiados",
+    "description": "Trapense compleja con perfil seco, notas herbales, levadura salvaje y amargor elegante.",
+    "price": "5.50€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/ursus.webp",
+    "name": "Ursus",
+    "format": "33cl",
+    "country": "Rumanía",
+    "style": "Pale Lager",
+    "color": "Dorado",
+    "abv": 5,
+    "ibu": 20,
+    "pairing": "Carnes blancas, aperitivos, pizza",
+    "description": "Lager rumana equilibrada, fresca y fácil de beber con final limpio.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_RUMANIA"
+    ]
+  },
+  {
+    "image": "/images/botella/estrella-galicia-sin-gluten.webp",
+    "name": "Estrella Galicia Sin Gluten",
+    "format": "33cl",
+    "country": "España",
+    "style": "Pale Lager",
+    "color": "Dorado brillante",
+    "abv": 5.5,
+    "ibu": 25,
+    "pairing": "Tapas, burgers, pollo",
+    "description": "Versión sin gluten de Estrella Galicia, equilibrada, fresca y con amargor suave.",
+    "price": "2.70€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_ESPANA"
+    ]
+  },
+  {
+    "image": "/images/botella/birra-moretti.webp",
+    "name": "Birra Moretti",
+    "format": "33cl",
+    "country": "Italia",
+    "style": "Lager",
+    "color": "Dorado claro",
+    "abv": 4.6,
+    "ibu": 21,
+    "pairing": "Pizza, pasta, aperitivos",
+    "description": "Lager italiana suave y equilibrada, muy refrescante y gastronómica.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_ITALIA"
+    ]
+  },
+  {
+    "image": "/images/botella/guillotine.webp",
+    "name": "Guillotine",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Golden Ale",
+    "color": "Dorado intenso",
+    "abv": 8.5,
+    "ibu": 22,
+    "pairing": "Carnes blancas, quesos curados, platos especiados",
+    "description": "Rubia belga fuerte, afrutada y especiada, con final seco y cálido.",
+    "price": "4.80€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/mongozo-banana.webp",
+    "name": "Mongozo",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Exotic Fruit Beer",
+    "color": "Dorado anaranjado",
+    "abv": 3.6,
+    "ibu": 10,
+    "pairing": "Postres, comida picante, platos ligeros",
+    "description": "Cerveza exótica suave y afrutada, muy refrescante y fácil de beber.",
+    "price": "4.00€",
+    "available": false,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/barena.webp",
+    "name": "Barena",
+    "format": "33cl",
+    "country": "Italia",
+    "style": "Premium Lager",
+    "color": "Dorado claro",
+    "abv": 4.8,
+    "ibu": 18,
+    "pairing": "Pasta, aperitivos, pizzas",
+    "description": "Lager italiana limpia y ligera, con trago fácil y final refrescante.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "SUAVE",
+      "PAIS_ITALIA"
+    ]
+  },
+  {
+    "image": "/images/botella/tete-de-mort.webp",
+    "name": "Tête de Mort",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Ale",
+    "color": "Roja",
+    "abv": 8.1,
+    "ibu": 20,
+    "pairing": "Quesos fuertes, carnes, platos especiados",
+    "description": "Ale belga intensa, afrutada y especiada, con cuerpo medio-alto y final cálido.",
+    "price": "4.80€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/bon-secours.webp",
+    "name": "Bon Secours",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Blond Ale",
+    "color": "Dorado",
+    "abv": 8,
+    "ibu": 18,
+    "pairing": "Carnes blancas, quesos, cocina belga",
+    "description": "Rubia belga potente, redonda y afrutada con perfil elegante y especiado.",
+    "price": "4.80€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/magners-dark-fruit.webp",
+    "name": "Magners Dark Fruit",
+    "format": "50cl",
+    "country": "Irlanda",
+    "style": "Fruit Cider",
+    "color": "Rojo oscuro",
+    "abv": 4,
+    "ibu": 0,
+    "pairing": "Postres, quesos suaves, comida ligera",
+    "description": "Sidra irlandesa afrutada con frutos rojos, dulce, fresca y muy fácil de beber.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_IRLANDA"
+    ]
+  },
+  {
+    "image": "/images/botella/tempelier.webp",
+    "name": "Tempelier",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Blonde Ale",
+    "color": "Dorado brillante",
+    "abv": 6,
+    "ibu": 28,
+    "pairing": "Burgers, carnes blancas, aperitivos",
+    "description": "Rubia belga equilibrada con buena presencia de lúpulo, notas florales y final seco.",
+    "price": "4.00€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/bombardier.webp",
+    "name": "Bombardier",
+    "format": "50cl",
+    "country": "Reino Unido",
+    "style": "English Bitter",
+    "color": "Ámbar cobrizo",
+    "abv": 4.1,
+    "ibu": 23,
+    "pairing": "Pies, carnes asadas, fish and chips",
+    "description": "Ale inglesa clásica con perfil maltoso, toques de caramelo y amargor herbal suave.",
+    "price": "4.00€",
+    "available": false,
+    "tags": [
+      "TOSTADA",
+      "SUAVE",
+      "PAIS_REINO_UNIDO"
+    ]
+  },
+  {
+    "image": "/images/botella/hopus.webp",
+    "name": "Hopus",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Blond Ale",
+    "color": "Dorado brillante",
+    "abv": 8.3,
+    "ibu": 38,
+    "pairing": "Carnes a la parrilla, quesos curados, burgers potentes",
+    "description": "Rubia belga intensa y muy lupulada, con perfil floral, especiado y final seco.",
+    "price": "4.80€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/samichlaus-14.webp",
+    "name": "Samichlaus (14º)",
+    "format": "33cl",
+    "country": "Austria",
+    "style": "Doppelbock",
+    "color": "Ámbar oscuro",
+    "abv": 14,
+    "ibu": 26,
+    "pairing": "Quesos intensos, carnes rojas, postres caramelizados",
+    "description": "Cerveza extremadamente potente, licorosa, maltosa y compleja con final muy cálido.",
+    "price": "5.50€",
+    "available": false,
+    "tags": [
+      "TOSTADA",
+      "FUERTE",
+      "PAIS_AUSTRIA"
+    ]
+  },
+  {
+    "image": "/images/botella/tuborg.webp",
+    "name": "Tuborg",
+    "format": "33cl",
+    "country": "Dinamarca",
+    "style": "Pale Lager",
+    "color": "Dorado claro",
+    "abv": 5,
+    "ibu": 18,
+    "pairing": "Aperitivos, pizza, pollo",
+    "description": "Lager danesa ligera y refrescante, muy fácil de beber.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "SUAVE",
+      "PAIS_DINAMARCA"
+    ]
+  },
+  {
+    "image": "/images/botella/timmisoreana.webp",
+    "name": "Timmisoreana",
+    "format": "33cl",
+    "country": "Rumanía",
+    "style": "Pale Lager",
+    "color": "Dorado",
+    "abv": 5,
+    "ibu": 18,
+    "pairing": "Aperitivos, carnes blancas, frituras",
+    "description": "Lager rumana equilibrada, limpia y refrescante con final suave.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_RUMANIA"
+    ]
+  },
+  {
+    "image": "/images/botella/trooper-british-ale.webp",
+    "name": "Trooper British Ale",
+    "format": "50cl",
+    "country": "Reino Unido",
+    "style": "Premium British Ale",
+    "color": "Ámbar",
+    "abv": 4.7,
+    "ibu": 32,
+    "pairing": "Hamburguesas, carnes asadas, quesos",
+    "description": "Ale británica con base maltosa, notas cítricas y final amargo equilibrado.",
+    "price": "6.00€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "MEDIA",
+      "PAIS_REINO_UNIDO"
+    ]
+  },
+  {
+    "image": "/images/botella/casablanca.webp",
+    "name": "Casablanca",
+    "format": "33cl",
+    "country": "Marruecos",
+    "style": "Premium Lager",
+    "color": "Dorado claro",
+    "abv": 5,
+    "ibu": 18,
+    "pairing": "Comida especiada, pollo, aperitivos",
+    "description": "Lager marroquí suave y refrescante, con perfil limpio y ligero amargor.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_MARRUECOS"
+    ]
+  },
+  {
+    "image": "/images/botella/aguila-sin-filtrar.webp",
+    "name": "Aguila Sin Filtrar",
+    "format": "33cl",
+    "country": "España",
+    "style": "Lager Sin Filtrar",
+    "color": "Dorado turbio",
+    "abv": 5.5,
+    "ibu": 20,
+    "pairing": "Tapas, pollo, aperitivos",
+    "description": "Lager española con más cuerpo y cereal, fresca y muy bebible.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_ESPANA"
+    ]
+  },
+  {
+    "image": "/images/botella/satan.webp",
+    "name": "Satan",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Golden Ale",
+    "color": "Roja",
+    "abv": 8,
+    "ibu": 20,
+    "pairing": "Quesos fuertes, carnes blancas, platos especiados",
+    "description": "Rubia belga intensa, afrutada y especiada, con final seco y alcohólico.",
+    "price": "4.80€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/oharas-stout.webp",
+    "name": "Oharas Stout",
+    "format": "33cl",
+    "country": "Irlanda",
+    "style": "Irish Stout",
+    "color": "Negro",
+    "abv": 4.3,
+    "ibu": 34,
+    "pairing": "Carnes estofadas, chocolate, quesos curados",
+    "description": "Stout irlandesa tostada con notas de café, cacao y final seco.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "MEDIA",
+      "PAIS_IRLANDA"
+    ]
+  },
+  {
+    "image": "/images/botella/mahou-sin-filtrar.webp",
+    "name": "Mahou Sin Filtrar",
+    "format": "33cl",
+    "country": "España",
+    "style": "Lager Sin Filtrar",
+    "color": "Dorado intenso",
+    "abv": 5.2,
+    "ibu": 22,
+    "pairing": "Tapas, carnes blancas, frituras",
+    "description": "Lager española de inspiración tradicional, más redonda y con sabor a cereal.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_ESPANA"
+    ]
+  },
+  {
+    "image": "/images/botella/cubanero.webp",
+    "name": "Cubanero",
+    "format": "33cl",
+    "country": "Cuba",
+    "style": "Strong Lager",
+    "color": "Dorado profundo",
+    "abv": 5.4,
+    "ibu": 20,
+    "pairing": "Comida latina, carnes, frituras",
+    "description": "Lager cubana con algo más de cuerpo y potencia, fresca y sabrosa.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_CUBA"
+    ]
+  },
+  {
+    "image": "/images/botella/mongozo-banana.webp",
+    "name": "Mongozo Banana",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Fruit Beer",
+    "color": "Dorado pálido",
+    "abv": 3.6,
+    "ibu": 8,
+    "pairing": "Postres, platos picantes, comida ligera",
+    "description": "Cerveza afrutada con banana, dulce, tropical y muy refrescante.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/becks.webp",
+    "name": "Becks",
+    "format": "33cl",
+    "country": "Alemania",
+    "style": "German Pilsner",
+    "color": "Dorado claro",
+    "abv": 5,
+    "ibu": 24,
+    "pairing": "Salchichas, aperitivos, pizzas",
+    "description": "Pils alemana seca y refrescante, con amargor herbal moderado.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_ALEMANIA"
+    ]
+  },
+  {
+    "image": "/images/botella/orion-the-draft.webp",
+    "name": "Orion The Draft",
+    "format": "33cl",
+    "country": "Japón",
+    "style": "Pale Lager",
+    "color": "Dorado brillante",
+    "abv": 5,
+    "ibu": 20,
+    "pairing": "Sushi, tempura, platos ligeros",
+    "description": "Lager japonesa limpia, suave y muy refrescante con final seco.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_JAPON"
+    ]
+  },
+  {
+    "image": "/images/botella/oharas-red.webp",
+    "name": "Oharas Red",
+    "format": "33cl",
+    "country": "Irlanda",
+    "style": "Irish Red Ale",
+    "color": "Rojo cobrizo",
+    "abv": 4.3,
+    "ibu": 28,
+    "pairing": "Burgers, carnes a la parrilla, cheddar",
+    "description": "Red ale irlandesa con notas de caramelo, galleta tostada y final seco.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "MEDIA",
+      "PAIS_IRLANDA"
+    ]
+  },
+  {
+    "image": "/images/botella/maredsous-blonde.webp",
+    "name": "Maredsous Blonde",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Abbey Blonde Ale",
+    "color": "Dorado intenso",
+    "abv": 6,
+    "ibu": 22,
+    "pairing": "Carnes blancas, quesos, cocina belga",
+    "description": "Cerveza de abadía rubia, afrutada y especiada, de cuerpo medio y trago elegante.",
+    "price": "4.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/stella-artois.webp",
+    "name": "Stella Artois",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Euro Lager",
+    "color": "Dorado claro",
+    "abv": 5,
+    "ibu": 24,
+    "pairing": "Pollo, aperitivos, platos ligeros",
+    "description": "Lager belga fina, equilibrada y refrescante con amargor limpio.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/kilkenny.webp",
+    "name": "Kilkenny",
+    "format": "44cl",
+    "country": "Irlanda",
+    "style": "Irish Cream Ale",
+    "color": "Rojo rubí",
+    "abv": 4.3,
+    "ibu": 20,
+    "pairing": "Carnes asadas, burgers, quesos suaves",
+    "description": "Ale irlandesa cremosa y suave con notas de caramelo y tostado ligero.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "TOSTADA",
+      "MEDIA",
+      "PAIS_IRLANDA"
+    ]
+  },
+  {
+    "image": "/images/botella/pilsner-urquell.webp",
+    "name": "Pilsner Urquell",
+    "format": "33cl",
+    "country": "República Checa",
+    "style": "Czech Pilsner",
+    "color": "Dorado brillante",
+    "abv": 4.4,
+    "ibu": 40,
+    "pairing": "Salchichas, frituras, aperitivos",
+    "description": "La pilsner original, seca, floral y con amargor noble muy marcado.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_REPUBLICA_CHECA"
+    ]
+  },
+  {
+    "image": "/images/botella/straffe-hendrick-quadruple.webp",
+    "name": "Straffe Hendrick Quadruple",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Quadrupel",
+    "color": "Marrón oscuro",
+    "abv": 11,
+    "ibu": 35,
+    "pairing": "Carnes rojas, quesos fuertes, postres de chocolate",
+    "description": "Quadrupel belga intensa y compleja, con notas de fruta pasa, cacao y malta tostada.",
+    "price": "5.00€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/maeloc-pera.webp",
+    "name": "Maeloc Pera",
+    "format": "33cl",
+    "country": "España",
+    "style": "Pear Cider",
+    "color": "Dorado muy pálido",
+    "abv": 4,
+    "ibu": 0,
+    "pairing": "Postres, ensaladas, aperitivos",
+    "description": "Sidra de pera suave, dulce y muy refrescante, ideal para tomar muy fría.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_ESPANA"
+    ]
+  },
+  {
+    "image": "/images/botella/zagorka.webp",
+    "name": "Zagorka",
+    "format": "50cl",
+    "country": "Bulgaria",
+    "style": "Pale Lager",
+    "color": "Dorado claro",
+    "abv": 5,
+    "ibu": 18,
+    "pairing": "Carnes blancas, aperitivos, pizzas",
+    "description": "Lager búlgara suave, limpia y refrescante con perfil muy fácil de beber.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_BULGARIA"
+    ]
+  },
+  {
+    "image": "/images/botella/tennent-extra.webp",
+    "name": "Tennent Extra",
+    "format": "33cl",
+    "country": "Escocia",
+    "style": "Strong Lager",
+    "color": "Dorado intenso",
+    "abv": 9,
+    "ibu": 22,
+    "pairing": "Carnes potentes, frituras, quesos curados",
+    "description": "Lager escocesa fuerte, con cuerpo medio, dulzor de malta y final alcohólico.",
+    "price": "4.00€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_ESCOCIA"
+    ]
+  },
+  {
+    "image": "/images/botella/zyguluvisky.webp",
+    "name": "Zyguluvisky",
+    "format": "50cl",
+    "country": "Polonia",
+    "style": "Pale Lager",
+    "color": "Dorado",
+    "abv": 5.6,
+    "ibu": 18,
+    "pairing": "Embutidos, carnes blancas, aperitivos",
+    "description": "Lager polaca con buen cuerpo, fresca y de trago fácil.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_POLONIA"
+    ]
+  },
+  {
+    "image": "/images/botella/lomza.webp",
+    "name": "Lomza",
+    "format": "50cl",
+    "country": "Polonia",
+    "style": "Pale Lager",
+    "color": "Dorado claro",
+    "abv": 5.7,
+    "ibu": 18,
+    "pairing": "Aperitivos, carnes blancas, pizzas",
+    "description": "Lager polaca fresca, suave y ligeramente maltosa, muy fácil de beber.",
+    "price": "3.50€",
+    "available": false,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_POLONIA"
+    ]
+  },
+  {
+    "image": "/images/botella/weihenstephaner.webp",
+    "name": "Weihenstephaner Hefeweissbier",
+    "format": "50cl",
+    "country": "Alemania",
+    "style": "Hefeweizen",
+    "color": "Dorado turbio",
+    "abv": 5.4,
+    "ibu": 14,
+    "pairing": "Platos ligeros, ensaladas, pescados",
+    "description": "Trigo bávara clásica, aromática, con notas de plátano y clavo, muy suave y refrescante.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "TRIGO",
+      "RUBIA",
+      "MEDIA",
+      "PAIS_ALEMANIA"
+    ]
+  },
+  {
+    "image": "/images/botella/franziskaner.webp",
+    "name": "Franziskaner Weissbier",
+    "format": "50cl",
+    "country": "Alemania",
+    "style": "Hefeweizen",
+    "color": "Dorado turbio",
+    "abv": 5,
+    "ibu": 14,
+    "pairing": "Ensaladas, pescados, platos ligeros",
+    "description": "Trigo bávara suave y afrutada, con notas de plátano y especias, final ligero y refrescante.",
+    "price": "4.00€",
+    "available": true,
+    "tags": [
+      "TRIGO",
+      "RUBIA",
+      "MEDIA",
+      "PAIS_ALEMANIA"
+    ]
+  },
+  {
+    "image": "/images/botella/cusquena.webp",
+    "name": "Cusqueña Dorada",
+    "format": "33cl",
+    "country": "Perú",
+    "style": "Pale Lager",
+    "color": "Dorado claro",
+    "abv": 5,
+    "ibu": 15,
+    "pairing": "Ceviche, comida peruana, mariscos",
+    "description": "Lager peruana suave y equilibrada, de perfil maltoso ligero y final limpio.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_PERU"
+    ]
+  },
+  {
+    "image": "/images/botella/volldamm.webp",
+    "name": "Voll-Damm",
+    "format": "33cl",
+    "country": "España",
+    "style": "Doppelbock",
+    "color": "Ámbar intenso",
+    "abv": 7.2,
+    "ibu": 24,
+    "pairing": "Carnes rojas, quesos curados, platos contundentes",
+    "description": "Lager fuerte de Damm, maltosa y compleja, con notas de caramelo y un cuerpo denso poco habitual en una lager.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "FUERTE",
+      "PAIS_ESPANA"
+    ]
+  },
+  {
+    "image": "/images/botella/1906-black-coupage.webp",
+    "name": "1906 Black Coupage",
+    "format": "33cl",
+    "country": "España",
+    "style": "Baltic Porter (Coupage en barrica)",
+    "color": "Negro",
+    "abv": 8.5,
+    "ibu": 25,
+    "pairing": "Postres de chocolate, quesos azules, carnes ahumadas",
+    "description": "Cerveza negra gallega de Estrella Galicia, envejecida en barrica, compleja, con notas de café, madera y frutos negros.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "FUERTE",
+      "PAIS_ESPANA"
+    ]
+  },
+  {
+    "image": "/images/botella/presidente.webp",
+    "name": "Presidente",
+    "format": "33cl",
+    "country": "República Dominicana",
+    "style": "Pale Lager",
+    "color": "Dorado claro",
+    "abv": 5,
+    "ibu": 15,
+    "pairing": "Comida caribeña, mariscos, frituras",
+    "description": "Lager dominicana ligera y muy refrescante, icónica en el Caribe.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "SUAVE",
+      "PAIS_REPUBLICA_DOMINICANA"
+    ]
+  },
+  {
+    "image": "/images/botella/club-colombia.webp",
+    "name": "Club Colombia Dorada",
+    "format": "33cl",
+    "country": "Colombia",
+    "style": "Golden Lager",
+    "color": "Dorado",
+    "abv": 4.7,
+    "ibu": 18,
+    "pairing": "Comida colombiana, carnes, frituras",
+    "description": "Lager colombiana premium, suave y equilibrada con un ligero toque de lúpulo.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "MEDIA",
+      "PAIS_COLOMBIA"
+    ]
+  },
+  {
+    "image": "/images/botella/palm.webp",
+    "name": "Palm",
+    "format": "25cl",
+    "country": "Bélgica",
+    "style": "Belgian Amber Ale",
+    "color": "Ámbar",
+    "abv": 5.4,
+    "ibu": 20,
+    "pairing": "Carnes a la parrilla, quesos, embutidos",
+    "description": "Ale ámbar belga clásica, ligera y muy fácil de beber, con toques de malta tostada y un final suave.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "MEDIA",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/cass.webp",
+    "name": "Cass",
+    "format": "33cl",
+    "country": "Corea del Sur",
+    "style": "Pale Lager",
+    "color": "Dorado pálido",
+    "abv": 4.5,
+    "ibu": 10,
+    "pairing": "Comida coreana, picante, barbacoa",
+    "description": "Lager coreana ligera y muy refrescante, con perfil limpio y suave amargor.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "SUAVE",
+      "PAIS_COREA_SUR"
+    ]
+  },
+  {
+    "image": "/images/botella/maeloc-mora.webp",
+    "name": "Maeloc Mora",
+    "format": "33cl",
+    "country": "España",
+    "style": "Blackberry Cider",
+    "color": "Violeta oscuro",
+    "abv": 4,
+    "ibu": 0,
+    "pairing": "Postres, quesos suaves, aperitivo",
+    "description": "Sidra de mora suave y afrutada, dulce y muy refrescante, ideal servida muy fría.",
+    "price": "3.50€",
+    "available": true,
+    "tags": [
+      "FRUTAS",
+      "SUAVE",
+      "PAIS_ESPANA"
+    ]
+  },
+  {
+    "image": "/images/barril/duvel-666.webp",
+    "name": "Duvel 6.66",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Blonde Ale",
+    "color": "Dorado",
+    "abv": 6.66,
+    "ibu": 32,
+    "pairing": "Carnes blancas, platos especiados",
+    "description": "Edición especial de Duvel, más ligera en graduación que la original pero igual de aromática, con cuerpo medio y final seco.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/samuel-smith-taddy-porter.webp",
+    "name": "Samuel Smith's Taddy Porter",
+    "format": "35.5cl",
+    "country": "Inglaterra",
+    "style": "Porter",
+    "color": "Marrón oscuro",
+    "abv": 5,
+    "ibu": 30,
+    "pairing": "Carnes ahumadas, quesos curados, postres de chocolate",
+    "description": "Porter inglesa tradicional, tostada e intensa, con notas de café, chocolate negro y un final seco y elegante.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "NEGRA",
+      "MEDIA",
+      "PAIS_REINO_UNIDO"
+    ]
+  },
+  {
+    "image": "/images/botella/diablesa-blonde.webp",
+    "name": "Diablesa Blonde",
+    "format": "33cl",
+    "country": "Bélgica",
+    "style": "Belgian Strong Blonde Ale",
+    "color": "Dorado",
+    "abv": 7.5,
+    "ibu": 22,
+    "pairing": "Carnes, ensaladas, pescados",
+    "description": "Rubia belga de alta fermentación elaborada por Brasserie du Bocq, afrutada y aromática, con notas cítricas, un punto dulce y final ligeramente amargo.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "RUBIA",
+      "FUERTE",
+      "PAIS_BELGICA"
+    ]
+  },
+  {
+    "image": "/images/botella/oharas-51st-state-ipa.webp",
+    "name": "O'Hara's 51st State IPA",
+    "format": "50cl",
+    "country": "Irlanda",
+    "style": "New England IPA",
+    "color": "Dorado turbio",
+    "abv": 6,
+    "ibu": 40,
+    "pairing": "Comida picante, burgers, quesos curados",
+    "description": "IPA irlandesa sin filtrar de Carlow Brewing, con doble dry hopping de Citra y Amarillo. Estalla en aromas tropicales de pomelo, maracuyá, albaricoque y melocotón.",
+    "price": "4.50€",
+    "available": true,
+    "tags": [
+      "TOSTADA",
+      "FUERTE",
+      "PAIS_IRLANDA"
+    ]
+  }
+]

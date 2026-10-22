@@ -1,0 +1,227 @@
+---
+const items = [
+  
+  { href: "/destacados", label: "Destacados", icon: "⭐" },
+  { href: "/bebidas", label: "Bebidas", icon: "🍺" },
+  { href: "/fusionbites", label: "Fusion Bites", img: "/images/fusion-bites-icon.png" },
+  { href: "/mexicano", label: "Mexicano", icon: "🌯" },
+  { href: "/nachos", label: "Nachos", img: "/images/icons8-nachos-100.png" },
+  { href: "/patatas", label: "Patatas", icon: "🍟" },
+  { href: "/carnes", label: "Carnes", icon: "🍗" },
+  { href: "/bocatas", label: "Bocatas", img: "/images/icons8-pan-96.png" },
+  { href: "/burgers", label: "Burgers", icon: "🍔" },
+  { href: "/ensaladas", label: "Ensaladas", icon: "🥗" },
+  { href: "/postres", label: "Postres", icon: "🍰" },
+  
+];
+---
+
+<nav class="top-marquee" aria-label="Navegación rápida">
+  <a href="/" class="inicio-btn" aria-label="Inicio">
+    <span class="inicio-arrow">←</span>
+    <span class="inicio-label">Inicio</span>
+  </a>
+  <div class="marquee-viewport" data-ll-marquee="viewport">
+    <div class="marquee-content" data-ll-marquee="content">
+      <div class="marquee-set">
+        {items.map((it) => (
+          <a class="m-item" href={it.href}>
+            <span class="circle">
+              {it.img ? <img src={it.img} alt={it.label} loading="lazy" /> : it.icon}
+            </span>
+            <span class="label">{it.label}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .top-marquee{
+    position: fixed;
+    top: 0;
+    left: 0; right: 0;
+    z-index: 999;
+    height: 58px;
+    background: rgba(0,0,0,.78);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    display:flex;
+    align-items:center;
+  }
+
+  .inicio-btn {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    padding: 0 14px;
+    height: 100%;
+    text-decoration: none;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.72);
+    transition: color 0.2s, background 0.2s;
+  }
+  .inicio-btn:hover {
+    background: rgba(220,38,38,0.1);
+    color: #fff;
+  }
+  .inicio-arrow {
+    font-size: 15px;
+    line-height: 1;
+  }
+  .inicio-label {
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .marquee-viewport{
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    touch-action: pan-x;
+    cursor: grab;
+  }
+  .marquee-viewport:active{ cursor: grabbing; }
+  .marquee-viewport::-webkit-scrollbar{ display:none; }
+
+  .marquee-content{
+    display:inline-flex;
+    min-width:100%;
+    align-items:center;
+    height:100%;
+  }
+
+  .marquee-set{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    padding:0 18px;
+  }
+
+  .m-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+
+  .circle{
+    
+    width:42px;
+    height:42px;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,.65);
+    border:1px solid rgba(255,255,255,.18);
+    font-size:18px;
+    box-shadow:0 0 18px rgba(220,38,38,.06);
+  }
+
+  .circle img{
+    width:26px;
+    height:26px;
+    object-fit:contain;
+    display:block;
+  }
+/* Glow rojo para la sección activa */
+.m-item.is-active .circle{
+  border-color: rgba(220,38,38,.85);
+  box-shadow:
+    0 0 10px rgba(220,38,38,.55),
+    0 0 26px rgba(220,38,38,.35);
+  animation: llGlow 1.35s ease-in-out infinite;
+}
+
+@keyframes llGlow{
+  0%,100%{
+    box-shadow:
+      0 0 10px rgba(220,38,38,.45),
+      0 0 22px rgba(220,38,38,.28);
+  }
+  50%{
+    box-shadow:
+      0 0 14px rgba(220,38,38,.70),
+      0 0 34px rgba(220,38,38,.45);
+  }
+}
+  .label{
+    font-size:11px;
+    color:rgba(255,255,255,.80);
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+</style>
+
+<script is:inline>
+(() => {
+  const W = window;
+  if (!W.__LL_MARQUEE_CTRL) {
+    W.__LL_MARQUEE_CTRL = {
+      abort: null,
+
+      markActive() {
+        const viewport = document.querySelector('[data-ll-marquee="viewport"]');
+        if (!viewport) return;
+        const path = window.location.pathname.replace(/\/$/, "") || "/";
+        viewport.querySelectorAll('.m-item').forEach(a => {
+          const href = (a.getAttribute('href') || "").replace(/\/$/, "") || "/";
+          a.classList.toggle('is-active', href === path);
+        });
+      },
+
+      bind() {
+        const viewport = document.querySelector('[data-ll-marquee="viewport"]');
+        if (!viewport) return;
+
+        if (this.abort) this.abort.abort();
+        this.abort = new AbortController();
+        const { signal } = this.abort;
+
+        // Drag mouse (desktop)
+        let isDown = false;
+        let startX = 0;
+        let startLeft = 0;
+
+        viewport.addEventListener('mousedown', (e) => {
+          isDown = true;
+          startX = e.pageX;
+          startLeft = viewport.scrollLeft;
+          viewport.style.cursor = 'grabbing';
+        }, { signal });
+
+        window.addEventListener('mouseup', () => {
+          if (!isDown) return;
+          isDown = false;
+          viewport.style.cursor = '';
+        }, { signal });
+
+        window.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          viewport.scrollLeft = startLeft - (e.pageX - startX);
+        }, { passive: false, signal });
+
+        this.markActive();
+      }
+    };
+
+    document.addEventListener('astro:page-load', () => W.__LL_MARQUEE_CTRL.bind());
+    document.addEventListener('astro:after-swap', () => W.__LL_MARQUEE_CTRL.bind());
+    window.addEventListener('pageshow', () => W.__LL_MARQUEE_CTRL.bind());
+  }
+
+  W.__LL_MARQUEE_CTRL.bind();
+})();
+</script>

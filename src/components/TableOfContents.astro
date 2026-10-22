@@ -1,0 +1,63 @@
+---
+// Table of Contents - Mobile floating menu
+interface Section {
+	id: string;
+	label: string;
+}
+
+interface Props {
+	sections: Section[];
+}
+
+const { sections } = Astro.props;
+---
+
+<div class="lg:hidden fixed bottom-4 left-4 z-40">
+	<button id="tocToggle" class="bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition">
+		<i data-feather="menu" class="w-6 h-6"></i>
+	</button>
+	
+	<div id="mobileToc" class="hidden absolute bottom-16 left-0 bg-black border-2 border-red-600 rounded-lg w-48 shadow-xl">
+		<h3 class="font-burford text-lg text-red-600 p-3 text-center border-b border-red-600">
+			SECCIONES
+		</h3>
+		<ul class="p-2">
+			{sections.map(section => (
+				<li>
+					<a 
+						href={`#${section.id}`}
+						class="font-bratton text-white hover:text-red-600 block py-2 px-3 text-sm transition"
+					>
+						{section.label}
+					</a>
+				</li>
+			))}
+		</ul>
+	</div>
+</div>
+
+<script>
+	const tocToggle = document.getElementById('tocToggle');
+	const mobileToc = document.getElementById('mobileToc');
+	
+	if (tocToggle && mobileToc) {
+		tocToggle.addEventListener('click', () => {
+			mobileToc.classList.toggle('hidden');
+		});
+		
+		// Close TOC when clicking a section link
+		const links = mobileToc.querySelectorAll('a');
+		links.forEach(link => {
+			link.addEventListener('click', () => {
+				mobileToc.classList.add('hidden');
+			});
+		});
+		
+		// Close TOC when clicking outside
+		document.addEventListener('click', (e) => {
+			if (!tocToggle.contains(e.target as Node) && !mobileToc.contains(e.target as Node)) {
+				mobileToc.classList.add('hidden');
+			}
+		});
+	}
+</script>

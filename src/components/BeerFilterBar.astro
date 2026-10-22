@@ -1,0 +1,324 @@
+---
+// src/components/BeerFilterBar.astro
+interface ColorBucket {
+	id: number;
+	label: string;
+	swatch: string;
+}
+
+interface Props {
+	colorBuckets: ColorBucket[];
+	styleOptions: string[];
+	countryOptions: string[];
+}
+
+const { colorBuckets, styleOptions, countryOptions } = Astro.props;
+
+const COUNTRY_FLAGS: Record<string, string> = {
+	Alemania: '🇩🇪',
+	Austria: '🇦🇹',
+	Bulgaria: '🇧🇬',
+	Bélgica: '🇧🇪',
+	Colombia: '🇨🇴',
+	'Corea del Sur': '🇰🇷',
+	Cuba: '🇨🇺',
+	Dinamarca: '🇩🇰',
+	Escocia: '🏴',
+	España: '🇪🇸',
+	'Estados Unidos': '🇺🇸',
+	Francia: '🇫🇷',
+	Grecia: '🇬🇷',
+	India: '🇮🇳',
+	Inglaterra: '🏴',
+	Irlanda: '🇮🇪',
+	Italia: '🇮🇹',
+	Japón: '🇯🇵',
+	Marruecos: '🇲🇦',
+	México: '🇲🇽',
+	'Países Bajos': '🇳🇱',
+	Perú: '🇵🇪',
+	Polonia: '🇵🇱',
+	Portugal: '🇵🇹',
+	'Reino Unido': '🇬🇧',
+	'República Checa': '🇨🇿',
+	'República Dominicana': '🇩🇴',
+	Rumanía: '🇷🇴',
+	Tailandia: '🇹🇭',
+	Vietnam: '🇻🇳',
+};
+
+function flagFor(country: string): string {
+	if (COUNTRY_FLAGS[country]) return COUNTRY_FLAGS[country];
+	const parts = country.split(' / ').map((p) => p.trim());
+	const flags = parts.map((p) => COUNTRY_FLAGS[p]).filter(Boolean);
+	return flags.length ? flags.join(' ') : '🏳️';
+}
+
+const colorGradient = colorBuckets.map((b) => b.swatch).join(', ');
+const maxColorStep = colorBuckets.length;
+const colorLabelsJson = JSON.stringify(['Todos', ...colorBuckets.map((b) => b.label)]);
+---
+
+<div id="beerFilterBar" class="mb-10">
+	<button
+		type="button"
+		id="filterToggleBtn"
+		class="filter-toggle"
+		aria-expanded="false"
+		aria-controls="filterPanel"
+	>
+		<span>🔍 Filtrar cervezas</span>
+		<span id="filterCount" class="filter-count hidden">0</span>
+		<span id="filterChevron" class="filter-chevron">▾</span>
+	</button>
+
+	<div id="filterPanel" class="filter-panel" hidden>
+		<div class="filter-field">
+			<label class="filter-label" for="filterColorRange">Color</label>
+			<div class="color-slider-wrap">
+				<div class="color-gradient-bar" style={`background: linear-gradient(to right, ${colorGradient});`}></div>
+				<input
+					type="range"
+					id="filterColorRange"
+					class="color-range"
+					min="0"
+					max={maxColorStep}
+					step="1"
+					value="0"
+					data-filter-group="color"
+					data-labels={colorLabelsJson}
+				/>
+			</div>
+			<div id="colorSliderCaption" class="color-slider-caption">Todos</div>
+		</div>
+
+		<div class="filter-field">
+			<label class="filter-label" for="filterStyle">Estilo</label>
+			<select id="filterStyle" class="filter-select" data-filter-group="style">
+				<option value="">Todos</option>
+				{styleOptions.map((s) => <option value={s}>{s}</option>)}
+			</select>
+		</div>
+
+		<div class="filter-field">
+			<label class="filter-label" for="filterCountry">País</label>
+			<select id="filterCountry" class="filter-select" data-filter-group="country">
+				<option value="">Todos</option>
+				{countryOptions.map((c) => <option value={c}>{flagFor(c)} {c}</option>)}
+			</select>
+		</div>
+
+		<div class="flex justify-center mt-2">
+			<button type="button" id="clearFiltersBtn" class="filter-clear-btn">Limpiar filtros</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	.filter-toggle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		margin: 0 auto;
+		padding: 10px 20px;
+		font-size: 13px;
+		font-weight: 800;
+		letter-spacing: 0.03em;
+		border-radius: 999px;
+		border: 1px solid rgba(220, 38, 38, 0.45);
+		background: rgba(220, 38, 38, 0.12);
+		color: #fff;
+		cursor: pointer;
+	}
+
+	.filter-toggle:hover {
+		border-color: rgba(220, 38, 38, 0.8);
+	}
+
+	.filter-count {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 18px;
+		height: 18px;
+		padding: 0 5px;
+		border-radius: 999px;
+		background: #dc2626;
+		color: #fff;
+		font-size: 11px;
+		font-weight: 800;
+	}
+
+	.filter-count.hidden {
+		display: none;
+	}
+
+	.filter-chevron {
+		transition: transform 0.2s ease;
+		font-size: 11px;
+	}
+
+	.filter-toggle[aria-expanded='true'] .filter-chevron {
+		transform: rotate(180deg);
+	}
+
+	.filter-panel {
+		margin-top: 16px;
+		max-width: 420px;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.filter-field {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	.filter-label {
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: rgba(255, 255, 255, 0.5);
+		font-weight: 700;
+	}
+
+	.filter-select {
+		width: 100%;
+		padding: 10px 14px;
+		font-size: 14px;
+		font-weight: 600;
+		border-radius: 10px;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		background: rgba(0, 0, 0, 0.45);
+		color: #fff;
+		cursor: pointer;
+	}
+
+	.filter-select:focus {
+		outline: none;
+		border-color: rgba(220, 38, 38, 0.7);
+	}
+
+	.color-slider-wrap {
+		position: relative;
+		height: 22px;
+		display: flex;
+		align-items: center;
+	}
+
+	.color-gradient-bar {
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 10px;
+		border-radius: 999px;
+		border: 1px solid rgba(255, 255, 255, 0.25);
+	}
+
+	.color-range {
+		position: relative;
+		width: 100%;
+		height: 22px;
+		margin: 0;
+		background: transparent;
+		-webkit-appearance: none;
+		appearance: none;
+		cursor: pointer;
+	}
+
+	.color-range::-webkit-slider-runnable-track {
+		background: transparent;
+		height: 10px;
+	}
+	.color-range::-moz-range-track {
+		background: transparent;
+		height: 10px;
+	}
+
+	.color-range::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 22px;
+		height: 22px;
+		border-radius: 50%;
+		background: #fff;
+		border: 3px solid #dc2626;
+		box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+		margin-top: -6px;
+	}
+	.color-range::-moz-range-thumb {
+		width: 22px;
+		height: 22px;
+		border-radius: 50%;
+		background: #fff;
+		border: 3px solid #dc2626;
+		box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.color-slider-caption {
+		text-align: center;
+		font-size: 13px;
+		font-weight: 700;
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.filter-clear-btn {
+		padding: 8px 18px;
+		font-size: 12px;
+		font-weight: 700;
+		border-radius: 999px;
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		background: transparent;
+		color: rgba(255, 255, 255, 0.6);
+		cursor: pointer;
+	}
+
+	.filter-clear-btn:hover {
+		border-color: rgba(255, 255, 255, 0.6);
+		color: #fff;
+	}
+</style>
+
+<script>
+	function initFilterToggle() {
+		const btn = document.getElementById('filterToggleBtn');
+		const panel = document.getElementById('filterPanel') as HTMLElement | null;
+		if (!btn || !panel || btn.dataset.bound === 'true') return;
+		btn.dataset.bound = 'true';
+
+		btn.addEventListener('click', () => {
+			const expanded = btn.getAttribute('aria-expanded') === 'true';
+			btn.setAttribute('aria-expanded', String(!expanded));
+			panel.hidden = expanded;
+		});
+	}
+
+	function initColorSlider() {
+		const range = document.getElementById('filterColorRange') as HTMLInputElement | null;
+		const caption = document.getElementById('colorSliderCaption');
+		if (!range || !caption || range.dataset.bound === 'true') return;
+		range.dataset.bound = 'true';
+
+		const labels: string[] = JSON.parse(range.dataset.labels || '[]');
+
+		const updateCaption = () => {
+			caption.textContent = labels[Number(range.value)] || 'Todos';
+		};
+
+		range.addEventListener('input', updateCaption);
+		updateCaption();
+	}
+
+	function initFilterBarUi() {
+		initFilterToggle();
+		initColorSlider();
+	}
+
+	document.addEventListener('astro:page-load', initFilterBarUi);
+	document.addEventListener('DOMContentLoaded', initFilterBarUi);
+</script>

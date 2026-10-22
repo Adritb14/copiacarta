@@ -1,0 +1,16 @@
+---
+// Simple drink item
+interface Props {
+	name: string;
+	price: string;
+}
+
+const { name, price } = Astro.props;
+---
+
+<!-- Touch target: py-3.5 (14px) para alcanzar ~48px de altura mínima -->
+<div class="flex justify-between items-center py-3.5 gap-4">
+	<!-- Typography: text-base mobile para mejor legibilidad -->
+	<p class="font-bratton text-base md:text-lg text-white">{name}</p>
+	<span class="font-burford text-lg md:text-xl text-red-600 whitespace-nowrap">{price}</span>
+</div>

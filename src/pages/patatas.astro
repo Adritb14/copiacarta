@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+// import BottomNavigation from '../components/BottomNavigation.astro';
+
+import MenuSection from '../components/MenuSection.astro';
+import MenuItem from '../components/MenuItem.astro';
+import PatatasData from '../data/patatas.json';
+import FeaturedCard from '../components/FeaturedCard.astro';
+
+const sections = PatatasData;
+---
+
+<Layout title="Patatas - Lucky Luke">
+	<Navigation />
+	
+	
+	<!-- Spacing: pt-28 mobile navbar, px-5 mobile óptimo, pb-28 bottom nav -->
+	<main class="pt-10 md:pt-15 px-5 md:px-6 pb-28 md:pb-24">
+		<!-- Spacing: py-12 mobile, py-16 desktop -->
+		<section class="py-0 md:py-16 bg-black">
+			<div class="container mx-auto max-w-7xl">
+				
+				{sections
+  .filter((section: any) => section.available !== false)
+  .map(section => (
+
+					<MenuSection 
+						id={section.id}
+						title={section.title}
+					>
+						{(() => {
+  const visibleItems = (section.items || []).filter((item: any) => item.available !== false);
+
+  const featuredItems = visibleItems.filter((item: any) => item.featured === true && item.image);
+  const regularItems  = visibleItems.filter((item: any) => !(item.featured === true && item.image));
+
+  return (
+    <>
+      {featuredItems.length > 0 && (
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 mb-8 col-span-full">
+          {featuredItems.map((item: any) => (
+            <FeaturedCard
+  name={item.name}
+  price={item.price}
+  description={item.description}
+  image={item.image}
+  emoji={item.emoji}
+  color={item.color}
+  allergens={item.allergens || []}
+/>
+          ))}
+        </div>
+      )}
+
+      {regularItems.map((item: any) => (
+        <MenuItem
+          name={item.name}
+          price={item.price}
+          description={item.description}
+          allergens={item.allergens || []}
+        />
+      ))}
+    </>
+  );
+})()}
+
+					</MenuSection>
+				))}
+				
+			</div>
+		</section>
+	</main>
+	
+	<!-- <BottomNavigation /> -->
+</Layout>

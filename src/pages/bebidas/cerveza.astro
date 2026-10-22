@@ -1,0 +1,431 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BebidasNav from '../../components/BebidasNav.astro';
+import BeerCard from '../../components/BeerCard.astro';
+import BarrilBeerSwiper from '../../components/BarrilBeerSwiper.astro';
+import BeerFilterBar from '../../components/BeerFilterBar.astro';
+
+import barrilData from '../../data/barril.json';
+import beersData from '../../data/beers.json';
+
+const cervezasBarril = barrilData.filter((b: any) => b.available !== false);
+const cervezasBotella = beersData.filter((b: any) => b.available !== false);
+
+const allBeers = [...cervezasBarril, ...cervezasBotella] as any[];
+
+// Escala de color de cerveza: de más claro a más oscuro, para el deslizante.
+const COLOR_BUCKETS = [
+  { id: 1, label: 'Muy claro', swatch: '#fdf6e3', keywords: ['transparente', 'muy pálido', 'pálido', 'rosa claro', 'rosado'] },
+  { id: 2, label: 'Dorado', swatch: '#f2c230', keywords: ['dorado', 'rubio', 'rubia'] },
+  { id: 3, label: 'Ámbar', swatch: '#e2861f', keywords: ['ámbar', 'naranja', 'anaranjado'] },
+  { id: 4, label: 'Cobrizo / Rojizo', swatch: '#b8422c', keywords: ['cobrizo', 'rojo', 'roja', 'caoba'] },
+  { id: 5, label: 'Marrón / Tostado', swatch: '#6b3a1f', keywords: ['marrón', 'tostada'] },
+  { id: 6, label: 'Negro', swatch: '#1c1209', keywords: ['negro', 'negra', 'oscuro', 'violeta'] },
+];
+
+function colorBucketOf(color: string | undefined): number {
+  if (!color) return 0;
+  const c = color.toLowerCase();
+  if (/negro|negra|muy oscuro/.test(c)) return 6;
+  if (/p[aá]lido|transparente/.test(c)) return 1;
+  if (/oscuro/.test(c)) {
+    if (/marr[oó]n|tostada/.test(c)) return 6;
+    if (/cobrizo|rojo|roja|caoba/.test(c)) return 5;
+    return 4;
+  }
+  if (/cobrizo|rojo|roja|caoba/.test(c)) return 4;
+  if (/marr[oó]n|tostada/.test(c)) return 5;
+  if (/[aá]mbar|naranja|anaranjado/.test(c)) return 3;
+  if (/dorado|rubio|rubia/.test(c)) return 2;
+  if (/rosa|rosado|violeta/.test(c)) return 1;
+  return 0;
+}
+
+const colorBucketOptions = COLOR_BUCKETS;
+
+const styleOptions = [...new Set(allBeers.map((b) => b.style).filter(Boolean))].sort((a, b) =>
+  a.localeCompare(b, 'es')
+);
+const countryOptions = [...new Set(allBeers.map((b) => b.country).filter(Boolean))].sort((a, b) =>
+  a.localeCompare(b, 'es')
+);
+---
+
+<Layout title="Cerveza - Lucky Luke">
+<script is:inline>
+  const ua = navigator.userAgent;
+  const isIOS = /iPhone|iPad|iPod/i.test(ua);
+  const isSafari =
+    /Safari/i.test(ua) &&
+    !/Chrome|CriOS|Edg|EdgiOS|OPR|FxiOS/i.test(ua);
+
+  if ((isIOS || isSafari) && window.location.pathname !== '/bebidas/cervezas-safari') {
+    window.location.replace('/bebidas/cervezas-safari');
+  }
+</script>
+  <main class="px-5 md:px-6 pb-28 md:pb-24 bg-black overflow-x-hidden">
+
+    <BebidasNav />
+
+    <section class="py-4">
+
+      <BeerFilterBar
+        colorBuckets={colorBucketOptions}
+        styleOptions={styleOptions}
+        countryOptions={countryOptions}
+      />
+
+      <!-- CERVEZAS DE BARRIL -->
+      <div id="barril" class="mb-16 pb-8">
+        <div class="flex items-center mb-4">
+          <div class="flex-1 h-px bg-gray-700"></div>
+          <h2 class="font-burford text-3xl md:text-4xl mx-4 text-red-600 text-center">CERVEZAS DE BARRIL</h2>
+          <div class="flex-1 h-px bg-gray-700"></div>
+        </div>
+        <div class="flex justify-center mb-6">
+          <span id="barrilCount" class="beer-count-badge">{cervezasBarril.length} disponibles</span>
+        </div>
+
+        <div class="barril-swiper relative">
+          <div class="swiper" id="barrilSwiper">
+            <div class="swiper-wrapper" id="barrilWrapper">
+              {cervezasBarril.map((beer: any) => (
+                <BarrilBeerSwiper
+                  name={beer.name}
+                  image={beer.image}
+                  description={beer.description}
+                  prices={beer.prices}
+                  abv={beer.abv?.toString()}
+                  ibu={beer.ibu?.toString()}
+                  style={beer.style}
+                  country={beer.country}
+                  color={beer.color}
+                  colorBucket={colorBucketOf(beer.color)}
+                  pairing={beer.pairing}
+                />
+              ))}
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <p id="barrilEmpty" class="hidden text-center text-white/60 py-10">
+          No hay cervezas de barril con esos filtros.
+        </p>
+      </div>
+
+      <!-- CERVEZAS DE BOTELLA -->
+      <div id="botella" class="mb-16">
+        <div class="flex items-center mb-4">
+          <div class="flex-1 h-px bg-gray-700"></div>
+          <h2 class="font-burford text-3xl md:text-4xl mx-4 text-red-600 text-center">CERVEZAS DE BOTELLA</h2>
+          <div class="flex-1 h-px bg-gray-700"></div>
+        </div>
+        <div class="flex justify-center mb-6">
+          <span id="beerCount" class="beer-count-badge">{cervezasBotella.length} disponibles</span>
+        </div>
+
+        <div class="botella-swiper relative">
+          <div class="swiper" id="beerSwiper">
+            <div class="swiper-wrapper" id="beerWrapper">
+              {cervezasBotella.map((beer: any) => (
+                <div
+                  class="swiper-slide"
+                  data-color={colorBucketOf(beer.color)}
+                  data-style={beer.style}
+                  data-country={beer.country}
+                >
+                  <BeerCard
+                    name={beer.name}
+                    format={beer.format}
+                    price={beer.price}
+                    image={beer.image}
+                    description={beer.description}
+                    abv={beer.abv?.toString()}
+                    ibu={beer.ibu?.toString()}
+                    featured={beer.name === 'Sake Japonés'}
+                    style={beer.style}
+                    country={beer.country}
+                    tags={beer.tags}
+                  />
+                </div>
+              ))}
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <p id="beerEmpty" class="hidden text-center text-white/60 py-10">
+          No hay cervezas de botella con esos filtros.
+        </p>
+      </div>
+
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .swiper {
+    width: 100%;
+    padding: 40px 0;
+    overflow: hidden;
+  }
+  .swiper-slide {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #dc2626;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after { font-size: 20px; }
+  .swiper-pagination { bottom: 0 !important; }
+  .swiper-pagination-bullet {
+    background: rgba(255,255,255,0.7) !important;
+    border: 2px solid rgba(220,38,38,0.8) !important;
+    opacity: 1 !important;
+    width: 10px !important;
+    height: 10px !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: #dc2626 !important;
+    border-color: #dc2626 !important;
+    transform: scale(1.2);
+  }
+  #barrilSwiper .swiper-slide { width: 85%; }
+  @media (min-width: 768px) {
+    #barrilSwiper .swiper-slide { width: 420px; }
+  }
+  .beer-count-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 26px;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    border-radius: 999px;
+    border: 2px solid #dc2626;
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.35), rgba(220, 38, 38, 0.12));
+    color: #fff;
+    box-shadow: 0 0 24px rgba(220, 38, 38, 0.35);
+  }
+  .beer-count-badge::before {
+    content: '🍺';
+    font-size: 20px;
+  }
+  @media (min-width: 768px) {
+    .beer-count-badge { font-size: 20px; padding: 12px 32px; }
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+  import 'swiper/css/effect-coverflow';
+
+  function isSafari() {
+    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  }
+  function isMobile() {
+    return window.matchMedia('(max-width: 767px)').matches;
+  }
+
+  function getSwiperConfig(type: string) {
+    const simple = isSafari() || isMobile();
+    if (type === 'barril') {
+      return {
+        modules: [Navigation, Pagination, EffectCoverflow],
+        effect: simple ? 'slide' : 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto' as const,
+        spaceBetween: simple ? 12 : 18,
+        loop: !simple,
+        speed: simple ? 450 : 700,
+        watchOverflow: true,
+        observer: true,
+        observeParents: true,
+        navigation: {
+          nextEl: '#barrilSwiper .swiper-button-next',
+          prevEl: '#barrilSwiper .swiper-button-prev',
+        },
+        pagination: { el: '#barrilSwiper .swiper-pagination', clickable: true },
+        coverflowEffect: simple ? undefined : { rotate: 16, stretch: 0, depth: 140, modifier: 1.05, slideShadows: false },
+      };
+    }
+    return {
+      modules: [Navigation, Pagination, EffectCoverflow],
+      effect: simple ? 'slide' : 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto' as const,
+      spaceBetween: simple ? 14 : 20,
+      loop: !simple,
+      speed: simple ? 500 : 800,
+      watchOverflow: true,
+      observer: true,
+      observeParents: true,
+      navigation: {
+        nextEl: '#beerSwiper .swiper-button-next',
+        prevEl: '#beerSwiper .swiper-button-prev',
+      },
+      pagination: { el: '#beerSwiper .swiper-pagination', clickable: true },
+      coverflowEffect: simple ? undefined : { rotate: 18, stretch: 0, depth: 160, modifier: 1.1, slideShadows: false },
+    };
+  }
+
+  const barrilState = { instance: null as any, allSlides: [] as HTMLElement[] };
+  const botellaState = { instance: null as any, allSlides: [] as HTMLElement[] };
+
+  function initSwiperWhenVisible(selector: string, type: string, state: { instance: any }) {
+    const el = document.querySelector(selector);
+    if (!el || el.classList.contains('swiper-initialized')) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        if (!el.classList.contains('swiper-initialized')) {
+          state.instance = new Swiper(selector, getSwiperConfig(type));
+        }
+        observer.disconnect();
+      });
+    }, { rootMargin: '300px 0px' });
+    observer.observe(el);
+  }
+
+  // ---- Clasificador de cervezas (color / estilo / país) ----
+  type FilterGroup = 'color' | 'style' | 'country';
+  const activeFilters: Record<FilterGroup, string> = {
+    color: '',
+    style: '',
+    country: '',
+  };
+
+  function slideMatches(el: HTMLElement) {
+    const color = el.dataset.color || '';
+    const style = el.dataset.style || '';
+    const country = el.dataset.country || '';
+    if (activeFilters.color && activeFilters.color !== color) return false;
+    if (activeFilters.style && activeFilters.style !== style) return false;
+    if (activeFilters.country && activeFilters.country !== country) return false;
+    return true;
+  }
+
+  function rebuildSwiper(
+    selector: string,
+    wrapperId: string,
+    type: string,
+    state: { instance: any; allSlides: HTMLElement[] },
+    emptyId: string,
+    countId: string
+  ) {
+    const wrapper = document.getElementById(wrapperId);
+    const swiperBox = document.querySelector(selector) as HTMLElement | null;
+    const emptyEl = document.getElementById(emptyId);
+    const countEl = document.getElementById(countId);
+    if (!wrapper || !swiperBox) return;
+
+    const visible = state.allSlides.filter(slideMatches);
+    const total = state.allSlides.length;
+
+    if (countEl) {
+      countEl.textContent =
+        visible.length === total ? `${total} disponibles` : `${visible.length} de ${total} disponibles`;
+    }
+
+    if (state.instance) {
+      state.instance.destroy(true, true);
+      state.instance = null;
+    }
+
+    wrapper.innerHTML = '';
+    visible.forEach((el) => wrapper.appendChild(el));
+
+    if (visible.length === 0) {
+      emptyEl?.classList.remove('hidden');
+      swiperBox.style.display = 'none';
+    } else {
+      emptyEl?.classList.add('hidden');
+      swiperBox.style.display = '';
+      state.instance = new Swiper(selector, getSwiperConfig(type));
+    }
+  }
+
+  function applyFilters() {
+    rebuildSwiper('#barrilSwiper', 'barrilWrapper', 'barril', barrilState, 'barrilEmpty', 'barrilCount');
+    rebuildSwiper('#beerSwiper', 'beerWrapper', 'botella', botellaState, 'beerEmpty', 'beerCount');
+    updateFilterCount();
+  }
+
+  function updateFilterCount() {
+    const total = [activeFilters.color, activeFilters.style, activeFilters.country].filter(Boolean).length;
+    const badge = document.getElementById('filterCount');
+    if (!badge) return;
+    badge.textContent = String(total);
+    badge.classList.toggle('hidden', total === 0);
+  }
+
+  function initFilterBar() {
+    const bar = document.getElementById('beerFilterBar');
+    if (!bar || bar.dataset.bound === 'true') return;
+    bar.dataset.bound = 'true';
+
+    bar.querySelectorAll<HTMLSelectElement>('.filter-select[data-filter-group]').forEach((select) => {
+      select.addEventListener('change', () => {
+        const group = select.dataset.filterGroup as FilterGroup;
+        activeFilters[group] = select.value;
+        applyFilters();
+      });
+    });
+
+    const colorRange = document.getElementById('filterColorRange') as HTMLInputElement | null;
+    colorRange?.addEventListener('change', () => {
+      activeFilters.color = colorRange.value === '0' ? '' : colorRange.value;
+      applyFilters();
+    });
+
+    document.getElementById('clearFiltersBtn')?.addEventListener('click', () => {
+      activeFilters.color = '';
+      activeFilters.style = '';
+      activeFilters.country = '';
+      bar.querySelectorAll<HTMLSelectElement>('.filter-select').forEach((s) => (s.value = ''));
+      if (colorRange) {
+        colorRange.value = '0';
+        colorRange.dispatchEvent(new Event('input'));
+      }
+      applyFilters();
+    });
+  }
+
+  function initPage() {
+    if (barrilState.allSlides.length === 0) {
+      const wrapper = document.getElementById('barrilWrapper');
+      if (wrapper) barrilState.allSlides = Array.from(wrapper.children) as HTMLElement[];
+    }
+    if (botellaState.allSlides.length === 0) {
+      const wrapper = document.getElementById('beerWrapper');
+      if (wrapper) botellaState.allSlides = Array.from(wrapper.children) as HTMLElement[];
+    }
+
+    initSwiperWhenVisible('#barrilSwiper', 'barril', barrilState);
+    initSwiperWhenVisible('#beerSwiper', 'botella', botellaState);
+    initFilterBar();
+  }
+
+  document.addEventListener('astro:page-load', initPage);
+  document.addEventListener('DOMContentLoaded', initPage);
+</script>

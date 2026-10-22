@@ -1,0 +1,56 @@
+[
+  {
+    "id": "gorra-lucky",
+    "name": "Gorra Lucky Luke",
+    "category": "Ropa",
+    "price": 0,
+    "image": "/images/comida/platos/COMING-SOON.webp",
+    "description": "Gorra con bordado del logo Lucky Luke.",
+    "available": true
+  },
+  {
+    "id": "camiseta-lucky",
+    "name": "Camiseta Lucky Luke",
+    "category": "Ropa",
+    "price": 0,
+    "image": "/images/comida/platos/COMING-SOON.webp",
+    "description": "Camiseta 100% algodón con el logo del restaurante.",
+    "available": true
+  },
+  {
+    "id": "sudadera-lucky",
+    "name": "Sudadera Lucky Luke",
+    "category": "Ropa",
+    "price": 0,
+    "image": "/images/comida/platos/COMING-SOON.webp",
+    "description": "Sudadera con capucha y logo bordado.",
+    "available": true
+  },
+  {
+    "id": "jarra-lucky",
+    "name": "Jarra Lucky Luke",
+    "category": "Hogar",
+    "price": 0,
+    "image": "/images/comida/platos/COMING-SOON.webp",
+    "description": "Jarra de cerámica con el logo del restaurante.",
+    "available": true
+  },
+  {
+    "id": "taza-lucky",
+    "name": "Taza Lucky Luke",
+    "category": "Hogar",
+    "price": 0,
+    "image": "/images/comida/platos/COMING-SOON.webp",
+    "description": "Taza de cerámica con diseño exclusivo.",
+    "available": true
+  },
+  {
+    "id": "bolsa-lucky",
+    "name": "Bolsa Tote Lucky Luke",
+    "category": "Accesorios",
+    "price": 0,
+    "image": "/images/comida/platos/COMING-SOON.webp",
+    "description": "Bolsa de tela resistente con el logo del restaurante.",
+    "available": true
+  }
+]

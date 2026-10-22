@@ -1,0 +1,28 @@
+---
+// Menu Section Component
+interface Props {
+	id: string;
+	title: string;
+	description?: string;
+}
+
+const { id, title, description } = Astro.props;
+---
+
+<div id={id} class="mb-16 md:mb-20">
+	<div class="flex items-center mb-10">
+		<div class="flex-1 h-px bg-gray-700"></div>
+		<h2 class="font-burford text-3xl md:text-4xl mx-4 text-red-600 text-center">{title}</h2>
+		<div class="flex-1 h-px bg-gray-700"></div>
+	</div>
+	
+	{description && (
+		<p class="font-bratton text-gray-300 text-center max-w-3xl mx-auto mb-10">
+			{description}
+		</p>
+	)}
+	
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-5">
+		<slot />
+	</div>
+</div>

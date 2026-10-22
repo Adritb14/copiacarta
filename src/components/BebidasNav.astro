@@ -1,0 +1,56 @@
+---
+const path = Astro.url.pathname.replace(/\/$/, '');
+const active = (p: string) => path === p;
+---
+
+<nav class="beb-subnav">
+  <a class:list={['beb-link', { 'is-active': active('/bebidas/cerveza') }]} href="/bebidas/cerveza">
+    <span>🍺</span> Cerveza
+  </a>
+  <a class:list={['beb-link', { 'is-active': active('/bebidas/refrescos') }]} href="/bebidas/refrescos">
+    <span>🥤</span> Refrescos
+  </a>
+  <a class:list={['beb-link', { 'is-active': active('/bebidas/cocteles') }]} href="/bebidas/cocteles">
+    <span>🍸</span> Cocteles
+  </a>
+</nav>
+
+<style>
+  .beb-subnav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 16px 20px;
+    flex-wrap: wrap;
+  }
+
+  .beb-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(220, 38, 38, 0.35);
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Burford', 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+
+  .beb-link:hover {
+    border-color: rgba(220, 38, 38, 0.65);
+    background: rgba(220, 38, 38, 0.12);
+    color: #fff;
+  }
+
+  .beb-link.is-active {
+    border-color: #dc2626;
+    background: rgba(220, 38, 38, 0.18);
+    color: #fff;
+    box-shadow: 0 0 12px rgba(220, 38, 38, 0.3);
+  }
+</style>

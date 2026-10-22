@@ -1,0 +1,92 @@
+[
+  {
+    "id": "fusionbites",
+    "title": "fusion-bites",
+    "available": true,
+    "items": [
+      {
+        "available": true,
+        "name": "BALL BITE COSTILLA BBQ",
+        "featured": true,
+        "image": "/images/comida/platos/fusion-bites/ballbites.webp",
+        "price": "11,90€",
+        "description": "Croquetas de costilla a la BBQ cocinada a baja temperatura.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Sulfitos"
+        ]
+      },
+      {
+        "available": true,
+        "name": "BALL BITE ATÚN ROJO",
+        "featured": true,
+        "image": "/images/comida/platos/fusion-bites/ballbites.webp",
+        "price": "11,90€",
+        "description": "Croquetas de Atún Rojo con Wakame.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Pescado"
+        ]
+      },
+      {
+        "available": false,
+        "name": "GYOZAS BUEY",
+        "featured": true,
+        "image": "/images/comida/platos/fusion-bites/gyozabuey.webp",
+        "price": "11,90€",
+        "description": "Gyozas de buey a la brasa.",
+        "allergens": [
+          "Gluten",
+          "Soja",
+          "Sésamo"
+        ]
+      },
+      {
+        "available": true,
+        "name": "GYOZAS PRESA IBÉRICA",
+        "featured": true,
+        "image": "/images/comida/platos/fusion-bites/gyozabuey.webp",
+        "price": "11,90€",
+        "description": "Gyozas de presa ibérica.",
+        "allergens": [
+          "Gluten",
+          "Soja",
+          "Sésamo"
+        ]
+      },
+      {
+        "available": true,
+        "name": "PAN BAO MEX FUSION",
+        "featured": true,
+        "image": "/images/comida/platos/fusion-bites/baomex.webp",
+        "price": "11,90€",
+        "description": "3 baos crujientes: carne al pastor, tinga poblana y cochinita pibil.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Soja",
+          "Sésamo"
+        ]
+      },
+      {
+        "available": true,
+        "name": "PAN BAO SPAIN",
+        "featured": true,
+        "image": "/images/comida/platos/fusion-bites/baoesp.webp",
+        "price": "11,90€",
+        "description": "3 baos crujientes: rabo de toro a la cordobesa, carrillada al vino tinto y solomillo al Pedro Ximénez.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Soja",
+          "Sésamo",
+          "Sulfitos"
+        ]
+      }
+    ]
+  }
+]

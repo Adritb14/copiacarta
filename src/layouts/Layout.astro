@@ -1,0 +1,200 @@
+---
+import '../styles/global.css';
+import { ViewTransitions } from 'astro:transitions';
+import Analytics from '@vercel/analytics/astro';
+
+import TopMarquee from "../components/TopMarquee.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  showMenuButton?: boolean;
+  showMarquee?: boolean;
+}
+
+const {
+  title = "Lucky Luke - Restaurante",
+  description = "Carta del Restaurante Lucky Luke",
+  showMenuButton = true,
+  showMarquee = true
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover para safe-area en iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#dc2626" />
+
+    <!-- iOS icon -->
+    <link rel="apple-touch-icon" href="/images/logos/192logo.png" />
+
+    <!-- Fonts: preconnect + carga no bloqueante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&family=Creepster&family=Cinzel:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&family=Creepster&family=Cinzel:wght@600;700&display=swap"></noscript>
+
+    <!-- Swiper CSS: no bloqueante -->
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+
+    <!-- AOS CSS: no bloqueante -->
+    <link rel="preload" as="style" href="https://unpkg.com/aos@2.3.1/dist/aos.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+
+    <!-- PWA Meta -->
+    <meta name="apple-mobile-web-app-title" content="Carta LuckyLuke">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <slot name="head" />
+
+    <ViewTransitions />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+
+  <body class="bg-black text-white font-bratton">
+  {showMarquee && <TopMarquee />}
+
+    <main id="page-transition" class={`page-under-marquee${showMarquee ? '' : ' no-marquee'}`}>
+      <slot />
+    </main>
+
+   
+
+    <Analytics />
+
+    <!-- Scripts diferidos: no bloquean el render -->
+    <script is:inline defer src="https://unpkg.com/feather-icons"></script>
+    <script is:inline defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script is:inline defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize -->
+    <script is:inline>
+      function initUI() {
+        if (window.feather) window.feather.replace();
+
+        if (window.AOS) {
+          try { window.AOS.refreshHard(); } catch (e) {}
+          window.AOS.init({ duration: 800, once: true, offset: 100 });
+          try { window.AOS.refreshHard(); } catch (e) {}
+        }
+      }
+
+      const run = () => requestAnimationFrame(initUI);
+
+      document.addEventListener("DOMContentLoaded", run);
+      document.addEventListener("astro:page-load", run);
+      document.addEventListener("astro:after-swap", run);
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  /* Fuentes locales */
+  @font-face{
+    font-family:'Burford';
+    src:
+      url('/fonts/Burford_Base.ttf') format('truetype'),
+      url('/fonts/Burford_Line.ttf') format('truetype');
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+  }
+  @font-face{
+    font-family:'Bratton';
+    src:
+      url('/fonts/Bratton.woff2') format('woff2'),
+      url('/fonts/Bratton.woff') format('woff');
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+  }
+
+  /* IMPORTANT: layout “tipo app” en móvil (evita hueco negro) */
+  html, body {
+    height: 100%;
+  }
+  body {
+    min-height: 100dvh;              /* altura dinámica móvil */
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    /* si tu diseño no necesita scroll del body, esto lo estabiliza */
+    /* overflow-y: hidden; */
+    padding-bottom: env(safe-area-inset-bottom); /* iOS */
+  }
+
+  /* Main debe crecer y empujar el resto, en vez de dejar hueco */
+  main.page-under-marquee {
+    flex: 1;
+    min-height: 0;
+    padding-top: 58px; /* igual que height del marquee */
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+  main.page-under-marquee.no-marquee {
+    padding-top: 0;
+  }
+
+  /* Transición tipo app */
+  #page-transition{
+    animation: pageIn 280ms ease;
+  }
+  @keyframes pageIn{
+    from{ opacity:0; transform: translateY(12px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  .font-burford { font-family: 'Burford', 'Bebas Neue', sans-serif; }
+  .font-bratton { font-family: 'Bratton', 'Roboto', sans-serif; }
+
+  .border-western {
+    border: 2px solid rgba(206, 19, 23, 0.5);
+    border-radius: 8px;
+  }
+  .border-western:hover { border-color: rgba(206, 19, 23, 0.8); }
+
+  .menu-category {
+    border-left: 4px solid #CE1317;
+    background: rgba(206, 19, 23, 0.1);
+  }
+
+  .burger-upgrade{
+    background: rgba(206, 19, 23, 0.08);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  .burger-upgrade:hover{
+    background: rgba(206, 19, 23, 0.14);
+  }
+  .upgrade-item span{
+    letter-spacing: 0.05em;
+  }
+
+  .font-andalucia{
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+  }
+
+  .glow-andalucia {
+    box-shadow:
+      0 0 8px rgba(34,197,94,0.35),
+      0 0 18px rgba(34,197,94,0.25);
+    transition: box-shadow 0.3s ease;
+  }
+  .glow-andalucia:hover {
+    box-shadow:
+      0 0 12px rgba(34,197,94,0.5),
+      0 0 28px rgba(34,197,94,0.35);
+  }
+</style>

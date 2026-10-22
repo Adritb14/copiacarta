@@ -1,0 +1,165 @@
+---
+type Price =
+  | string
+  | {
+      medio?: string;
+      entero?: string;
+      [k: string]: any;
+    };
+
+interface Props {
+  name: string;
+  price: Price;          // 👈 antes string
+  description: string;
+  image?: string;
+  emoji?: string;
+  color?: string;
+  allergens?: string[];
+  titleClass?: string;
+  options?: { label: string; choices: string[] }[];
+}
+
+const {
+  name,
+  price,
+  description,
+  image,
+  emoji = "",
+  color = "text-red-600",
+  allergens = [],
+  titleClass = "",
+  options = [],
+} = Astro.props;
+
+const allergenColors: Record<string, string> = {
+  'Gluten': 'bg-red-700',
+  'Huevo': 'bg-yellow-700',
+  'Lácteos': 'bg-green-600',
+  'Soja': 'bg-blue-600',
+  'Sésamo': 'bg-stone-700',
+  'Sulfitos': 'bg-gray-600',
+  'Mostaza': 'bg-amber-600',
+  'Apio': 'bg-lime-700',
+  'Cacahuetes': 'bg-orange-700',
+  'Frutos secos': 'bg-orange-600',
+};
+
+const isPriceObject = typeof price === "object" && price !== null;
+const medio = isPriceObject ? (price as any).medio : null;
+const entero = isPriceObject ? (price as any).entero : null;
+---
+
+<details class="flip-card">
+  <summary class="flip-summary">
+    <div class="flip-inner">
+      <!-- FRONT -->
+      <article class="flip-face border border-white/15 bg-black/40 rounded-xl overflow-hidden hover:border-red-600/50 transition-all duration-300">
+        <div class="relative aspect-square">
+          {image ? (
+            <img
+              src={image}
+              alt={name}
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          ) : (
+            <div class="absolute inset-0 flex items-center justify-center bg-gray-800 text-white/60">
+              Imagen no disponible
+            </div>
+          )}
+        </div>
+
+        <div class="p-4 md:p-5">
+          <div class="flex items-start gap-4 mb-3">
+            <h3 class={`Burford flex-1 text-xl md:text-2xl font-bold ${color} ${titleClass} leading-tight`}>
+              {name}{emoji}
+            </h3>
+
+            {/* PRECIO: simple o doble (2 líneas) */}
+            <div class="shrink-0 text-right text-white font-semibold">
+              {isPriceObject ? (
+                <div class="text-lg md:text-xl leading-tight whitespace-nowrap">
+                  {medio && <div>Medio · {medio}</div>}
+                  {entero && <div>Entero · {entero}</div>}
+                </div>
+              ) : (
+                <span class="whitespace-nowrap text-lg md:text-xl">
+                  {price as string}
+                </span>
+              )}
+            </div>
+          </div>
+
+          <p class="text-sm md:text-base text-white/80">{description}</p>
+
+          {options.length > 0 && (
+            <div class="mt-4 space-y-3">
+              {options.map(opt => (
+                <div class="rounded-lg border border-red-600/50 bg-red-600/10 p-3">
+                  <p class="Burford text-sm md:text-base font-bold uppercase tracking-wide text-red-500 mb-2">
+                    {opt.label}
+                  </p>
+                  <div class="flex flex-wrap gap-1.5">
+                    {opt.choices.map(choice => (
+                      <span class="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs md:text-sm font-semibold text-white">
+                        {choice}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {allergens.length > 0 && (
+            <p class="mt-3 text-xs text-white/50">Toca para ver alérgenos</p>
+          )}
+        </div>
+      </article>
+
+      <!-- BACK -->
+      <article class="flip-face flip-back border border-white/15 bg-black/80 rounded-xl overflow-hidden p-4 md:p-5">
+        <h4 class="Burford text-xl md:text-2xl font-bold text-red-600 text-center mb-4">
+          Alérgenos
+        </h4>
+
+        {allergens.length > 0 ? (
+          <div class="flex flex-wrap gap-2 justify-center">
+            {allergens.map(a => (
+              <span class={`${allergenColors[a] || 'bg-gray-600'} text-white text-xs px-3 py-1.5 rounded`}>
+                {a}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <p class="text-sm text-white/70 text-center">Sin alérgenos declarados</p>
+        )}
+
+        <p class="mt-4 text-xs text-white/50 text-center">Toca para volver</p>
+      </article>
+    </div>
+  </summary>
+</details>
+
+<style>
+  /* quitar triangulito */
+  .flip-summary { list-style: none; cursor: pointer; }
+  .flip-summary::-webkit-details-marker { display: none; }
+
+  .flip-card { perspective: 1000px; display: block; }
+  .flip-inner {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 500ms ease;
+  }
+  /* Asegura que ambas caras ocupen lo mismo */
+  .flip-face { backface-visibility: hidden; }
+  .flip-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+  }
+
+  /* Giro cuando se abre */
+  .flip-card[open] .flip-inner { transform: rotateY(180deg); }
+</style>

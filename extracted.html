@@ -1,0 +1,7158 @@
+
+            <!DOCTYPE html>
+          
+
+            <html lang="es</span
+              >"></span
+            >
+          
+
+            <head></span
+            ><script></span
+            >window.huggingface={variables:{"SPACE_CREATOR_USER_ID":"68cf8246ce1399b97e6d6428"}};</script></span
+            >
+          
+
+            <meta charset="UTF-8</span
+              >"></span
+            >
+          
+
+            <meta name="viewport</span
+              >" content="width=device-width, initial-scale=1.0</span
+              >"></span
+            >
+          
+
+            <title>INICIO</title></span
+            >
+          
+
+            <link rel="icon</span
+              >" type="image/x-icon</span
+              >" href="static/favicon.ico</a
+              >"></span
+            >
+          
+
+            <script src="https://cdn.tailwindcss.com</a
+              >"></span
+            ></script>
+          
+
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css</a
+              >" rel="stylesheet</span
+              >"></span
+            >
+          
+
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js</a
+              >"></span
+            ></script>
+          
+
+            <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js</a
+              >"></span
+            ></script>
+          
+
+            <script src="https://unpkg.com/feather-icons</a
+              >"></span
+            ></script>
+          
+
+            <link rel="preconnect</span
+              >" href="https://fonts.googleapis.com</a
+              >"></span
+            >
+          
+
+            <link rel="preconnect</span
+              >" href="https://fonts.gstatic.com</a
+              >" crossorigin></span
+            >
+          
+
+            <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap</a
+              >"</span
+            >
+          
+
+            rel="stylesheet</span
+            >">
+          
+
+            <!-- Swiper -->
+          
+
+            <link rel="stylesheet</span
+              >" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css</a
+              >"></span
+            >
+          
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js</a
+              >"></span
+            ></script>
+          
+
+            <!-- ICONOS PARA PANTALLA DE INICIO --></span
+            >
+          
+<link
+
+            rel="apple-touch-icon</span
+            >"
+          
+
+            href="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/tMQfBYwOpdA0mnxUByTu0.webp</a
+            >">
+          
+<link
+
+            rel="icon</span
+            >"
+          
+
+            type="image/png</span
+            >"
+          
+
+            sizes="192x192</span
+            >"
+          
+
+            href="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/tMQfBYwOpdA0mnxUByTu0.webp</a
+            >">
+          
+<link
+
+            rel="icon</span
+            >"
+          
+
+            type="image/png</span
+            >"
+          
+
+            sizes="512x512</span
+            >"
+          
+
+            href="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/tMQfBYwOpdA0mnxUByTu0.webp</a
+            >">
+          
+
+            <!-- PWA MANIFEST -->
+          
+
+            <link rel="manifest</span
+              >" href="manifest.json</a
+              >"></span
+            >
+          
+
+            <!-- NOMBRE PARA iOS -->
+          
+
+            <meta name="apple-mobile-web-app-title</span
+              >" content="Carta LuckyLuke</span
+              >"></span
+            >
+          
+
+            <meta name="apple-mobile-web-app-capable</span
+              >" content="yes</span
+              >"></span
+            >
+          
+
+            <meta name="apple-mobile-web-app-status-bar-style</span
+              >" content="black</span
+              >"></span
+            >
+          
+
+            <!-- HERO FONT -->
+          
+
+            <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap</a
+              >" rel="stylesheet</span
+              >"></span
+            >
+          
+
+            <style>
+          
+
+            /* ===== Tipografías corporativas ===== */
+          
+@font-face {
+font-family: 'Burford';
+
+            src: url('fonts/Burford.woff2') format('woff2');
+          
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Bratton';
+
+            src: url('fonts/Bratton.woff2') format('woff2');
+          
+font-weight: normal;
+font-style: normal;
+}
+
+            .font-burford { font-family: 'Burford', 'Bebas Neue', sans-serif; }
+          
+
+            .font-bratton { font-family: 'Bratton', 'Roboto', sans-serif; }
+          
+/* =========================
+SWIPER (tamaños de slide)
+========================= */
+.barril-swiper .swiper-slide,
+.botella-swiper .swiper-slide {
+width: 280px;
+}
+@media (min-width: 640px) {
+.barril-swiper .swiper-slide,
+.botella-swiper .swiper-slide {
+width: 310px;
+}
+}
+/* =========================
+QUITAR BOTONES (flechas)
+========================= */
+#barril .swiper-button-next,
+#barril .swiper-button-prev,
+#cervezas .swiper-button-next,
+#cervezas .swiper-button-prev {
+display: none !important;
+}
+/* =========================
+PUNTITOS SOLO BARRIL
+========================= */
+/* Oculta paginación de botellas */
+#cervezas .swiper-pagination {
+display: none !important;
+}
+/* Estilo paginación de barril */
+#barril .swiper-pagination-bullet {
+width: 10px;
+height: 10px;
+background: transparent !important;
+
+            border: 1.5px solid rgba(206, 19, 23, 0.75);
+          
+opacity: 1 !important;
+margin: 0 6px !important;
+transition: all 0.25s ease;
+}
+
+            #barril .swiper-pagination-bullet-active {
+          
+background: #CE1317 !important;
+border-color: #CE1317 !important;
+
+            box-shadow: 0 0 10px rgba(206, 19, 23, 0.55);
+          
+transform: scale(1.15);
+}
+/* =========================
+FLIP CARDS (común)
+========================= */
+.flip-card {
+perspective: 1200px;
+height: 420px;
+
+            -webkit-tap-highlight-color: transparent;
+          
+user-select: none;
+}
+.flip-inner {
+position: relative;
+width: 100%;
+height: 100%;
+transform-style: preserve-3d;
+
+            transition: transform 700ms cubic-bezier(.2,.8,.2,1);
+          
+}
+.flip-card.is-flipped .flip-inner {
+transform: rotateY(180deg);
+}
+.flip-face {
+position: absolute;
+inset: 0;
+backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+display: flex;
+flex-direction: column;
+border-radius: 16px;
+overflow: hidden;
+}
+.flip-back {
+transform: rotateY(180deg);
+}
+.card-shell {
+border: 2px solid rgba(206,19,23,.75);
+background: rgba(0,0,0,.45);
+
+            box-shadow: 0 0 30px rgba(206,19,23,.12);
+          
+}
+.flip-card:hover .card-shell {
+border-color: rgba(206,19,23,1);
+
+            box-shadow: 0 0 40px rgba(206,19,23,.18);
+          
+}
+
+            /* Permitir swipe horizontal en Swiper sin pelearse con la página */
+          
+
+            #cervezas .swiper { touch-action: pan-y; }
+          
+#barril .swiper { touch-action: pan-y; }
+
+            </style>
+          
+
+            <script>
+          
+
+            // Detección temprana de iOS para condicionar el renderizado
+          
+
+            const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+          
+
+            </script>
+          
+
+            </head>
+          
+
+            <body class="bg-black text-white font-bratton</span
+              >"></span
+            >
+          
+
+            <!-- NAV -->
+          
+
+            <nav class="bg-black fixed top-0 left-0 w-full z-50 border-b
+                border-red-600</span
+              >"></span
+            >
+          
+
+            <div class="container mx-auto px-4 py-3 flex justify-center
+                items-center</span
+              >"></span
+            >
+          
+
+            <!-- Logo -->
+          
+
+            <div class="flex items-center</span
+              >"></span
+            >
+          
+<img
+
+            src="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/Lucky_Horizontal_Principal%20negativo.png</a
+            >"
+          
+
+            alt="Lucky Luke Logo</span
+            >" class="h-[80px]</span
+            >">
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- Menú móvil -->
+          
+
+            <div id="mobileMenu</span
+              >" class="hidden md:hidden bg-black border-t border-red-600</span
+              >"></span
+            >
+          
+
+            <a href="index.html</a
+              >" class="block px-4 py-2 text-white hover:text-red-600
+                font-burford</span
+              >"></span
+            >Inicio</a>
+          
+
+            <a href="carta.html</a
+              >" class="block px-4 py-2 text-white text-red-600 font-burford</span
+              >"></span
+            >Carta</a>
+          
+
+            <a href="reservas.html</a
+              >" class="block px-4 py-2 hover:text-red-600 font-burford</span
+              >"></span
+            >Reservas</a>
+          
+
+            <a href="eventos.html</a
+              >" class="block px-4 py-2 text-white hover:text-red-600
+                font-burford</span
+              >"></span
+            >Eventos</a>
+          
+
+            <a href="contacto.html</a
+              >" class="block px-4 py-2 text-white text-red-600 font-burford</span
+              >"></span
+            >Contacto</a>
+          
+
+            </div>
+          
+
+            </nav>
+          
+
+            <!-- JS NAV (por si reactivas el botón en el futuro)
+              --></span
+            >
+          
+
+            <script>
+          
+
+            const btn = document.getElementById('menuBtn');
+          
+
+            const menu = document.getElementById('mobileMenu');
+          
+if (btn && menu) {
+btn.addEventListener('click', () => {
+menu.classList.toggle('hidden');
+});
+}
+
+            </script>
+          
+
+            <!-- CONTENEDOR PRINCIPAL --></span
+            >
+          
+
+            <!-- <main class="pt-28 md:pt-32 px-4"> --></span
+            >
+          
+
+            <!-- HERO BLACK FRIDAY -->
+          
+
+            <!-- <section class="w-full relative text-center mb-10">
+              --></span
+            >
+          
+
+            <!-- Imagen con enlace -->
+          
+
+            <!-- <a
+              href="https://restauranteluckyluke-restauranteluckyluke.static.hf.space/blackfriday.html"></span
+            >
+          
+
+             <img
+          
+
+            
+              src="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/BFbanner.jpeg"</span
+            >
+          
+
+             alt="Black Friday Lucky Luke"
+          
+
+            
+              class="w-full max-h-[380px] object-cover rounded-xl shadow-lg
+              cursor-pointer hover:opacity-90 transition"></span
+            >
+          
+
+             </a>
+          
+
+             <!-- Contenido -->
+          
+
+            <!-- <div class="mt-5">
+          
+
+            
+              <h2 class="text-3xl md:text-4xl font-bold text-white"></span
+            >
+          
+
+             ¡Oferta Especial Black Friday!
+          
+
+             </h2>
+          
+
+            
+              <p class="text-gray-300 mt-2 max-w-xl mx-auto"></span
+            >
+          
+
+            
+              Packs exclusivos solo por tiempo limitado.</span
+            >
+          
+
+            
+              Aprovecha ahora antes de que se agoten.</span
+            >
+          
+
+             </p>
+          
+ <a
+
+            
+              href="https://restauranteluckyluke-restauranteluckyluke.static.hf.space/blackfriday.html"</span
+            >
+          
+
+            
+              class="inline-block mt-5 bg-red-600 hover:bg-red-700 text-white
+              font-semibold px-6 py-3 rounded-full text-sm md:text-base
+              transition-all shadow-md"></span
+            >
+          
+
+             Ver ofertas 🔥
+          
+
+             </a>
+          
+
+             </div>
+          
+
+             </section> --> -->
+          
+
+            <!-- </main> -->
+          
+
+            <!-- TOC MÓVIL -->
+          
+
+            <div class="lg:hidden fixed bottom-4 left-4 z-40</span
+              >"></span
+            >
+          
+
+            <button id="tocToggle</span
+              >" class="bg-red-600 text-white p-3 rounded-full shadow-lg</span
+              >"></span
+            >
+          
+
+            <i
+              data-feather="menu</span
+              >" class="w-6 h-6</span
+              >"></span
+            ></i>
+          
+
+            </button>
+          
+
+            <div id="mobileToc</span
+              >" class="hidden absolute bottom-16 left-0 bg-black border-2
+                border-red-600 rounded-lg w-48</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-lg text-red-600 p-3 text-center border-b
+                border-red-600</span
+              >"></span
+            >SECCIONES</h3>
+          
+
+            <ul class="p-2</span
+              >"></span
+            >
+          
+
+            <li></span
+            ><a href="#fusionbites</a
+              >" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm</span
+              >"></span
+            >Fusion Bites</a></span
+            ></li>
+          
+
+            <li></span
+            ><a href="#bocatas</a
+              >" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm</span
+              >"></span
+            >Bocatas</a>
+          
+
+            </li>
+          
+
+            <li></span
+            ><a href="#patatas</a
+              >" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm</span
+              >"></span
+            >Patatas</a>
+          
+
+            </li>
+          
+
+            <li></span
+            ><a href="#nachos</a
+              >" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm</span
+              >"></span
+            >Nachos</a>
+          
+
+            </li>
+          
+
+            <li></span
+            ><a href="#ensaladas</a
+              >" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm</span
+              >"></span
+            >Ensaladas</a>
+          
+
+            </li>
+          
+
+            <li></span
+            ><a href="#burgers</a
+              >" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm</span
+              >"></span
+            >Burgers</a>
+          
+
+            </li>
+          
+
+            <li></span
+            ><a href="#carnes</a
+              >" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm</span
+              >"></span
+            >Carnes</a>
+          
+
+            </li>
+          
+
+            <li></span
+            ><a href="#mexicano</a
+              >"</span
+            >
+          
+
+            class="font-bratton text-white hover:text-red-600 block py-2 px-3
+              text-sm</span
+            >">Mexicano</a></span
+            ></li>
+          
+
+            <li></span
+            ><a href="#postres</a
+              >"</span
+            >
+          
+
+            class="font-bratton text-white hover:text-red-600 block py-2 px-3
+              text-sm</span
+            >">Postres</a></span
+            ></li>
+          
+
+            </ul>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- MENU -->
+          
+
+            <section class="py-16 bg-black mb-20 mt-16 lg:mt-24</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="container mx-auto px-4</span
+              >"></span
+            >
+          
+
+            <!-- Refrescos Premium -->
+          
+
+            <div class="mb-20 pt-6 lg:pt-10</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600 mb-4 pl-2 menu-category
+                py-2</span
+              >"></span
+            >
+          
+REFRESCOS PREMIUM
+
+            </h3>
+          
+
+            <div class="space-y-4</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between</span
+              >"></span
+            >
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >Coca-Cola Vainilla</p>
+          
+
+            <span class="font-burford</span
+              >"></span
+            >2.70€</span>
+          
+
+            </div>
+          
+
+            <div class="flex justify-between</span
+              >"></span
+            >
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >Aquarius Melocoton</p>
+          
+
+            <span class="font-burford</span
+              >"></span
+            >2.70€</span>
+          
+
+            </div>
+          
+
+            <div class="flex justify-between</span
+              >"></span
+            >
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >Fuze Tea Mango Piña</p>
+          
+
+            <span class="font-burford</span
+              >"></span
+            >2.70€</span>
+          
+
+            </div>
+          
+
+            <div class="flex justify-between</span
+              >"></span
+            >
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >Dr Pepper</p>
+          
+
+            <span class="font-burford</span
+              >"></span
+            >2.70€</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <section id="barril</span
+              >" class="py-16 bg-black</span
+              >"></span
+            >
+          
+
+            <div class="container mx-auto px-4</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="text-4xl mx-4 text-red-600 text-center font-bold</span
+              >"></span
+            >CERVEZAS DE BARRIL</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <div class="barril-swiper</span
+              >"></span
+            >
+          
+
+            <div class="swiper</span
+              >" id="barrilSwiper</span
+              >"></span
+            >
+          
+
+            <div class="swiper-wrapper</span
+              >" id="barrilWrapper</span
+              >"></span
+            ></div>
+          
+
+            <div class="swiper-button-prev</span
+              >"></span
+            ></div>
+          
+
+            <div class="swiper-button-next</span
+              >"></span
+            ></div>
+          
+
+            <div class="swiper-pagination</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <p id="barrilError</span
+              >" class="hidden mt-4 text-center text-sm text-red-400</span
+              >"></span
+            ></p>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </section>
+          
+
+            <section id="cervezas</span
+              >" class="py-16 bg-black</span
+              >"></span
+            >
+          
+
+            <div class="container mx-auto px-4</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="text-4xl mx-4 text-red-600 text-center font-bold</span
+              >"></span
+            >CERVEZAS DE BOTELLA</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <!-- FILTROS (AUTO) -->
+          
+
+            <div class="space-y-4 mb-6</span
+              >"></span
+            >
+          
+
+            <div>
+          
+
+            <p class="font-burford text-red-600 text-sm mb-2 text-center</span
+              >"></span
+            >COLORES</p>
+          
+
+            <div id="filters-colores</span
+              >" class="flex gap-2 overflow-x-auto pb-2</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <div>
+          
+
+            <p class="font-burford text-red-600 text-sm mb-2 text-center</span
+              >"></span
+            >INTENSIDAD Y SABOR</p>
+          
+
+            <div id="filters-ingredientes</span
+              >" class="flex gap-2 overflow-x-auto pb-2</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <div>
+          
+
+            <p class="font-burford text-red-600 text-sm mb-2 text-center</span
+              >"></span
+            >PAÍSES</p>
+          
+
+            <div id="filters-paises</span
+              >" class="flex gap-2 overflow-x-auto pb-2</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <div class="botella-swiper</span
+              >"></span
+            >
+          
+
+            <div class="swiper</span
+              >" id="beerSwiper</span
+              >"></span
+            >
+          
+
+            <div class="swiper-wrapper</span
+              >" id="beerWrapper</span
+              >"></span
+            ></div>
+          
+
+            <div class="swiper-button-prev</span
+              >"></span
+            ></div>
+          
+
+            <div class="swiper-button-next</span
+              >"></span
+            ></div>
+          
+
+            <div class="swiper-pagination</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <p id="beerError</span
+              >" class="hidden mt-4 text-center text-sm text-red-400</span
+              >"></span
+            ></p>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </section>
+          
+
+            <!-- BURGERS NAVIDAD -->
+          
+
+            <div id="burgers-navidad</span
+              >" class="mb-20</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="font-burford text-4xl mx-4 text-red-600 text-center</span
+              >"></span
+            >
+          
+BURGERS DE NAVIDAD
+
+            </h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6</span
+              >"></span
+            >
+          
+
+            <!-- SWEETY SANTA -->
+          
+
+            <article class="border border-white/15 bg-black/40 rounded-xl
+                overflow-hidden</span
+              >"></span
+            >
+          
+
+            <div class="relative aspect-square</span
+              >"></span
+            >
+          
+<img
+
+            src="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/SWEETSANTA.jpeg</a
+            >"
+          
+
+            alt="Sweety Santa</span
+            >"
+          
+
+            class="absolute inset-0 w-full h-full object-cover</span
+            >"
+          
+
+            loading="lazy</span
+            >"
+          
+/>
+
+            </div>
+          
+
+            <div class="p-4</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center justify-between mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="text-lg font-bold text-red-600 tracking-wide</span
+              >"></span
+            >
+          
+Sweety Santa 🎅🏻
+
+            </h3>
+          
+
+            <span class="text-white font-semibold</span
+              >"></span
+            >
+          
+13,90 €
+
+            </span>
+          
+
+            </div>
+          
+
+            <p class="text-sm text-white/80 leading-relaxed</span
+              >"></span
+            >
+          
+
+            Brioche rojo artesanal, mayonesa de trufa, smash fino con gouda
+            fundido, mermelada de bacon y cebolla pochada.
+          
+Doble capa y garrapiñado picado.
+</p>
+
+            </div>
+          
+
+            </article>
+          
+
+            <!-- GINGER GRINCH -->
+          
+
+            <article class="border border-white/15 bg-black/40 rounded-xl
+                overflow-hidden</span
+              >"></span
+            >
+          
+
+            <div class="relative aspect-square</span
+              >"></span
+            >
+          
+<img
+
+            src="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/GINGERGRINCH.jpeg</a
+            >"
+          
+
+            alt="Ginger Grinch</span
+            >"
+          
+
+            class="absolute inset-0 w-full h-full object-cover</span
+            >"
+          
+
+            loading="lazy</span
+            >"
+          
+/>
+
+            </div>
+          
+
+            <div class="p-4</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center justify-between mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="text-lg font-bold text-green-600 tracking-wide</span
+              >"></span
+            >
+          
+Ginger Grinch 🎄
+
+            </h3>
+          
+
+            <span class="text-white font-semibold</span
+              >"></span
+            >
+          
+13,90 €
+
+            </span>
+          
+
+            </div>
+          
+
+            <p class="text-sm text-white/80 leading-relaxed</span
+              >"></span
+            >
+          
+
+            Brioche verde artesanal, mayo japonesa, pollo crujiente, cheddar y
+            Monterey Jack,
+          
+
+            bacon ahumado, cebolla caramelizada y Lotus picado por encima
+          
+</p>
+
+            </div>
+          
+
+            </article>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- FUSION BITES -->
+          
+
+            <div id="fusionbites</span
+              >" class="mb-20</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="font-burford text-4xl mx-4 text-red-600 text-center</span
+              >"></span
+            >FUSION BITES</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300 text-center max-w-3xl mx-auto
+                mb-8</span
+              >"></span
+            ></p>
+          
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8</span
+              >"></span
+            >
+          
+
+            <!-- BALL BITE COSTILLA BBQ --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >BALL BITE COSTILLA BBQ</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >11,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Croquetas de costilla a la BBQ cocinada a baja temperatura.
+          
+</p>
+
+            </div>
+          
+
+            <!-- BALL BITE ATÚN ROJO -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >BALL BITE ATÚN ROJO</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >11,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+Croquetas de Atún Rojo con Wakame.
+</p>
+
+            </div>
+          
+
+            <!-- GYOZAS BUEY -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >GYOZAS BUEY</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >11,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+Gyozas de buey a la brasa.
+</p>
+
+            </div>
+          
+
+            <!-- GYOZAS PRESa IBÉRICA --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >GYOZAS PRESA IBÉRICA</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >11,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+Gyozas de presa ibérica.
+</p>
+
+            </div>
+          
+
+            <!-- Pan BAO MEX FUSION -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >PAN BAO MEX FUSION</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >11,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            3 baos crujientes: carne al pastor, tinga poblana y cochinita pibil.
+          
+</p>
+
+            </div>
+          
+
+            <!-- Pan BAO SPAIN -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >PAN BAO SPAIN</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >11,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            3 baos crujientes: rabo de toro a la cordobesa, carrillada al vino
+            tinto y solomillo al Pedro Ximénez.
+          
+</p>
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- BOCATAS GOURMET -->
+          
+
+            <div id="bocatas</span
+              >" class="mb-20</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="font-burford text-4xl mx-4 text-red-600 text-center</span
+              >"></span
+            >BOCATAS GOURMET</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300 text-center max-w-3xl mx-auto
+                mb-8</span
+              >"></span
+            ></p>
+          
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8</span
+              >"></span
+            >
+          
+
+            <!-- DON SOLOMILLÓN -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >DON SOLOMILLÓN</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            De solomillo de cerdo Duroc, queso brie, cebolla caramelizada,
+            rúcula, jamón y mayo trufada.
+          
+</p>
+
+            </div>
+          
+
+            <!-- EL KOREANO -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >EL KOREANO</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            De pollo coreano crujiente, coleslaw de kimchi, escamas de parmesano
+            y mayo japonesa.
+          
+</p>
+
+            </div>
+          
+
+            <!-- EL GRINGO -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >EL GRINGO</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            De pollo Kentucky style, lechuga, tomate, cebolla morada, salsa
+            cheddar, bacon y mayo chipotle.
+          
+</p>
+
+            </div>
+          
+
+            <!-- TEJANO -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >TEJANO</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            De entrecot de ternera a la brasa, con huevos fritos, bacon laqueado
+            en sirope de arce y queso monterrey
+          
+jack.
+</p>
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- PATATAS -->
+          
+
+            <div id="patatas</span
+              >" class="mb-20 aos-init</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="font-burford text-4xl mx-4 text-red-600 text-center</span
+              >"></span
+            >PATATAS</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300 text-center max-w-3xl mx-auto
+                mb-8</span
+              >"></span
+            >
+          
+</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8</span
+              >"></span
+            >
+          
+
+            <!-- 37. RANCHERAS -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Rancheras</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Mezcla de quesos, bacon crispy y salsa ranchera.</p></span
+            >
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 38. BACONERAS -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Baconeras</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Mezcla de quesos, bacon y salsa del Tío Sam (mahonesa de
+          
+
+            bacon).</p>
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 39. LUISIANA -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Luisiana</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Mezcla de quesos, pollo a la parrilla y salsa miel y mostaza.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-lime-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Apio</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 40. JUMPERS FRIES -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >JUMPERS FRIES</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Patatas con mezcla de quesos, salsa Jumpers y pulled pork.</p></span
+            >
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-lime-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Apio</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 41. MAC & CHEESE FRIES --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >MAC &amp; CHEESE FRIES</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Patatas con mezcla de quesos, Mac &amp; Cheese y bacon
+            crujiente.</p>
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- NACHOS -->
+          
+
+            <div id="nachos</span
+              >" class="mb-20 aos-init</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="font-burford text-4xl mx-4 text-red-600 text-center</span
+              >"></span
+            >NACHOS</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8</span
+              >"></span
+            >
+          
+
+            <!-- nachos aztecas -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Nachos Aztecas</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Salsa pico de gallo, tinga de pollo, guacamole y salsa crema de
+            queso..</p>
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            <span class="bg-orange-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Cacahuetes</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 68. DEL PASTOR -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Nachos del Pastor</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Salsa pico de gallo, mezcla de quesos, cebolla morada, carne
+          
+
+            guisada al pastor y guacamole casero.</p></span
+            >
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            <span class="bg-orange-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Cacahuetes</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 71. TÍO JACK -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Nachos Tío Jack</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Salsa Jack Daniel's BBQ, mezcla de quesos y pulled pork.</p></span
+            >
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- ENSALADAS -->
+          
+
+            <div id="ensaladas</span
+              >" class="mb-20 aos-init</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="font-burford text-4xl mx-4 text-red-600 text-center</span
+              >"></span
+            >ENSALADAS</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8</span
+              >"></span
+            >
+          
+
+            <!-- 75. CALIFORNIA -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >California</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >10,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Mezclum de lechugas, tomate cherry, parmesano, croutons, pollo
+          
+
+            empanado y a la parrilla, bacon crispy y salsa miel y mostaza.</p></span
+            >
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-stone-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sésamo</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 76. MIMOSA -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Mimosa</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >10,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Mezclum de lechugas, tomate cherry, rulo de cabra, mix de
+          
+
+            frutos secos y miel.</p>
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-orange-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Frutos secos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 77. MEXICANA -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Mexicana</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >10,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >Mezclum de lechugas, tomate cherry, cebolla morada, maíz,
+          
+
+            nachos, pollo a la parrilla y salsa pico de gallo.</p></span
+            >
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-lime-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Apio</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- BURGERS -->
+          
+
+            <div id="burgers</span
+              >" class="mb-20 aos-init</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="font-burford text-4xl mx-4 text-red-600 text-center</span
+              >"></span
+            >BURGERS</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300 text-center max-w-3xl mx-auto</span
+              >"></span
+            >
+          
+
+            Sólo la mejor carne puede traer estas burgers. Hechas en parrilla,
+            con pan brioche casero y acompañadas de patatas.
+          
+</p>
+
+            <div class="mt-4 flex flex-col items-center gap-3</span
+              >"></span
+            >
+          
+
+            <p class="font-bratton text-sm text-gray-400 text-center</span
+              >"></span
+            >
+          
+TODAS ESTAS BURGERS CONTIENEN:
+</p>
+
+            <div class="flex flex-wrap justify-center gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-stone-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sésamo</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- TOP BURGERS -->
+          
+
+            <div class="mt-10</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-6</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-800</span
+              >"></span
+            ></div>
+          
+
+            <h3 class="font-burford text-3xl mx-4 text-red-600 text-center</span
+              >"></span
+            >TOP BURGERS</h3>
+          
+
+            <div class="flex-1 h-px bg-gray-800</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8</span
+              >"></span
+            >
+          
+
+            <!-- RIBS BURGER -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >RIBS BURGER
+          
+
+            </h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            De costillas de cerdo a la BBQ a baja temperatura, coleslaw
+            americana, delicioso Mac&amp;Cheese y aros de cebolla.
+          
+</p>
+
+            </div>
+          
+
+            <!-- FREDDY KRÜGER (BOWL'S BURGER) --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Bolw´s Burger</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >14,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Cheese&amp;Bacon empanada y frita dentro de un bowl de queso
+            fundido.
+          
+</p>
+
+            </div>
+          
+
+            <!-- SWEET CANDY (BOWL'S BURGER) --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Sweet Candy</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Pan de Croissant, doble smash, queso Jack, mermelada de bacon y Mayo
+            Japonesa.</p>
+          
+
+            </div>
+          
+
+            <!-- BABADOOK (JUMPER'S CHICKEN) --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Jumper´s Chicken </h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Burger de pollo crujiente con queso cheddar, bacon, mézclum, tomate,
+            cebolla morada y salsa
+          
+Jumpers.
+</p>
+
+            </div>
+          
+
+            <!-- EMMILY (JUMPER'S CHICKEN) --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Emmily </h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Carne, doble de queso cheddar, bacon laqueado en sirope de arce,
+            pepinillos y salsa emmy
+          
+</p>
+
+            </div>
+          
+
+            <!-- SILENT HILL (LONDON) --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 </span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >London</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >14,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Carne, queso Monterrey Jack, pastrami, pepinillo, lechuga, tomate,
+            cebolla y salsa BBQ Jack Daniel´s cubierta de la niebla del propio
+            London City.
+          
+</p>
+
+            </div>
+          
+
+            <!-- La Cabra -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >La Cabra</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >11,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            200g de ternera premium, queso rulo de cabra, champiñón portobello a
+            la brasa, cebolla caramelizada, mezclum de lechuga y tomate.
+          
+</p>
+
+            </div>
+          
+
+            <!-- Con un Par -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Con un Par</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >11,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            200g de ternera premium, queso monterrey Jack, bacon ahumado, 2
+            huevos fritos, mezclum de lechuga, tomate y cebolla.
+          
+</p>
+
+            </div>
+          
+
+            <!-- Jack Daniel's -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Jack Daniel's</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            200g de ternera premium macerada en Jack Daniel's, doble de bacon
+            ahumado, doble de queso y salsa BBQ Jack Daniel's con mezclum de
+            lechuga y tomate.
+          
+</p>
+
+            </div>
+          
+
+            <!-- La Rubia Gallega -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >La Rubia Gallega</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            200g de Rubia Gallega macerada en cerveza 1906, queso Idiazábal
+            ahumado y pastrami con mezclum de lechuga, tomate y cebolla.
+          
+</p>
+
+            </div>
+          
+
+            <!-- Crazy Cheese -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Crazy Cheese</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            200g de ternera premium, queso cheddar y monterrey Jack, bacon,
+            magreta, mezclum, tomate y cebolla bañada en salsa cheddar.
+          
+</p>
+
+            </div>
+          
+
+            <!-- Waffle Smash -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 </span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Waffle Smash</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >14,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            ¡Una locura! 2 carnes de 100g smasheadas de ternera premium, queso
+            cheddar y monterrey Jack,
+          
+
+            bacon, confitura de tomate y cebolla, aros de queso y sirope de
+            arce, todo <strong>dentro de 2
+            gofres</strong>.
+          
+</p>
+
+            </div>
+          
+
+            <!-- Chicken Ranch Kentucky --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Chicken Ranch Kentucky</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Pollo frito Kentucky crujiente con queso monterrey Jack, bacon
+            ahumado, salsa ranchera,
+          
+
+            jalapeños rellenos de queso, mezclum, tomate y cebolla.
+          
+</p>
+
+            </div>
+          
+
+            <!-- Angus Nebraska -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Angus Nebraska</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            200g de Angus de EEUU, 2 de bacon, queso monterrey Jack y cheddar,
+            salsa del Tío Sam, mezclum de lechuga, tomate y cebolla.
+          
+</p>
+
+            </div>
+          
+
+            <!-- Smash Tower -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 </span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Smash Tower</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >17,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            400g de ternera premium smasheada en 4 capas con cebolla, queso
+            cheddar, bacon, pepinillos y salsa Smash Tower.
+          
+</p>
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- /BURGERS -->
+          
+
+            <!-- CARNES -->
+          
+
+            <div id="carnes</span
+              >" class="mb-20 aos-init</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="font-burford text-4xl mx-4 text-red-600 text-center</span
+              >"></span
+            >CARNES</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300 text-center max-w-3xl mx-auto
+                mb-10</span
+              >"></span
+            >
+          
+
+            Hechas a la parrilla y al ahumador como mandan los cánones. Elige tu
+            locura favorita.
+          
+</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8</span
+              >"></span
+            >
+          
+
+            <!-- 44. Alitas de Pollo Fritas --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Alitas de Pollo Fritas</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >8,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Ahumadas lentamente y terminadas crujientes, con sal y pimienta.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 45. Alitas Caramelizadas al Horno (Elige tu salsa)
+              --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Alitas Caramelizadas al Horno</h4></span
+            >
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >10,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Ahumadas lentamente y bañadas en tu salsa favorita para caramelizar
+            al horno.<br>
+          
+(Elige entre BBQ, Miel o INFIERNO)
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 46. Alitas Kentucky Style --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Alitas Kentucky Style</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+Súper crujientes con toque sureño.
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-orange-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Frutos secos</span>
+          
+
+            <span class="bg-amber-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Cacahuetes</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 47. Alitas Dragón (Picante extremo) --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex items-start justify-between mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Alitas Dragón</h4>
+          
+
+            <span class="font-burford text-xs px-2 py-1 rounded bg-red-700
+                text-white</span
+              >"></span
+            >PICANTE EXTREMO</span>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >13,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Probablemente las más picantes de Europa. Solo para expertos.
+            <strong>Requiere consentimiento
+          
+
+            firmado.</strong>
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 48. Alitas Atómicas (Máximo picante) --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex items-start justify-between mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Alitas Atómicas</h4>
+          
+
+            <span class="font-burford text-xs px-2 py-1 rounded bg-red-700
+                text-white</span
+              >"></span
+            >MÁXIMO PICANTE</span>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >14,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Nadie ha podido terminarlas. El mayor picante que hayas probado
+            <strong>nunca</strong></span
+            >.
+          
+
+            <strong>Requiere consentimiento
+            firmado.</strong>
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 51. Cachopo de Angus --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Cachopo de Angus</h4>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >19,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Filetes de Angus empanados y rellenos, al estilo astur, versión
+            Lukies.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 52. Costillas (Medio / Entero) --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-2</span
+              >"></span
+            >
+          
+
+            <h4 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Costillas al Horno</h4>
+          
+
+            <div class="flex items-center gap-2</span
+              >"></span
+            >
+          
+
+            <span class="font-burford text-base bg-gray-800 px-3 py-1 rounded</span
+              >"></span
+            >Medio · 10,90€</span>
+          
+
+            <span class="font-burford text-base bg-gray-800 px-3 py-1 rounded</span
+              >"></span
+            >Entero · 19,90€</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Cocinadas a baja temperatura y ahumadas para esa jugosidad de
+            auténtica BBQ.<br>
+          
+(Elige entre BBQ, Miel o INFIERNO)
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- MEXICANO -->
+          
+
+            <div id="mexicano</span
+              >" class="mb-20 aos-init</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="font-burford text-4xl mx-4 text-red-600 text-center</span
+              >"></span
+            >MEXICANO</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300 text-center max-w-3xl mx-auto
+                mb-8</span
+              >"></span
+            >
+          
+
+            Platos de la cocina mexicana y sureña de EE. UU., seleccionados para
+            el disfrute de los sentidos.
+          
+</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8</span
+              >"></span
+            >
+          
+
+            <!-- 62. CHIMICHANGA -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Chimichanga</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >12,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Burrito relleno de guiso mexicano de carne y verduras, cubierto de
+            salsa pico de gallo y mezcla de
+          
+quesos, gratinado al horno.
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-lime-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Apio</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 64. Empanadas -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Empanadas</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >11,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            3 empanadas artesanas al estilo mexicano: al pastor, tinga y pulled
+            pork.</p>
+          
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            <span class="bg-orange-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Cacahuetes</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-sky-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Pescado</span>
+          
+
+            <span class="bg-cyan-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Moluscos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 64. BURRITOS (6 u. surtidos) --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Burritos (6 u.)</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >14,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Surtido: 1 de chili con carne, 2 de pulled pork, 1 de carne al
+            pastor y 2 de pollo con guacamole.
+          
+
+            Acompañados de nachos, salsa mexicana y guacamole.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            <span class="bg-orange-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Cacahuetes</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-sky-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Pescado</span>
+          
+
+            <span class="bg-cyan-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Moluscos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 65. MIX QUESADILLAS -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Mix Quesadillas</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >10,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Combinado de quesadillas de bacon &amp; cheddar, pulled pork
+            &amp; BBQ y mezcla de quesos con pico
+          
+de gallo. Cargadas de mucho queso.
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-amber-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Mostaza</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 66. SOUTHERN CHICKEN WAFFLES (3 u.) --></span
+            >
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Southern Chicken Waffles (3 u.)</h3></span
+            >
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >10,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            3 gofres con pollo frito crujiente al estilo tejano, guacamole, pico
+            de gallo y salsa ranchera.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-orange-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Frutos secos</span>
+          
+
+            <span class="bg-amber-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Cacahuete</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- 67. ENCHILADA -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 transition
+                duration-300 p-6 cursor-pointer</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Enchilada</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >10,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            2 tortitas rellenas de guiso mexicano, salsa de queso, salsa
+            mexicana, guacamole y nachos
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2 hidden</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            <span class="bg-cyan-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Moluscos</span>
+          
+
+            <span class="bg-sky-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Pescado</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- POSTRES -->
+          
+
+            <div id="postres</span
+              >" class="mb-20</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center mb-8</span
+              >"></span
+            >
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            <h2 class="font-burford text-4xl mx-4 text-red-600 text-center</span
+              >"></span
+            >POSTRES</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700</span
+              >"></span
+            ></div>
+          
+
+            </div>
+          
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8</span
+              >"></span
+            >
+          
+
+            <!-- HAPPY HIPPO -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta Happy Hippo</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Capas de crema de avellana y chocolate inspiradas en el mítico snack
+            Happy Hippo.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-orange-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Frutos secos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- NATILLAS -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta de Natillas</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Cremosa tarta de natillas al estilo casero, con base de galleta
+            tradicional.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- LOTUS -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta Lotus</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Cremosa mezcla de galleta Lotus y caramelo con una textura suave y
+            dulce irresistible.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- ARROZ CON LECHE -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta de Arroz con Leche</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Sabor tradicional asturiano convertido en tarta: cremosa, aromática
+            y con toque de canela.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- TURRÓN BLANDO -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta de Turrón Blando</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Tarta suave y cremosa elaborada con turrón de Jijona. Dulce,
+            navideña y muy adictiva.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-orange-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Frutos secos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- OREO -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta Oreo</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Base crujiente de Oreo con crema suave y chocolate. Un clásico
+            irresistible.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- PANTERA ROSA -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta Pantera Rosa</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Cremosa, esponjosa y con el icónico sabor del pastelito Pantera
+            Rosa.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- SUCHARD -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta Suchard</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Tarta inspirada en el famoso turrón Suchard, con chocolate crujiente
+            y textura cremosa.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-orange-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Frutos secos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- CHOCOLATE BLANCO & PISTACHO --.></span
+            >
+          
+
+            
+              <div class="border-western bg-black/40 hover:bg-gray-900
+              p-6"></span
+            >
+          
+
+            
+              <div class="flex justify-between items-start mb-2"></span
+            >
+          
+
+            
+              <h3 class="font-burford text-2xl text-red-600">Tarta
+              Chocolate Blanco &amp; Pistacho</h3></span
+            >
+          
+
+            
+              <span class="font-burford text-xl">6,90€</span></span
+            >
+          
+
+             </div>
+          
+
+            
+              <p class="font-bratton text-gray-300"></span
+            >
+          
+
+            
+              Combina chocolate blanco cremoso con toque de pistacho. Elegante y
+              deliciosa.</span
+            >
+          
+
+             </p>
+          
+
+            
+              <div class="mt-3 flex flex-wrap gap-2"></span
+            >
+          
+
+            
+              <span class="bg-green-600 text-white text-xs px-2 py-1
+              rounded">Lácteos</span></span
+            >
+          
+
+            
+              <span class="bg-yellow-700 text-white text-xs px-2 py-1
+              rounded">Huevo</span></span
+            >
+          
+
+            
+              <span class="bg-orange-600 text-white text-xs px-2 py-1
+              rounded">Frutos secos</span></span
+            >
+          
+
+             </div>
+          
+
+             </div>
+          
+
+             <!-- FERRERO -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta Ferrero</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Inspirada en Ferrero Rocher: crema de avellana, cacao y crujiente
+            delicioso.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-orange-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Frutos secos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- PHOSKITOS -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta Phoskitos</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Cremosa tarta de queso inspirada en el clásico bizcocho con nata
+            Phoskitos.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Soja</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- QUESO MANCHEGA -->
+          
+
+            <div class="border-western bg-black/40 hover:bg-gray-900 p-6</span
+              >"></span
+            >
+          
+
+            <div class="flex justify-between items-start mb-2</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600</span
+              >"></span
+            >Tarta de Queso Manchega</h3>
+          
+
+            <span class="font-burford text-xl</span
+              >"></span
+            >6,90€</span>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-300</span
+              >"></span
+            >
+          
+
+            Cheesecake elaborada con queso manchego, sabor potente y textura
+            suave. Un toque muy nuestro.
+          
+</p>
+
+            <div class="mt-3 flex flex-wrap gap-2</span
+              >"></span
+            >
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="bg-yellow-700 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Huevo</span>
+          
+
+            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded</span
+              >"></span
+            >Sulfitos</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- Alergenos Legend -->
+          
+
+            <div class="mt-16 p-6 bg-gray-900 border border-gray-700 rounded-lg
+                max-w-4xl mx-auto aos-init</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <h3 class="font-burford text-2xl text-red-600 mb-4</span
+              >"></span
+            >Información de Alérgenos</h3>
+          
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4</span
+              >"></span
+            >
+          
+
+            <div class="flex items-center</span
+              >"></span
+            >
+          
+
+            <span class="bg-red-600 text-white text-xs px-2 py-1 rounded mr-2</span
+              >"></span
+            >Gluten</span>
+          
+
+            <span class="font-bratton text-sm</span
+              >"></span
+            >Trigo, Cebada, Centeno</span>
+          
+
+            </div>
+          
+
+            <div class="flex items-center</span
+              >"></span
+            >
+          
+
+            <span class="bg-yellow-600 text-white text-xs px-2 py-1 rounded mr-2</span
+              >"></span
+            >Huevos</span>
+          
+
+            <span class="font-bratton text-sm</span
+              >"></span
+            >Productos aviares</span>
+          
+
+            </div>
+          
+
+            <div class="flex items-center</span
+              >"></span
+            >
+          
+
+            <span class="bg-green-600 text-white text-xs px-2 py-1 rounded mr-2</span
+              >"></span
+            >Lácteos</span>
+          
+
+            <span class="font-bratton text-sm</span
+              >"></span
+            >Leche y derivados</span>
+          
+
+            </div>
+          
+
+            <div class="flex items-center</span
+              >"></span
+            >
+          
+
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded mr-2</span
+              >"></span
+            >Soja</span>
+          
+
+            <span class="font-bratton text-sm</span
+              >"></span
+            >Soja y derivados</span>
+          
+
+            </div>
+          
+
+            <div class="flex items-center</span
+              >"></span
+            >
+          
+
+            <span class="bg-purple-600 text-white text-xs px-2 py-1 rounded mr-2</span
+              >"></span
+            >Frutos secos</span>
+          
+
+            <span class="font-bratton text-sm</span
+              >"></span
+            >Almendras, nueces</span>
+          
+
+            </div>
+          
+
+            <div class="flex items-center</span
+              >"></span
+            >
+          
+
+            <span class="bg-pink-600 text-white text-xs px-2 py-1 rounded mr-2</span
+              >"></span
+            >Mariscos</span>
+          
+
+            <span class="font-bratton text-sm</span
+              >"></span
+            >Crustáceos, moluscos</span>
+          
+
+            </div>
+          
+
+            <div class="flex items-center</span
+              >"></span
+            >
+          
+
+            <span class="bg-orange-600 text-white text-xs px-2 py-1 rounded mr-2</span
+              >"></span
+            >Pescado</span>
+          
+
+            <span class="font-bratton text-sm</span
+              >"></span
+            >Pescados y derivados</span>
+          
+
+            </div>
+          
+
+            <div class="flex items-center</span
+              >"></span
+            >
+          
+
+            <span class="bg-teal-600 text-white text-xs px-2 py-1 rounded mr-2</span
+              >"></span
+            >Mostaza</span>
+          
+
+            <span class="font-bratton text-sm</span
+              >"></span
+            >Semillas de mostaza</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <p class="font-bratton text-gray-400 mt-4 text-sm</span
+              >"></span
+            >* Consulte con nuestro personal para información
+          
+
+            detallada sobre alérgenos en nuestros platos.</p></span
+            >
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </section>
+          
+
+            <!-- Footer -->
+          
+
+            <footer class="flex bg-gray-900 py-12 border-t border-red-600</span
+              >"></span
+            >
+          
+
+            <div class="container mx-auto px-4</span
+              >"></span
+            >
+          
+
+            <div class="flex flex-col md:flex-row justify-between items-center</span
+              >"></span
+            >
+          
+
+            <div class="mb-8 md:mb-0 </span
+              >"></span
+            >
+          
+
+            <img class="mb-8 md:mb-0 h-24 mx-auto mb-4</span
+              >" src="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/Lucky_Simple_principal.png</a
+              >" alt="Lucky Luke Log</span
+              >"></span
+            >
+          
+
+            <p class="font-bratton text-center text-red-600</span
+              >"></span
+            >Siente el Sabor <br>Vive la
+            Experiencia</p>
+          
+
+            </div>
+          
+
+            <div class="container mx-auto px-4</span
+              >"></span
+            >
+          
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8</span
+              >"></span
+            >
+          
+
+            <!-- Horario -->
+          
+
+            <div class="text-center aos-init</span
+              >" data-aos="fade-up</span
+              >"></span
+            >
+          
+
+            <div class="border-western p-6 h-full</span
+              >"></span
+            >
+          
+
+            <svg xmlns="http://www.w3.org/2000/svg</span
+              >" width="24</span
+              >" height="24</span
+              >" viewBox="0 0 24 24</span
+              >" fill="none</span
+              >" stroke="currentColor</span
+              >" stroke-width="2</span
+              >" stroke-linecap="round</span
+              >" stroke-linejoin="round</span
+              >" class="feather feather-clock mx-auto text-red-600 w-12 h-12 mb-4</span
+              >"></span
+            ><circle cx="12</span
+              >" cy="12</span
+              >" r="10</span
+              >"></span
+            ></circle></span
+            ><polyline
+              points="12 6 12 12 16 14</span
+              >"></span
+            ></polyline></span
+            ></svg>
+          
+
+            <h3 class="font-burford text-2xl text-red-600 mb-4</span
+              >"></span
+            >HORARIO</h3>
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >Martes a Domingo</p>
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >20:30h - 00:00h (L-V)</p>
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >20:30h - 01:00h (S-D)</p>
+          
+
+            <p class="font-bratton mt-4 text-gray-400</span
+              >"></span
+            >Cerrado los lunes</p>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- Ubicación -->
+          
+
+            <div class="text-center aos-init</span
+              >" data-aos="fade-up</span
+              >" data-aos-delay="100</span
+              >"></span
+            >
+          
+
+            <div class="border-western p-6 h-full</span
+              >"></span
+            >
+          
+
+            <svg xmlns="http://www.w3.org/2000/svg</span
+              >" width="24</span
+              >" height="24</span
+              >" viewBox="0 0 24 24</span
+              >" fill="none</span
+              >" stroke="currentColor</span
+              >" stroke-width="2</span
+              >" stroke-linecap="round</span
+              >" stroke-linejoin="round</span
+              >" class="feather feather-map-pin mx-auto text-red-600 w-12 h-12
+                mb-4</span
+              >"></span
+            ><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z</span
+              >"></span
+            ></path></span
+            ><circle cx="12</span
+              >" cy="10</span
+              >" r="3</span
+              >"></span
+            ></circle></span
+            ></svg>
+          
+
+            <h3 class="font-burford text-2xl text-red-600 mb-4</span
+              >"></span
+            >UBICACIÓN</h3>
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >Avenida del Parque 17</p>
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >14900 Lucena (Córdoba)</p>
+          
+
+            <a href="https://maps.google.com/?q=Avenida+del+Parque+17,Lucena</a
+              >" class="inline-block mt-4 text-red-600 hover:text-red-500
+                font-bratton</span
+              >"></span
+            >
+          
+Ver en Google Maps
+</a>
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- Contacto -->
+          
+
+            <div class="text-center aos-init</span
+              >" data-aos="fade-up</span
+              >" data-aos-delay="200</span
+              >"></span
+            >
+          
+
+            <div class="border-western p-6 h-full</span
+              >"></span
+            >
+          
+
+            <svg xmlns="http://www.w3.org/2000/svg</span
+              >" width="24</span
+              >" height="24</span
+              >" viewBox="0 0 24 24</span
+              >" fill="none</span
+              >" stroke="currentColor</span
+              >" stroke-width="2</span
+              >" stroke-linecap="round</span
+              >" stroke-linejoin="round</span
+              >" class="feather feather-phone mx-auto text-red-600 w-12 h-12 mb-4</span
+              >"></span
+            ><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5
+                19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2
+                2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09
+                9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0
+                0 0 2.81.7A2 2 0 0 1 22 16.92z</span
+              >"></span
+            ></path></span
+            ></svg>
+          
+
+            <h3 class="font-burford text-2xl text-red-600 mb-4</span
+              >"></span
+            >CONTACTO</h3>
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >957 052 481</p>
+          
+
+            <p class="font-bratton</span
+              >"></span
+            >744 786 202</p>
+          
+
+            <p class="font-bratton mt-4</span
+              >"></span
+            >info@luckyluke.com</p>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center</span
+              >"></span
+            >
+          
+
+            <p class="font-bratton text-sm</span
+              >"></span
+            >© 2025 Lucky Luke. Todos los derechos reservados.</p></span
+            >
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </footer>
+          
+
+            <!-- Scripts generales -->
+          
+
+            <script>
+          
+
+            window.addEventListener('error', (e) => {
+          
+
+            console.error('GLOBAL ERROR:', e.message, e.error);
+          
+
+            const el = document.getElementById('beerError');
+          
+if (el) {
+
+            el.textContent = 'Error JS: ' + e.message;
+          
+el.classList.remove('hidden');
+}
+});
+
+            window.addEventListener('unhandledrejection', (e) => {
+          
+
+            console.error('UNHANDLED PROMISE:', e.reason);
+          
+
+            const el = document.getElementById('beerError');
+          
+if (el) {
+
+            el.textContent = 'Error de carga: ' + (e.reason?.message ||
+            e.reason);
+          
+el.classList.remove('hidden');
+}
+});
+AOS.init({
+duration: 800,
+easing: 'ease-in-out',
+once: true
+});
+feather.replace();
+// Mobile TOC Toggle
+
+            document.getElementById('tocToggle').addEventListener('click',
+            function () {
+          
+
+            const mobileToc = document.getElementById('mobileToc');
+          
+mobileToc.classList.toggle('hidden');
+});
+
+            // Close mobile TOC when clicking outside
+          
+
+            document.addEventListener('click', function (event) {
+          
+
+            const tocToggle = document.getElementById('tocToggle');
+          
+
+            const mobileToc = document.getElementById('mobileToc');
+          
+
+            if (!tocToggle.contains(event.target) &&
+            !mobileToc.contains(event.target)) {
+          
+mobileToc.classList.add('hidden');
+}
+});
+
+            </script>
+          
+
+            <!-- Toggle alérgenos en tarjetas --></span
+            >
+          
+
+            <script>
+          
+(function () {
+
+            const cards = document.querySelectorAll('.border-western');
+          
+cards.forEach(card => {
+
+            const allergenBlocks =
+            card.querySelectorAll('.mt-3.flex.flex-wrap.gap-2');
+          
+if (allergenBlocks.length > 0) {
+allergenBlocks.forEach(block => {
+block.classList.add('hidden');
+});
+card.classList.add('cursor-pointer');
+
+            card.addEventListener('click', () => {
+          
+allergenBlocks.forEach(block => {
+block.classList.toggle('hidden');
+});
+});
+}
+});
+})();
+
+            </script>
+          
+
+            <script>
+          
+(function () {
+
+            const wrapper = document.getElementById('barrilWrapper');
+          
+
+            const swiperContainer = document.getElementById('barrilSwiper');
+          
+
+            const errBox = document.getElementById('barrilError');
+          
+if (!wrapper) return;
+
+            function esc(s){return
+            String(s??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#039;");}
+          
+function pricesBlock(pricesArr){
+if (!pricesArr.length) return '';
+return `
+
+            <div class="mt-3 rounded-xl border border-white/10 bg-black/35
+            overflow-hidden">
+          
+${pricesArr.map(p=>`
+
+            <div class="flex items-center justify-between px-3 py-2 border-b
+            border-white/5 last:border-b-0">
+          
+
+            <span class="text-xs
+            text-white/70">${esc(p.label||'')}</span>
+          
+
+            <span class="font-bold text-sm
+            text-white">${esc(p.price||'')}</span>
+          
+</div>
+`).join('')}
+</div>
+`;
+}
+
+            function applyIosScrollLayout(container, inner) {
+          
+if (!container || !inner) return;
+container.style.overflowX = 'auto';
+container.style.overflowY = 'visible';
+
+            container.style.scrollSnapType = 'x mandatory';
+          
+
+            container.style.touchAction = 'pan-x pan-y';
+          
+
+            container.style.webkitOverflowScrolling = 'touch';
+          
+container.classList.add('pb-4');
+inner.style.display = 'flex';
+inner.style.gap = '16px';
+inner.style.width = 'max-content';
+inner.style.transform = 'none';
+inner.style.transition = 'none';
+}
+function slideCardStatic(b){
+const name = esc(b.name || 'Cerveza');
+const img = esc(b.image || '');
+
+            const pricesArr = Array.isArray(b.prices) ? b.prices : [];
+          
+// NUEVOS CAMPOS (opcionales)
+
+            const desc = (b.description ?? '').toString().trim();
+          
+
+            const style = (b.style ?? '').toString().trim();
+          
+
+            const country = (b.country ?? '').toString().trim();
+          
+
+            const color = (b.color ?? '').toString().trim();
+          
+
+            const pairing = (b.pairing ?? '').toString().trim();
+          
+
+            const abv = (b.abv !== null && b.abv !== undefined
+            && String(b.abv).trim() !== '')
+          
+
+            ? (String(b.abv).includes('%') ? String(b.abv) : `${b.abv}%`)
+          
+: '';
+
+            const ibu = (b.ibu !== null && b.ibu !== undefined
+            && String(b.ibu).trim() !== '')
+          
+? String(b.ibu)
+: '';
+// Chips de datos (solo si existen)
+const chips = [
+
+            abv ? `<span class="px-2 py-1 rounded-full border border-white/10
+            bg-black/40 text-xs text-white/80">ABV: ${esc(abv)}</span>`
+            : '',
+          
+
+            ibu ? `<span class="px-2 py-1 rounded-full border border-white/10
+            bg-black/40 text-xs text-white/80">IBU: ${esc(ibu)}</span>`
+            : '',
+          
+
+            color ? `<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs
+            text-white/80">${esc(color)}</span>` : '',
+          
+
+            country ? `<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs
+            text-white/80">${esc(country)}</span>` : '',
+          
+
+            style ? `<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs
+            text-white/80">${esc(style)}</span>` : ''
+          
+].filter(Boolean).join('');
+const descHtml = desc
+
+            ? `<p class="mt-3 text-sm text-white/85
+            leading-relaxed">${esc(desc)}</p>`
+          
+
+            : `<p class="mt-3 text-sm text-white/70
+            leading-relaxed">Disponible en barril. Pregunta al personal por
+            notas de cata y rotación.</p>`;
+          
+const pairingHtml = pairing
+? `
+<div class="mt-3">
+
+            <div class="text-xs font-bold text-red-400 tracking-wide
+            mb-1">MARIDAJE</div>
+          
+
+            <p class="text-sm text-white/85
+            leading-relaxed">${esc(pairing)}</p>
+          
+</div>
+`
+: '';
+return `
+
+            <div class="swiper-slide flex-shrink-0"
+            style="scroll-snap-align:start">
+          
+
+            <article class="card-shell p-4 h-full flex flex-col gap-3
+            min-w-[260px]">
+          
+
+            <div class="relative h-48 bg-black/60 rounded-lg
+            overflow-hidden">
+          
+${img
+
+            ? `<img src="${img}" alt="${name}" class="absolute inset-0 w-full
+            h-full object-cover"
+          
+loading="lazy"
+
+            onerror="this.style.display='none';
+            this.parentElement.classList.add('bg-black/60');"/>`
+          
+
+            : `<div class="absolute inset-0 flex items-center justify-center
+            text-white/60 text-sm">Imagen no disponible</div>`
+          
+}
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80
+            via-black/10 to-transparent"></div>
+          
+
+            <div class="absolute bottom-3 left-3 right-3 flex items-end
+            justify-between gap-3">
+          
+
+            <h3 class="text-xl font-bold text-red-500 leading-tight
+            drop-shadow">${name}</h3>
+          
+</div>
+</div>
+
+            ${chips ? `<div class="flex flex-wrap
+            gap-2">${chips}</div>` : ''}
+          
+${descHtml}
+${pairingHtml}
+<div class="mt-auto">
+
+            <div class="text-xs font-bold text-red-400 tracking-wide
+            mb-1">FORMATOS</div>
+          
+${pricesBlock(pricesArr)}
+</div>
+</article>
+</div>
+`;
+}
+function slideCard(b){
+const name = esc(b.name);
+const img = esc(b.image || '');
+
+            const pricesArr = Array.isArray(b.prices) ? b.prices : [];
+          
+// NUEVOS CAMPOS (opcionales)
+
+            const desc = (b.description ?? '').toString().trim();
+          
+
+            const style = (b.style ?? '').toString().trim();
+          
+
+            const country = (b.country ?? '').toString().trim();
+          
+
+            const color = (b.color ?? '').toString().trim();
+          
+
+            const pairing = (b.pairing ?? '').toString().trim();
+          
+
+            const abv = (b.abv !== null && b.abv !== undefined
+            && String(b.abv).trim() !== '')
+          
+
+            ? (String(b.abv).includes('%') ? String(b.abv) : `${b.abv}%`)
+          
+: '';
+
+            const ibu = (b.ibu !== null && b.ibu !== undefined
+            && String(b.ibu).trim() !== '')
+          
+? String(b.ibu)
+: '';
+// Chips de datos (solo si existen)
+const chips = [
+
+            abv ? `<span class="px-2 py-1 rounded-full border border-white/10
+            bg-black/40 text-xs text-white/80">ABV: ${esc(abv)}</span>`
+            : '',
+          
+
+            ibu ? `<span class="px-2 py-1 rounded-full border border-white/10
+            bg-black/40 text-xs text-white/80">IBU: ${esc(ibu)}</span>`
+            : '',
+          
+
+            color ? `<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs
+            text-white/80">${esc(color)}</span>` : '',
+          
+
+            country ? `<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs
+            text-white/80">${esc(country)}</span>` : '',
+          
+
+            style ? `<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs
+            text-white/80">${esc(style)}</span>` : ''
+          
+].filter(Boolean).join('');
+const descHtml = desc
+
+            ? `<p class="mt-3 text-sm text-white/85
+            leading-relaxed">${esc(desc)}</p>`
+          
+
+            : `<p class="mt-3 text-sm text-white/70
+            leading-relaxed">Disponible en barril. Pregunta al personal por
+            notas de cata y rotación.</p>`;
+          
+const pairingHtml = pairing
+? `
+<div class="mt-4">
+
+            <div class="text-xs font-bold text-red-400 tracking-wide
+            mb-1">MARIDAJE</div>
+          
+
+            <p class="text-sm text-white/85
+            leading-relaxed">${esc(pairing)}</p>
+          
+</div>
+`
+: '';
+if (isIOS) return slideCardStatic(b);
+return `
+<div class="swiper-slide">
+
+            <div class="flip-card barril-flip cursor-pointer">
+          
+<div class="flip-inner">
+<!-- FRONT -->
+
+            <article class="flip-face card-shell">
+          
+
+            <div class="relative h-52 bg-black">
+          
+
+            <img src="${img}" alt="${name}" class="absolute inset-0 w-full
+            h-full object-cover"
+          
+loading="lazy"
+
+            onerror="this.style.display='none';
+            this.parentElement.classList.add('bg-black/60');"/>
+          
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80
+            via-black/10 to-transparent"></div>
+          
+
+            <div class="absolute bottom-3 left-3 right-3 flex items-end
+            justify-between gap-3">
+          
+
+            <h3 class="text-xl font-bold text-red-500 leading-tight
+            drop-shadow">${name}</h3>
+          
+
+            <span class="text-[11px] text-white/70 bg-black/50 border
+            border-white/10 px-2 py-1 rounded-full">Toca</span>
+          
+</div>
+</div>
+<div class="p-4">
+${pricesBlock(pricesArr)}
+</div>
+</article>
+<!-- BACK -->
+
+            <article class="flip-face flip-back card-shell">
+          
+<div class="p-4">
+
+            <div class="flex items-start justify-between gap-3">
+          
+
+            <h3 class="text-xl font-bold text-red-500
+            leading-tight">${name}</h3>
+          
+
+            <span class="text-[11px] text-white/70 bg-black/50 border
+            border-white/10 px-2 py-1 rounded-full">Volver</span>
+          
+</div>
+
+            ${chips ? `<div class="mt-3 flex flex-wrap
+            gap-2">${chips}</div>` : ''}
+          
+${descHtml}
+<div class="mt-4">
+
+            <div class="text-xs font-bold text-red-400 tracking-wide
+            mb-1">FORMATOS</div>
+          
+${pricesBlock(pricesArr)}
+</div>
+${pairingHtml}
+</div>
+</article>
+</div>
+</div>
+</div>
+`;
+}
+async function loadBarril(){
+try{
+
+            const res = await fetch('barril.json', { cache:'no-store' });
+          
+
+            if(!res.ok) throw new Error('HTTP '+res.status);
+          
+const data = await res.json();
+
+            const list = (Array.isArray(data)?data:[]).filter(x=>x &&
+            x.available !== false);
+          
+if(!list.length){
+
+            errBox.textContent = 'No hay cervezas de barril disponibles ahora
+            mismo.';
+          
+errBox.classList.remove('hidden');
+return;
+}
+
+            wrapper.innerHTML = list.map(slideCard).join('');
+          
+if (isIOS) {
+
+            applyIosScrollLayout(swiperContainer, wrapper);
+          
+return;
+}
+new Swiper('#barrilSwiper',{
+effect:'coverflow',
+grabCursor:true,
+centeredSlides:true,
+slidesPerView:'auto',
+spaceBetween:18,
+loop:true,
+speed:800,
+
+            coverflowEffect:{ rotate:18, stretch:0, depth:160, modifier:1.15,
+            slideShadows:true },
+          
+
+            navigation:{ nextEl:'#barril .swiper-button-next', prevEl:'#barril
+            .swiper-button-prev' },
+          
+
+            pagination:{ el:'#barril .swiper-pagination', clickable:true },
+          
+
+            mousewheel: { forceToAxis: true, sensitivity: 1.2 },
+          
+grabCursor: true,
+});
+}catch(e){
+console.error(e);
+
+            errBox.textContent = 'No se pudo cargar barril.json.';
+          
+errBox.classList.remove('hidden');
+}
+}
+loadBarril();
+// flip tap-only
+if (!isIOS) {
+const tap={x:0,y:0,t:0,moved:false};
+
+            document.addEventListener('pointerdown',(e)=>{
+          
+
+            const card=e.target.closest('.barril-flip'); if(!card) return;
+          
+
+            tap.x=e.clientX; tap.y=e.clientY; tap.t=Date.now(); tap.moved=false;
+          
+},{passive:true});
+
+            document.addEventListener('pointermove',(e)=>{
+          
+
+            const dx=Math.abs(e.clientX-tap.x), dy=Math.abs(e.clientY-tap.y);
+          
+if(dx>8||dy>8) tap.moved=true;
+},{passive:true});
+
+            document.addEventListener('pointerup',(e)=>{
+          
+
+            const card=e.target.closest('.barril-flip'); if(!card) return;
+          
+
+            if(tap.moved || (Date.now()-tap.t)>500) return;
+          
+card.classList.toggle('is-flipped');
+},{passive:true});
+}
+})();
+
+            </script>
+          
+
+            <script>
+          
+(function () {
+const URL = 'beers.json';
+
+            const wrapper = document.getElementById('beerWrapper');
+          
+
+            const errBox = document.getElementById('beerError');
+          
+
+            const swiperContainer = document.getElementById('beerSwiper');
+          
+
+            const elColores = document.getElementById('filters-colores');
+          
+
+            const elIngr = document.getElementById('filters-ingredientes');
+          
+
+            const elPaises = document.getElementById('filters-paises');
+          
+if (!wrapper) return;
+let allBeers = [];
+let activeFilter = 'all';
+let beerSwiper = null;
+
+            function applyIosScrollLayout(container, inner) {
+          
+if (!container || !inner) return;
+container.style.overflowX = 'auto';
+container.style.overflowY = 'visible';
+
+            container.style.scrollSnapType = 'x mandatory';
+          
+
+            container.style.touchAction = 'pan-x pan-y';
+          
+
+            container.style.webkitOverflowScrolling = 'touch';
+          
+container.classList.add('pb-4');
+inner.style.display = 'flex';
+inner.style.gap = '16px';
+inner.style.width = 'max-content';
+inner.style.transform = 'none';
+inner.style.transition = 'none';
+}
+// ===== helpers =====
+function esc(s) {
+return String(s ?? '')
+.replaceAll('&','&amp;')
+.replaceAll('<','&lt;')
+.replaceAll('>','&gt;')
+.replaceAll('"','&quot;')
+.replaceAll("'","&#039;");
+}
+function norm(s) {
+return String(s || '')
+.toUpperCase()
+.trim()
+.normalize('NFD')
+.replace(/[\u0300-\u036f]/g, '');
+}
+// Grupos (como antes)
+const TAG_GROUPS = {
+colores: ["RUBIA","TOSTADA","NEGRA"],
+
+            ingredientes: ["TRIGO","FRUTAS","SUAVE","MEDIA","FUERTE"],
+          
+
+            paises: t => norm(t).startsWith("PAIS_")
+          
+};
+function prettifyTag(t) {
+const T = String(t || '');
+
+            return T.startsWith('PAIS_') ?
+            T.replace('PAIS_','').replaceAll('_',' ') : T;
+          
+}
+function buildButton(tag, isActive) {
+
+            const active = isActive ? 'border-red-600 text-red-600' :
+            'border-gray-600 text-gray-200';
+          
+return `
+<button
+
+            class="beer-filter px-3 py-1 text-xs rounded-full border ${active}
+            font-bratton whitespace-nowrap"
+          
+data-filter="${esc(tag)}"
+type="button"
+
+            >${esc(prettifyTag(tag))}</button>
+          
+`;
+}
+function collectTags() {
+const set = new Set();
+
+            allBeers.forEach(b => (b.tags || []).forEach(t =>
+            set.add(t)));
+          
+return Array.from(set);
+}
+function renderTagGroups() {
+
+            if (!elColores || !elIngr || !elPaises) return;
+          
+const tags = collectTags();
+
+            const colores = tags.filter(t =>
+            TAG_GROUPS.colores.includes(norm(t)));
+          
+
+            const ingredientes = tags.filter(t =>
+            TAG_GROUPS.ingredientes.includes(norm(t)));
+          
+
+            const paises = tags.filter(t =>
+            TAG_GROUPS.paises(t)).sort((a,b)=>norm(a).localeCompare(norm(b)));
+          
+elColores.innerHTML =
+
+            buildButton('all', activeFilter === 'all') +
+          
+
+            colores.map(t => buildButton(t, activeFilter === t)).join('');
+          
+elIngr.innerHTML =
+
+            ingredientes.map(t => buildButton(t, activeFilter ===
+            t)).join('');
+          
+elPaises.innerHTML =
+
+            paises.map(t => buildButton(t, activeFilter === t)).join('');
+          
+}
+function beerMatchesFilter(beer) {
+
+            if (!beer || beer.available === false) return false;
+          
+if (activeFilter === 'all') return true;
+
+            const tags = Array.isArray(beer.tags) ? beer.tags : [];
+          
+return tags.includes(activeFilter);
+}
+// ===== card =====
+function slideCardStatic(b) {
+const name = esc(b.name);
+const format = esc(b.format || '');
+const price = esc(b.price || '');
+const img = esc(b.image || '');
+
+            const desc = esc((b.description || b.descripcion ||
+            '').toString().trim());
+          
+
+            const abvVal = (b.abv || '').toString().trim();
+          
+
+            const ibuVal = (b.ibu || '').toString().trim();
+          
+
+            const style = esc((b.style || b.estilo || '').toString().trim());
+          
+
+            const country= esc((b.country || b.pais || '').toString().trim());
+          
+
+            const abv = abvVal ? (abvVal.indexOf('%') !== -1 ? abvVal : (abvVal
+            + '%')) : '';
+          
+const ibu = ibuVal ? ibuVal : '';
+const chips = []
+
+            .concat(abv ? [`<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs text-white/80">ABV:
+            ${esc(abv)}</span>`] : [])
+          
+
+            .concat(ibu ? [`<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs text-white/80">IBU:
+            ${esc(ibu)}</span>`] : [])
+          
+
+            .concat(style ? [`<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs
+            text-white/80">${style}</span>`] : [])
+          
+
+            .concat(country ? [`<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs
+            text-white/80">${country}</span>`] : [])
+          
+.join('');
+return `
+
+            <div class="swiper-slide flex-shrink-0"
+            style="scroll-snap-align:start">
+          
+
+            <article class="card-shell p-6 flex flex-col gap-4
+            min-w-[260px]">
+          
+<div class="text-center">
+
+            <h3 class="text-xl font-extrabold
+            text-red-500">${name}</h3>
+          
+</div>
+
+            <div class="flex-1 flex items-center justify-center">
+          
+${img
+
+            ? `<img src="${img}" alt="${name}" class="max-h-64 w-auto
+            object-contain" loading="lazy">`
+          
+
+            : `<div class="text-white/60 text-sm">Imagen no
+            disponible</div>`
+          
+}
+</div>
+
+            ${chips ? `<div class="flex flex-wrap
+            gap-2">${chips}</div>` : ''}
+          
+
+            <p class="text-sm text-white/85 leading-relaxed">
+          
+${desc || 'Sin descripción disponible.'}
+</p>
+<div class="mt-auto">
+
+            <div class="text-sm text-white/90
+            text-center">${format}</div>
+          
+
+            <div class="text-lg font-black text-white text-center
+            mt-1">${price}</div>
+          
+</div>
+</article>
+</div>
+`;
+}
+function slideCard(b) {
+const name = esc(b.name);
+const format = esc(b.format || '');
+const price = esc(b.price || '');
+const img = esc(b.image || '');
+
+            const desc = esc((b.description || b.descripcion ||
+            '').toString().trim());
+          
+
+            const abvVal = (b.abv || '').toString().trim();
+          
+
+            const ibuVal = (b.ibu || '').toString().trim();
+          
+
+            const style = esc((b.style || b.estilo || '').toString().trim());
+          
+
+            const country= esc((b.country || b.pais || '').toString().trim());
+          
+
+            const abv = abvVal ? (abvVal.indexOf('%') !== -1 ? abvVal : (abvVal
+            + '%')) : '';
+          
+const ibu = ibuVal ? ibuVal : '';
+const chips = []
+
+            .concat(abv ? [`<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs text-white/80">ABV:
+            ${esc(abv)}</span>`] : [])
+          
+
+            .concat(ibu ? [`<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs text-white/80">IBU:
+            ${esc(ibu)}</span>`] : [])
+          
+
+            .concat(style ? [`<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs
+            text-white/80">${style}</span>`] : [])
+          
+
+            .concat(country ? [`<span class="px-2 py-1 rounded-full border
+            border-white/10 bg-black/40 text-xs
+            text-white/80">${country}</span>`] : [])
+          
+.join('');
+if (isIOS) return slideCardStatic(b);
+return `
+<div class="swiper-slide">
+
+            <div class="flip-card beer-flip cursor-pointer">
+          
+<div class="flip-inner">
+
+            <!-- FRONT: nombre + imagen + formato/precio -->
+          
+
+            <article class="flip-face card-shell p-6 flex flex-col">
+          
+<div class="text-center">
+
+            <h3 class="text-xl font-extrabold
+            text-red-500">${name}</h3>
+          
+</div>
+
+            <div class="flex-1 flex items-center justify-center my-4">
+          
+${img
+
+            ? `<img src="${img}" alt="${name}" class="max-h-64 w-auto
+            object-contain" loading="lazy">`
+          
+
+            : `<div class="text-white/60 text-sm">Imagen no
+            disponible</div>`
+          
+}
+</div>
+<div class="text-center">
+
+            <div class="text-sm text-white/90">${format}</div>
+          
+
+            <div class="text-lg font-black text-white
+            mt-1">${price}</div>
+          
+
+            <span class="text-[11px] text-white/70 bg-black/50 border
+            border-white/10 px-2 py-1 rounded-full mt-4 inline-block">
+          
+Toca para ver detalles
+</span>
+</div>
+</article>
+
+            <!-- BACK: descripción + datos (en lista vertical) -->
+          
+
+            <article class="flip-face flip-back card-shell p-6 flex
+            flex-col">
+          
+<!-- Arriba: nombre + volver -->
+
+            <div class="flex items-start justify-between gap-3">
+          
+
+            <h3 class="text-xl font-bold text-red-500
+            leading-tight">${name}</h3>
+          
+
+            <span class="text-[11px] text-white/70 bg-black/50 border
+            border-white/10 px-2 py-1 rounded-full">Volver</span>
+          
+</div>
+<!-- Cuerpo: descripción -->
+
+            <p class="mt-3 text-sm text-white/85 leading-relaxed">
+          
+${desc || 'Sin descripción disponible.'}
+</p>
+
+            <!-- Datos en vertical (label rojo, valor blanco) -->
+          
+
+            <div class="mt-4 space-y-2 text-sm">
+          
+${abv ? `
+
+            <div class="flex justify-between gap-4">
+          
+
+            <span class="text-red-500 font-semibold">ABV</span>
+          
+
+            <span class="text-white/90
+            font-medium">${esc(abv)}</span>
+          
+</div>` : ''}
+${ibu ? `
+
+            <div class="flex justify-between gap-4">
+          
+
+            <span class="text-red-500 font-semibold">IBU</span>
+          
+
+            <span class="text-white/90
+            font-medium">${esc(ibu)}</span>
+          
+</div>` : ''}
+${style ? `
+
+            <div class="flex justify-between gap-4">
+          
+
+            <span class="text-red-500 font-semibold">Estilo</span>
+          
+
+            <span class="text-white/90 font-medium
+            text-right">${style}</span>
+          
+</div>` : ''}
+${country ? `
+
+            <div class="flex justify-between gap-4">
+          
+
+            <span class="text-red-500 font-semibold">País</span>
+          
+
+            <span class="text-white/90 font-medium
+            text-right">${country}</span>
+          
+</div>` : ''}
+</div>
+
+            <!-- Abajo: formato + precio (como ahora) -->
+          
+
+            <div class="mt-auto pt-4 text-center text-xs text-white/70">
+          
+
+            ${format}${format && price ? ' · ' : ''}${price}
+          
+</div>
+</article>
+</div>
+</div>
+</div>
+`;
+}
+function initSwiper() {
+if (isIOS) return;
+
+            // Re-crear Swiper (importante al cambiar slides)
+          
+if (beerSwiper) {
+beerSwiper.destroy(true, true);
+beerSwiper = null;
+}
+beerSwiper = new Swiper('#beerSwiper', {
+effect: 'coverflow',
+centeredSlides: true,
+slidesPerView: 'auto',
+spaceBetween: 18,
+loop: true,
+// Swipe más “rápido/suelto”
+speed: 320,
+threshold: 3,
+resistanceRatio: 0.2,
+touchRatio: 1.35,
+// PC con rueda
+
+            mousewheel: { forceToAxis: true, sensitivity: 1.2 },
+          
+coverflowEffect: {
+rotate: 16,
+stretch: 0,
+depth: 140,
+modifier: 1.1,
+slideShadows: true
+},
+// sin botones, sin puntitos (botellas)
+// navigation: {}
+// pagination: {}
+});
+}
+function renderBeers() {
+
+            const list = allBeers.filter(beerMatchesFilter);
+          
+if (!list.length) {
+wrapper.innerHTML = '';
+if (errBox) {
+
+            errBox.textContent = 'No hay cervezas para este filtro.';
+          
+errBox.classList.remove('hidden');
+}
+
+            if (beerSwiper) { beerSwiper.destroy(true, true); beerSwiper = null;
+            }
+          
+return;
+}
+
+            if (errBox) errBox.classList.add('hidden');
+          
+
+            wrapper.innerHTML = list.map(slideCard).join('');
+          
+if (isIOS) {
+
+            applyIosScrollLayout(swiperContainer, wrapper);
+          
+return;
+}
+initSwiper();
+}
+
+            // ===== eventos filtros (delegación) =====
+          
+
+            document.addEventListener('click', (e) => {
+          
+
+            const btn = e.target.closest('.beer-filter');
+          
+if (!btn) return;
+const f = btn.dataset.filter || 'all';
+activeFilter = f;
+renderTagGroups();
+renderBeers();
+});
+
+            // ===== flip tap-only (no molesta swipe) =====
+          
+if (!isIOS) {
+
+            const tap = { x: 0, y: 0, t: 0, moved: false };
+          
+
+            document.addEventListener('pointerdown', (e) => {
+          
+
+            const card = e.target.closest('.beer-flip');
+          
+if (!card) return;
+
+            tap.x = e.clientX; tap.y = e.clientY; tap.t = Date.now(); tap.moved
+            = false;
+          
+}, { passive: true });
+
+            document.addEventListener('pointermove', (e) => {
+          
+const dx = Math.abs(e.clientX - tap.x);
+const dy = Math.abs(e.clientY - tap.y);
+
+            if (dx > 18 || dy > 18) tap.moved = true; // umbral alto para
+            no interferir con swipe
+          
+}, { passive: true });
+
+            document.addEventListener('pointerup', (e) => {
+          
+
+            const card = e.target.closest('.beer-flip');
+          
+if (!card) return;
+const dt = Date.now() - tap.t;
+if (tap.moved || dt > 500) return;
+card.classList.toggle('is-flipped');
+}, { passive: true });
+}
+// ===== init =====
+(async function load() {
+try {
+
+            const res = await fetch(URL, { cache: 'no-store' });
+          
+
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+          
+const data = await res.json();
+
+            allBeers = (Array.isArray(data) ? data : []).slice();
+          
+renderTagGroups();
+renderBeers();
+} catch (e) {
+console.error(e);
+if (errBox) {
+
+            errBox.textContent = 'No se pudo cargar beers.json.';
+          
+errBox.classList.remove('hidden');
+}
+}
+})();
+})();
+
+            </script>
+          
+
+            <!-- Banner instalar (PWA) --></span
+            >
+          
+
+            <div id="installBanner</span
+              >" class="hidden fixed bottom-4 left-4 right-4 z-50</span
+              >"></span
+            >
+          
+
+            <div class="border-2 border-red-600 bg-black/80 backdrop-blur rounded-xl
+                p-4 flex items-center justify-between gap-3</span
+              >"></span
+            >
+          
+
+            <div class="min-w-0</span
+              >"></span
+            >
+          
+
+            <div class="font-burford text-red-500 text-xl leading-tight</span
+              >"></span
+            >Añade la carta a tu móvil</div>
+          
+
+            <div id="installHint</span
+              >" class="font-bratton text-white/80 text-sm</span
+              >"></span
+            >
+          
+
+            Instálala para abrirla rápido desde tu pantalla de inicio.
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <div class="flex items-center gap-2 flex-shrink-0</span
+              >"></span
+            >
+          
+
+            <button id="installBtn</span
+              >"</span
+            >
+          
+
+            class="px-4 py-2 rounded-full border border-red-600 text-red-500
+              font-burford</span
+            >">
+          
+Instalar
+
+            </button>
+          
+
+            <button id="installClose</span
+              >"</span
+            >
+          
+
+            class="px-3 py-2 rounded-full border border-white/15 text-white/80
+              font-burford</span
+            >">
+          
+X
+
+            </button>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <script>
+          
+(function(){
+
+            const banner = document.getElementById('installBanner');
+          
+
+            const btnInstall = document.getElementById('installBtn');
+          
+
+            const btnClose = document.getElementById('installClose');
+          
+
+            const hint = document.getElementById('installHint');
+          
+
+            if (!banner || !btnInstall || !btnClose || !hint) return;
+          
+// Si ya está instalada, no molestamos
+const isStandalone =
+
+            window.matchMedia('(display-mode: standalone)').matches ||
+          
+window.navigator.standalone;
+if (isStandalone) return;
+
+            // iOS: no existe prompt nativo -> mostramos instrucciones
+          
+
+            const isSafari = isIOS &&
+            /safari/i.test(navigator.userAgent) &&
+            !/crios|fxios|edgios/i.test(navigator.userAgent);
+          
+let deferredPrompt = null;
+
+            // Android/Chrome: capturamos el evento y mostramos el banner
+          
+
+            window.addEventListener('beforeinstallprompt', (e) => {
+          
+e.preventDefault();
+deferredPrompt = e;
+banner.classList.remove('hidden');
+});
+
+            // iPhone Safari: mostramos banner con instrucciones (sin botón
+            instalar)
+          
+if (isSafari) {
+banner.classList.remove('hidden');
+btnInstall.classList.add('hidden');
+
+            hint.innerHTML = 'En iPhone: pulsa <b>Compartir</b> →
+            <b>Añadir a pantalla de inicio</b>.';
+          
+}
+
+            btnInstall.addEventListener('click', async () => {
+          
+if (!deferredPrompt) {
+
+            alert('Si no aparece el instalador, usa el menú del navegador:
+            “Añadir a pantalla de inicio”.');
+          
+return;
+}
+deferredPrompt.prompt();
+await deferredPrompt.userChoice;
+deferredPrompt = null;
+banner.classList.add('hidden');
+});
+
+            btnClose.addEventListener('click', () => {
+          
+banner.classList.add('hidden');
+});
+})();
+
+            </script>
+          
+
+            </body>
+          
+
+            </html>
+          

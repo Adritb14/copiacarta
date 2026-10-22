@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BebidasNav from '../../components/BebidasNav.astro';
+import coctelesData from '../../data/cocteles.json';
+
+const cocteles = (coctelesData as any[]).filter((c: any) => c.available !== false);
+---
+
+<Layout title="Cócteles - Lucky Luke">
+  <main class="px-5 md:px-6 pb-28 md:pb-24 bg-black overflow-x-hidden">
+
+    <BebidasNav />
+
+    <section class="py-4">
+
+      <div class="flex items-center mb-10">
+        <div class="flex-1 h-px bg-gray-700"></div>
+        <h2 class="font-burford text-3xl md:text-4xl mx-4 text-red-600 text-center">CÓCTELES</h2>
+        <div class="flex-1 h-px bg-gray-700"></div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        {cocteles.map((cocktail: any) => (
+          <article class="border-western bg-black/40 hover:bg-gray-900 transition p-4 md:p-6 rounded-xl">
+            {cocktail.image && (
+              <div class="mb-3 overflow-hidden rounded-lg border border-white/10 bg-black">
+                <div class="aspect-[4/3]">
+                  <img
+                    src={cocktail.image}
+                    alt={cocktail.name}
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            )}
+            <div class="flex justify-between items-start gap-2 mb-2">
+              <h3 class="font-burford text-lg md:text-2xl text-red-600 leading-tight">{cocktail.name}</h3>
+              <span class="font-burford text-base md:text-xl text-gray-200">{cocktail.price}</span>
+            </div>
+            <p class="font-bratton text-gray-300 text-sm md:text-base">{cocktail.description}</p>
+          </article>
+        ))}
+      </div>
+
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "carnes",
+    "title": "CARNES",
+    "description": "Hechas a la parrilla y al ahumador como mandan los cánones. Elige tu locura favorita.",
+    "available": true,
+    "items": [
+      {
+        "available": true,
+        "name": "Alitas de Pollo Fritas",
+        "featured": true,
+        "image": "images/comida/platos/carnes/alitas.webp",
+        "price": "8,90€",
+        "description": "Ahumadas lentamente y terminadas crujientes, con sal y pimienta.",
+        "allergens": ["Sulfitos"]
+      },
+      {
+        "available": true,
+        "name": "Alitas Caramelizadas al Horno",
+        "featured": true,
+        "image": "images/comida/platos/carnes/alitas-horno.webp",
+        "price": "10,90€",
+        "description": "Ahumadas lentamente y bañadas en tu salsa favorita para caramelizar al horno. (Elige entre BBQ, Miel o INFIERNO)",
+        "allergens": ["Sulfitos"]
+      },
+      {
+        "available": false,
+        "name": "Alitas Kentucky Style",
+        "featured": true,
+        "image": "images/comida/platos/COMING-SOON.webp",
+        "price": "12,90€",
+        "description": "Súper crujientes con toque sureño.",
+        "allergens": ["Sulfitos", "Gluten", "Huevo", "Lácteos", "Soja", "Frutos secos", "Cacahuetes"]
+      },
+      {
+        "available": true,
+        "name": "Alitas Dragón",
+        "featured": true,
+        "image": "images/comida/platos/carnes/alitas-horno2.webp",
+        "price": "13,90€",
+        "description": "Probablemente las más picantes de Europa. Solo para expertos. Requiere consentimiento firmado.",
+        "allergens": ["Sulfitos", "Soja"],
+        "badge": "PICANTE EXTREMO"
+      },
+      {
+        "available": true,
+        "name": "Alitas Atómicas",
+        "featured": true,
+        "image": "images/comida/platos/carnes/alitas-horno3.webp",
+        "price": "14,90€",
+        "description": "Nadie ha podido terminarlas. El mayor picante que hayas probado nunca. Requiere consentimiento firmado.",
+        "allergens": ["Sulfitos", "Soja"],
+        "badge": "MÁXIMO PICANTE"
+      },
+      {
+        "available": true,
+        "name": "Cachopo de Angus",
+        "featured": true,
+        "image": "images/comida/platos/COMING-SOON.webp",
+        "price": "19,90€",
+        "description": "Filetes de Angus empanados y rellenos, al estilo astur, versión Lukies.",
+        "allergens": ["Gluten", "Huevo", "Lácteos", "Soja"]
+      },
+      {
+        "available": true,
+        "name": "Costillas al Horno",
+        "featured": true,
+        "image": "images/comida/platos/carnes/costilla1.webp",
+        "price": {
+          "medio": "10,90€",
+          "entero": "19,90€"
+        },
+        "description": "Cocinadas a baja temperatura y ahumadas para esa jugosidad de auténtica BBQ. (Elige entre BBQ, Miel o INFIERNO)",
+        "allergens": ["Sulfitos"]
+      }
+    ]
+  }
+]

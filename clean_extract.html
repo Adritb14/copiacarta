@@ -1,0 +1,729 @@
+
+            <!DOCTYPE html>
+          
+
+            <html lang="es">
+          
+
+            <head><script>window.huggingface={variables:{"SPACE_CREATOR_USER_ID":"68cf8246ce1399b97e6d6428"}};</script>
+          
+
+            <meta charset="UTF-8">
+          
+
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          
+
+            <title>INICIO</title>
+          
+
+            <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+          
+
+            <script src="https://cdn.tailwindcss.com"></script>
+          
+
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+          
+
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+          
+
+            <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+          
+
+            <script src="https://unpkg.com/feather-icons"></script>
+          
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+          
+
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          
+
+            <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500&display=swap"
+          
+
+            rel="stylesheet">
+          
+
+            <!-- Swiper -->
+          
+
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+          
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+          
+
+            <!-- ICONOS PARA PANTALLA DE INICIO -->
+          
+<link
+
+            rel="apple-touch-icon"
+          
+
+            href="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/tMQfBYwOpdA0mnxUByTu0.webp">
+          
+<link
+
+            rel="icon"
+          
+
+            type="image/png"
+          
+
+            sizes="192x192"
+          
+
+            href="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/tMQfBYwOpdA0mnxUByTu0.webp">
+          
+<link
+
+            rel="icon"
+          
+
+            type="image/png"
+          
+
+            sizes="512x512"
+          
+
+            href="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/tMQfBYwOpdA0mnxUByTu0.webp">
+          
+
+            <!-- PWA MANIFEST -->
+          
+
+            <link rel="manifest" href="manifest.json">
+          
+
+            <!-- NOMBRE PARA iOS -->
+          
+
+            <meta name="apple-mobile-web-app-title" content="Carta LuckyLuke">
+          
+
+            <meta name="apple-mobile-web-app-capable" content="yes">
+          
+
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+          
+
+            <!-- HERO FONT -->
+          
+
+            <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+          
+
+            <style>
+          
+
+            /* ===== Tipografías corporativas ===== */
+          
+@font-face {
+font-family: 'Burford';
+
+            src: url('fonts/Burford.woff2') format('woff2');
+          
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Bratton';
+
+            src: url('fonts/Bratton.woff2') format('woff2');
+          
+font-weight: normal;
+font-style: normal;
+}
+
+            .font-burford { font-family: 'Burford', 'Bebas Neue', sans-serif; }
+          
+
+            .font-bratton { font-family: 'Bratton', 'Roboto', sans-serif; }
+          
+/* =========================
+SWIPER (tamaños de slide)
+========================= */
+.barril-swiper .swiper-slide,
+.botella-swiper .swiper-slide {
+width: 280px;
+}
+@media (min-width: 640px) {
+.barril-swiper .swiper-slide,
+.botella-swiper .swiper-slide {
+width: 310px;
+}
+}
+/* =========================
+QUITAR BOTONES (flechas)
+========================= */
+#barril .swiper-button-next,
+#barril .swiper-button-prev,
+#cervezas .swiper-button-next,
+#cervezas .swiper-button-prev {
+display: none !important;
+}
+/* =========================
+PUNTITOS SOLO BARRIL
+========================= */
+/* Oculta paginación de botellas */
+#cervezas .swiper-pagination {
+display: none !important;
+}
+/* Estilo paginación de barril */
+#barril .swiper-pagination-bullet {
+width: 10px;
+height: 10px;
+background: transparent !important;
+
+            border: 1.5px solid rgba(206, 19, 23, 0.75);
+          
+opacity: 1 !important;
+margin: 0 6px !important;
+transition: all 0.25s ease;
+}
+
+            #barril .swiper-pagination-bullet-active {
+          
+background: #CE1317 !important;
+border-color: #CE1317 !important;
+
+            box-shadow: 0 0 10px rgba(206, 19, 23, 0.55);
+          
+transform: scale(1.15);
+}
+/* =========================
+FLIP CARDS (común)
+========================= */
+.flip-card {
+perspective: 1200px;
+height: 420px;
+
+            -webkit-tap-highlight-color: transparent;
+          
+user-select: none;
+}
+.flip-inner {
+position: relative;
+width: 100%;
+height: 100%;
+transform-style: preserve-3d;
+
+            transition: transform 700ms cubic-bezier(.2,.8,.2,1);
+          
+}
+.flip-card.is-flipped .flip-inner {
+transform: rotateY(180deg);
+}
+.flip-face {
+position: absolute;
+inset: 0;
+backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+display: flex;
+flex-direction: column;
+border-radius: 16px;
+overflow: hidden;
+}
+.flip-back {
+transform: rotateY(180deg);
+}
+.card-shell {
+border: 2px solid rgba(206,19,23,.75);
+background: rgba(0,0,0,.45);
+
+            box-shadow: 0 0 30px rgba(206,19,23,.12);
+          
+}
+.flip-card:hover .card-shell {
+border-color: rgba(206,19,23,1);
+
+            box-shadow: 0 0 40px rgba(206,19,23,.18);
+          
+}
+
+            /* Permitir swipe horizontal en Swiper sin pelearse con la página */
+          
+
+            #cervezas .swiper { touch-action: pan-y; }
+          
+#barril .swiper { touch-action: pan-y; }
+
+            </style>
+          
+
+            <script>
+          
+
+            // Detección temprana de iOS para condicionar el renderizado
+          
+
+            const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+          
+
+            </script>
+          
+
+            </head>
+          
+
+            <body class="bg-black text-white font-bratton">
+          
+
+            <!-- NAV -->
+          
+
+            <nav class="bg-black fixed top-0 left-0 w-full z-50 border-b
+                border-red-600">
+          
+
+            <div class="container mx-auto px-4 py-3 flex justify-center
+                items-center">
+          
+
+            <!-- Logo -->
+          
+
+            <div class="flex items-center">
+          
+<img
+
+            src="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/Lucky_Horizontal_Principal%20negativo.png"
+          
+
+            alt="Lucky Luke Logo" class="h-[80px]">
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- Menú móvil -->
+          
+
+            <div id="mobileMenu" class="hidden md:hidden bg-black border-t border-red-600">
+          
+
+            <a href="index.html" class="block px-4 py-2 text-white hover:text-red-600
+                font-burford">Inicio</a>
+          
+
+            <a href="carta.html" class="block px-4 py-2 text-white text-red-600 font-burford">Carta</a>
+          
+
+            <a href="reservas.html" class="block px-4 py-2 hover:text-red-600 font-burford">Reservas</a>
+          
+
+            <a href="eventos.html" class="block px-4 py-2 text-white hover:text-red-600
+                font-burford">Eventos</a>
+          
+
+            <a href="contacto.html" class="block px-4 py-2 text-white text-red-600 font-burford">Contacto</a>
+          
+
+            </div>
+          
+
+            </nav>
+          
+
+            <!-- JS NAV (por si reactivas el botón en el futuro)
+              -->
+          
+
+            <script>
+          
+
+            const btn = document.getElementById('menuBtn');
+          
+
+            const menu = document.getElementById('mobileMenu');
+          
+if (btn && menu) {
+btn.addEventListener('click', () => {
+menu.classList.toggle('hidden');
+});
+}
+
+            </script>
+          
+
+            <!-- CONTENEDOR PRINCIPAL -->
+          
+
+            <!-- <main class="pt-28 md:pt-32 px-4"> -->
+          
+
+            <!-- HERO BLACK FRIDAY -->
+          
+
+            <!-- <section class="w-full relative text-center mb-10">
+              -->
+          
+
+            <!-- Imagen con enlace -->
+          
+
+            <!-- <a
+              href="https://restauranteluckyluke-restauranteluckyluke.static.hf.space/blackfriday.html">
+          
+
+             <img
+          
+
+            
+              src="https://huggingface.co/spaces/restauranteluckyluke/restauranteluckyluke/resolve/main/images/BFbanner.jpeg"
+          
+
+             alt="Black Friday Lucky Luke"
+          
+
+            
+              class="w-full max-h-[380px] object-cover rounded-xl shadow-lg
+              cursor-pointer hover:opacity-90 transition">
+          
+
+             </a>
+          
+
+             <!-- Contenido -->
+          
+
+            <!-- <div class="mt-5">
+          
+
+            
+              <h2 class="text-3xl md:text-4xl font-bold text-white">
+          
+
+             ¡Oferta Especial Black Friday!
+          
+
+             </h2>
+          
+
+            
+              <p class="text-gray-300 mt-2 max-w-xl mx-auto">
+          
+
+            
+              Packs exclusivos solo por tiempo limitado.
+          
+
+            
+              Aprovecha ahora antes de que se agoten.
+          
+
+             </p>
+          
+ <a
+
+            
+              href="https://restauranteluckyluke-restauranteluckyluke.static.hf.space/blackfriday.html"
+          
+
+            
+              class="inline-block mt-5 bg-red-600 hover:bg-red-700 text-white
+              font-semibold px-6 py-3 rounded-full text-sm md:text-base
+              transition-all shadow-md">
+          
+
+             Ver ofertas 🔥
+          
+
+             </a>
+          
+
+             </div>
+          
+
+             </section> --> -->
+          
+
+            <!-- </main> -->
+          
+
+            <!-- TOC MÓVIL -->
+          
+
+            <div class="lg:hidden fixed bottom-4 left-4 z-40">
+          
+
+            <button id="tocToggle" class="bg-red-600 text-white p-3 rounded-full shadow-lg">
+          
+
+            <i
+              data-feather="menu" class="w-6 h-6"></i>
+          
+
+            </button>
+          
+
+            <div id="mobileToc" class="hidden absolute bottom-16 left-0 bg-black border-2
+                border-red-600 rounded-lg w-48">
+          
+
+            <h3 class="font-burford text-lg text-red-600 p-3 text-center border-b
+                border-red-600">SECCIONES</h3>
+          
+
+            <ul class="p-2">
+          
+
+            <li><a href="#fusionbites" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm">Fusion Bites</a></li>
+          
+
+            <li><a href="#bocatas" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm">Bocatas</a>
+          
+
+            </li>
+          
+
+            <li><a href="#patatas" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm">Patatas</a>
+          
+
+            </li>
+          
+
+            <li><a href="#nachos" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm">Nachos</a>
+          
+
+            </li>
+          
+
+            <li><a href="#ensaladas" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm">Ensaladas</a>
+          
+
+            </li>
+          
+
+            <li><a href="#burgers" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm">Burgers</a>
+          
+
+            </li>
+          
+
+            <li><a href="#carnes" class="font-bratton text-white hover:text-red-600 block py-2 px-3
+                text-sm">Carnes</a>
+          
+
+            </li>
+          
+
+            <li><a href="#mexicano"
+          
+
+            class="font-bratton text-white hover:text-red-600 block py-2 px-3
+              text-sm">Mexicano</a></li>
+          
+
+            <li><a href="#postres"
+          
+
+            class="font-bratton text-white hover:text-red-600 block py-2 px-3
+              text-sm">Postres</a></li>
+          
+
+            </ul>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <!-- MENU -->
+          
+
+            <section class="py-16 bg-black mb-20 mt-16 lg:mt-24" data-aos="fade-up">
+          
+
+            <div class="container mx-auto px-4">
+          
+
+            <!-- Refrescos Premium -->
+          
+
+            <div class="mb-20 pt-6 lg:pt-10" data-aos="fade-up">
+          
+
+            <h3 class="font-burford text-2xl text-red-600 mb-4 pl-2 menu-category
+                py-2">
+          
+REFRESCOS PREMIUM
+
+            </h3>
+          
+
+            <div class="space-y-4">
+          
+
+            <div class="flex justify-between">
+          
+
+            <p class="font-bratton">Coca-Cola Vainilla</p>
+          
+
+            <span class="font-burford">2.70€</span>
+          
+
+            </div>
+          
+
+            <div class="flex justify-between">
+          
+
+            <p class="font-bratton">Aquarius Melocoton</p>
+          
+
+            <span class="font-burford">2.70€</span>
+          
+
+            </div>
+          
+
+            <div class="flex justify-between">
+          
+
+            <p class="font-bratton">Fuze Tea Mango Piña</p>
+          
+
+            <span class="font-burford">2.70€</span>
+          
+
+            </div>
+          
+
+            <div class="flex justify-between">
+          
+
+            <p class="font-bratton">Dr Pepper</p>
+          
+
+            <span class="font-burford">2.70€</span>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            <section id="barril" class="py-16 bg-black">
+          
+
+            <div class="container mx-auto px-4">
+          
+
+            <div class="flex items-center mb-8">
+          
+
+            <div class="flex-1 h-px bg-gray-700"></div>
+          
+
+            <h2 class="text-4xl mx-4 text-red-600 text-center font-bold">CERVEZAS DE BARRIL</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700"></div>
+          
+
+            </div>
+          
+
+            <div class="barril-swiper">
+          
+
+            <div class="swiper" id="barrilSwiper">
+          
+
+            <div class="swiper-wrapper" id="barrilWrapper"></div>
+          
+
+            <div class="swiper-button-prev"></div>
+          
+
+            <div class="swiper-button-next"></div>
+          
+
+            <div class="swiper-pagination"></div>
+          
+
+            </div>
+          
+
+            <p id="barrilError" class="hidden mt-4 text-center text-sm text-red-400"></p>
+          
+
+            </div>
+          
+
+            </div>
+          
+
+            </section>
+          
+
+            <section id="cervezas" class="py-16 bg-black">
+          
+
+            <div class="container mx-auto px-4">
+          
+
+            <div class="flex items-center mb-8">
+          
+
+            <div class="flex-1 h-px bg-gray-700"></div>
+          
+
+            <h2 class="text-4xl mx-4 text-red-600 text-center font-bold">CERVEZAS DE BOTELLA</h2>
+          
+
+            <div class="flex-1 h-px bg-gray-700"></div>
+          
+
+            </div>
+          
+
+            <!-- FILTROS (AUTO) -->
+          
+
+            <div class="space-y-4 mb-6">
+          
+
+            <div>
+          
+
+            <p class="font-burford text-red-600 text-sm mb-2 text-center">COLORES</p>
+          
+
+            <div id="filters-colores" class="flex gap-2 overflow-x-auto pb-2"></div>
+          
+
+            </div>
+          
+
+            <div>
+          
+
+            <p class="font-burford text-red-600 text-sm mb-2 text-center">INTENSIDAD Y SABOR</p>
+          
+
+            <div id="filters-ingredientes" class="flex gap-2 overflow-x-auto pb-2"></div>
+          
+
+            </div>
+          

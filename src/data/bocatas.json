@@ -1,0 +1,66 @@
+[
+  {
+    "id": "bocatas",
+    "title": "BOCATAS GOURMET",
+    "available": true,
+    "items": [
+      {
+        "available": true,
+        "name": "DON SOLOMILLÓN",
+        "featured": true,
+        "image": "images/comida/platos/COMING-SOON.webp",
+        "price": "13,90€",
+        "description": "De solomillo de cerdo Duroc, queso brie, cebolla caramelizada, mezclum, jamón y mayo trufada.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Sulfitos"
+        ]
+      },
+      {
+        "available": true,
+        "name": "EL KOREANO",
+        "featured": true,
+        "image": "/images/comida/platos/bocatas/koreano.png",
+        "price": "13,90€",
+        "description": "De pollo coreano crujiente, coleslaw de kimchi, escamas de parmesano y mayo japonesa.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja",
+          "Sésamo"
+        ]
+      },
+      {
+        "available": true,
+        "name": "EL GRINGO",
+        "featured": true,
+        "image": "images/comida/platos/bocatas/gringo.webp",
+        "price": "13,90€",
+        "description": "De pollo Kentucky style, lechuga, tomate, cebolla morada, queso cheddar, bacon y mayo chipotle.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Soja"
+        ]
+      },
+      {
+        "available": true,
+        "name": "TEJANO",
+        "featured": true,
+        "image": "/images/comida/platos/bocatas/Tejano.webp",
+        "price": "13,90€",
+        "description": "De entrecot de ternera a la brasa, con huevos fritos, bacon y queso monterrey jack.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Lácteos",
+          "Sulfitos"
+        ]
+      }
+    ]
+  }
+]

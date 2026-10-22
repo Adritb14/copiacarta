@@ -1,0 +1,56 @@
+[
+  {
+    "id": "nachos",
+    "title": "NACHOS",
+    "available": true,
+    "items": [
+      {
+        "available": true,
+        "name": "Nachos Aztecas",
+        "featured": true,
+        "image": "images/comida/platos/COMING-SOON.webp",
+        "price": "12,90€",
+        "description": "Salsa pico de gallo, tinga de pollo, guacamole y salsa crema de queso.",
+        "allergens": [
+          "Lácteos",
+          "Sulfitos",
+          "Gluten",
+          "Soja",
+          "Mostaza",
+          "Cacahuetes"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Nachos del Pastor",
+        "featured": true,
+        "image": "images/comida/platos/nachos/delpastor.webp",
+        "price": "12,90€",
+        "description": "Salsa pico de gallo, mezcla de quesos, cebolla morada, carne guisada al pastor y guacamole casero.",
+        "allergens": [
+          "Lácteos",
+          "Sulfitos",
+          "Gluten",
+          "Soja",
+          "Mostaza",
+          "Cacahuetes"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Nachos Tío Jack",
+        "featured": true,
+        "image": "images/comida/platos/nachos/tiojack.webp",
+        "price": "12,90€",
+        "description": "Salsa Jack Daniel's BBQ, mezcla de quesos y pulled pork.",
+        "allergens": [
+          "Gluten",
+          "Lácteos",
+          "Sulfitos",
+          "Soja",
+          "Mostaza"
+        ]
+      }
+    ]
+  }
+]

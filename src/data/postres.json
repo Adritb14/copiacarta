@@ -1,0 +1,137 @@
+[
+  {
+    "id": "postres",
+    "title": "POSTRES",
+    "available": true,
+    "items": [
+      {
+  "available": false,
+  "name": "Tarta de Galletas ReBuenas",
+  "featured": true,
+  "image": "/images/comida/platos/postres/rebuena.png",
+  "price": "6,90€",
+  "description": "Tarta cremosa de queso con galletas ReBuenas, con un intenso sabor a chocolate y un toque crujiente irresistible.",
+  "allergens": [
+    "Gluten",
+    "Lácteos",
+    "Huevo",
+    "Soja"
+  ]
+},
+      {
+  "available": true,
+  "name": "Tarta Takis Blue Heat",
+  "featured": true,
+  "image": "/images/comida/platos/postres/takis.png",
+  "price": "6,90€",
+  "description": "Tarta cremosa y sorprendente inspirada en Takis Blue Heat, con un contraste dulce, intenso y un toque picante muy original.",
+  "allergens": [
+    "Gluten",
+    "Lácteos",
+    "Huevo",
+    "Soja"
+  ]
+},
+      {
+        "available": false,
+        "name": "Tarta de Chocolate Blanco y Pistacho",
+        "featured": true,
+        "image": "images/comida/platos/postres/pistacho.png",
+        "price": "6,90€",
+        "description": "Tarta cremosa de chocolate blanco con pistacho triturado, equilibrada, suave y con un toque tostado irresistible.",
+        "allergens": ["Gluten", "Lácteos", "Huevo", "Frutos secos"]
+      },
+      {
+        "available": true,
+        "name": "Mix Minigofres 5 uds.",
+        "featured": true,
+        "image": "/images/comida/platos/COMING-SOON.webp",
+        "price": "5,00€",
+        "description": "Cinco minigofres recién hechos. ¡Personalízalos a tu gusto!",
+        "options": [
+          {
+            "label": "Elige tu sirope",
+            "choices": ["KitKat", "Chocolate blanco", "Nutella", "Kinder", "Fresa"]
+          },
+          {
+            "label": "Elige tu topping",
+            "choices": ["Lotus", "Oreo", "Almendra", "Nueces"]
+          }
+        ],
+        "allergens": ["Gluten", "Lácteos", "Huevo", "Soja", "Frutos secos"]
+      },
+      {
+        "available": true,
+        "name": "Tarta de Oreo",
+        "featured": true,
+        "image": "/images/comida/platos/postres/oreo.png",
+        "price": "6,90€",
+        "description": "Cremosa tarta de queso con auténticas galletas Oreo y un irresistible toque de chocolate.",
+        "allergens": ["Gluten", "Lácteos", "Huevo", "Soja"]
+      },
+      {
+        "available": true,
+        "name": "Tarta Lotus",
+        "featured": true,
+        "image": "/images/comida/platos/postres/lotus.png",
+        "price": "6,90€",
+        "description": "Cremosa mezcla de galleta Lotus y caramelo con una textura suave y dulce irresistible.",
+        "allergens": ["Gluten", "Lácteos", "Huevo", "Sulfitos"]
+      },
+      {
+        "available": true,
+        "name": "Tarta Pantera Rosa",
+        "featured": true,
+        "image": "/images/comida/platos/postres/pantera.png",
+        "price": "6,90€",
+        "description": "Irresistible tarta inspirada en el mítico pastel Pantera Rosa, con suave bizcocho, crema de vainilla y cobertura rosa con un toque de chocolate blanco.",
+        "allergens": ["Gluten", "Lácteos", "Huevo", "Soja"]
+      },
+      {
+        "available": true,
+        "name": "Tarta de Queso",
+        "featured": true,
+        "image": "/images/comida/platos/COMING-SOON.webp",
+        "price": "6,90€",
+        "description": "Cremosa tarta de queso, suave y equilibrada, con una textura irresistible.",
+        "allergens": ["Gluten", "Lácteos", "Huevo"]
+      },
+      {
+        "available": false,
+        "name": "Tarta de Mojito",
+        "featured": true,
+        "image": "/images/comida/platos/postres/mojito.png",
+        "price": "6,90€",
+        "description": "Tarta fresca y cremosa inspirada en el mojito, con notas cítricas de lima y un refrescante toque de hierbabuena.",
+        "allergens": ["Gluten", "Lácteos", "Huevo"]
+      },
+      {
+        "available": false,
+        "name": "Tarta de Piña Colada",
+        "featured": true,
+        "image": "/images/comida/platos/postres/pinacolada.png",
+        "price": "6,90€",
+        "description": "Tarta cremosa y tropical con sabor a piña y coco, inspirada en el clásico cóctel Piña Colada.",
+        "allergens": ["Gluten", "Lácteos", "Huevo"]
+      },
+      {
+        "available": false,
+        "name": "Brownie de Chocolate Americano",
+        "featured": true,
+        "image": "/images/comida/platos/postres/brownie.png",
+        "price": "6,90€",
+        "description": "Brownie de chocolate americano con nueces, intenso y jugoso, servido caliente con una bola de helado de vainilla.",
+        "allergens": ["Gluten", "Lácteos", "Huevo", "Soja", "Frutos secos"]
+      },
+      {
+        "available": false,
+        "name": "Coulant de Chocolate Blanco",
+        "featured": true,
+        "image": "/images/comida/platos/COMING-SOON.webp",
+        "price": "6,90€",
+        "description": "Coulant de chocolate blanco caliente con corazón fundente, intenso y cremoso.",
+        "allergens": ["Gluten", "Lácteos", "Huevo", "Soja"]
+      }
+    ]
+  }
+]

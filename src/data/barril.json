@@ -1,0 +1,642 @@
+[
+  {
+    "name": "Nitro Guinness",
+    "available": false,
+    "image": "/images/barril/guinness.webp",
+    "style": "Cocktail · Stout + Energy",
+    "country": "Irlanda",
+    "color": "Negro",
+    "abv": 4.2,
+    "ibu": 45,
+    "pairing": "Burgers, carnes a la brasa, nachos",
+    "description": "El combinado más brutal de la casa: Guinness Stout sobre Monster Energy Nitro. Cremosa, oscura y con un golpe de energía único. Solo para valientes.",
+    "prices": [
+      {
+        "label": "50cl",
+        "price": "5,50€"
+      }
+    ],
+    "tags": [
+      "NEGRA",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "O'Hara's Irish Red",
+    "available": true,
+    "image": "/images/barril/oharas.webp",
+    "style": "Irish Red Ale",
+    "country": "Irlanda",
+    "color": "Rojo cobrizo",
+    "abv": 4.3,
+    "ibu": 28,
+    "pairing": "Burgers, carnes a la parrilla, quesos y embutidos",
+    "description": "Irish Red Ale equilibrada y maltosa, con notas de caramelo, galleta tostada y un final seco y suave.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "TOSTADA",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "Chouffe Blanche",
+    "available": true,
+    "image": "/images/barril/chouffe-blanche.png",
+    "style": "Witbier",
+    "country": "Bélgica",
+    "color": "Rubio turbio",
+    "abv": 6.5,
+    "ibu": 15,
+    "pairing": "Pollo, ensaladas, pescados, platos especiados",
+    "description": "Cerveza blanca belga refrescante y aromática, con notas cítricas, especiadas y un final suave y ligeramente dulce.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "TRIGO",
+      "RUBIA",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "Bolleke De Koninck",
+    "available": true,
+    "image": "/images/barril/bolleke-de-koninck.png",
+    "style": "Belgian Amber Ale",
+    "country": "Bélgica",
+    "color": "Ámbar cobrizo",
+    "abv": 5.2,
+    "ibu": 24,
+    "pairing": "Burgers, carnes a la parrilla, embutidos, quesos semicurados",
+    "description": "Cerveza ámbar belga equilibrada y fácil de beber, con notas de malta tostada, caramelo suave y un amargor moderado.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "TOSTADA",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "N’Ice Chouffe",
+    "available": false,
+    "image": "",
+    "style": "Belgian Dark Strong Ale (Christmas Beer)",
+    "country": "Bélgica",
+    "color": "Tostada oscura",
+    "abv": 10,
+    "ibu": 25,
+    "pairing": "Carnes asadas, estofados, quesos curados, postres especiados",
+    "description": "Cerveza belga de Navidad, oscura y potente, con notas de caramelo, especias, piel de naranja y un ligero toque cálido de alcohol.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "NEGRA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Mc Chouffe",
+    "available": false,
+    "image": "/images/barril/mcchouffe.webp",
+    "style": "Belgian Strong Dark Ale",
+    "country": "Bélgica",
+    "color": "Marrón oscuro",
+    "abv": 8.5,
+    "ibu": 20,
+    "pairing": "Carnes asadas, estofados, quesos curados, platos contundentes",
+    "description": "Cerveza belga oscura de carácter maltoso, con notas de caramelo, fruta madura y un ligero toque especiado. Potente pero equilibrada, ideal para acompañar platos intensos.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "NEGRA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Gulden Draak Classic",
+    "available": false,
+    "image": "/images/barril/gulden.webp",
+    "style": "Belgian Dark Strong Ale",
+    "country": "Bélgica",
+    "color": "Tostada oscura",
+    "abv": 10.5,
+    "ibu": null,
+    "pairing": "Carnes rojas, estofados, quesos curados, postres de chocolate",
+    "description": "Cerveza belga oscura y potente, con notas de caramelo, fruta madura, malta tostada y un final cálido y alcohólico.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "NEGRA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Grimbergen",
+    "available": true,
+    "image": "/images/barril/grimbergen.webp",
+    "style": "Abbey Blonde",
+    "country": "Bélgica",
+    "color": "Tostada",
+    "abv": 6.7,
+    "ibu": 28,
+    "pairing": "Carnes blancas, quesos semicurados, platos especiados",
+    "description": "Cerveza belga de abadía, equilibrada y aromática, con notas maltosas y un final suave.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "RUBIA",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "IJ IPA",
+    "available": false,
+    "image": "/images/barril/ij-ipa.webp",
+    "style": "IPA",
+    "country": "Países Bajos",
+    "color": "Rubia",
+    "abv": 6.5,
+    "ibu": 45,
+    "pairing": "Hamburguesas, fritos, comida picante",
+    "description": "IPA fresca y lupulada, con amargor marcado y aromas cítricos y tropicales.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "TOSTADA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Guinness",
+    "available": true,
+    "image": "/images/barril/guinness.webp",
+    "style": "Dry Stout",
+    "country": "Irlanda",
+    "color": "Negra",
+    "abv": 4.2,
+    "ibu": 45,
+    "pairing": "Carnes a la parrilla, ostras, postres de chocolate",
+    "description": "Stout irlandesa icónica, cremosa, con notas de café tostado y cacao.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "3,00€"
+      },
+      {
+        "label": "50cl",
+        "price": "5,00€"
+      }
+    ],
+    "tags": [
+      "NEGRA",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "1906 Reserva",
+    "available": true,
+    "image": "/images/barril/1906-reserva.webp",
+    "style": "Lager Especial",
+    "country": "España",
+    "color": "Tostada",
+    "abv": 6.5,
+    "ibu": 25,
+    "pairing": "Carnes rojas, embutidos, platos contundentes",
+    "description": "Lager tostada con carácter, sabor intenso y ligero toque amargo final.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "2,90€"
+      },
+      {
+        "label": "50cl",
+        "price": "4,50€"
+      }
+    ],
+    "tags": [
+      "TOSTADA",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "Budvar",
+    "available": true,
+    "image": "/images/barril/budvar.webp",
+    "style": "Czech Pilsner",
+    "country": "República Checa",
+    "color": "Rubia",
+    "abv": 5,
+    "ibu": 35,
+    "pairing": "Pescados, ensaladas, aperitivos",
+    "description": "Pilsner checa tradicional, limpia y refrescante, con amargor noble y equilibrado.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "2,70€"
+      },
+      {
+        "label": "50cl",
+        "price": "4,00€"
+      }
+    ],
+    "tags": [
+      "RUBIA",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "BrewDog Punk IPA",
+    "available": true,
+    "image": "/images/barril/brewdog-punk-ipa.webp",
+    "style": "IPA",
+    "country": "Escocia",
+    "color": "Rubia",
+    "abv": 5.6,
+    "ibu": 35,
+    "pairing": "Hamburguesas, tacos, comida especiada",
+    "description": "IPA moderna, muy aromática, con notas de frutas tropicales y final seco.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "3,00€"
+      },
+      {
+        "label": "50cl",
+        "price": "5,00€"
+      }
+    ],
+    "tags": [
+      "LUPULO",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "Straffe Hendrick",
+    "available": true,
+    "image": "/images/barril/straffe-hendrick.webp",
+    "style": "Tripel",
+    "country": "Bélgica",
+    "color": "Rubia",
+    "abv": 9,
+    "ibu": 38,
+    "pairing": "Quesos fuertes, carnes asadas",
+    "description": "Cerveza belga intensa y especiada, con cuerpo robusto y amargor elegante.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      }
+    ],
+    "tags": [
+      "RUBIA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Brugse Zot Dubbel",
+    "available": false,
+    "image": "/images/barril/brugse-zot-dubbel.webp",
+    "style": "Dubbel",
+    "country": "Bélgica",
+    "color": "Tostada",
+    "abv": 7.5,
+    "ibu": 25,
+    "pairing": "Estofados, carnes al horno",
+    "description": "Dubbel belga oscura, maltosa y ligeramente dulce, con notas de caramelo.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "NEGRA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Brugse Zot Blonde",
+    "available": true,
+    "image": "/images/barril/brugse-zot-dubbel.webp",
+    "style": "Belgian Blonde Ale",
+    "country": "Bélgica",
+    "color": "Rubia",
+    "abv": 6,
+    "ibu": 26,
+    "pairing": "Quesos suaves, pollo, pescados, mariscos y hamburguesas",
+    "description": "Cerveza rubia belga de alta fermentación, equilibrada y refrescante, con notas afrutadas, un ligero toque especiado y un final suave con amargor moderado.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "RUBIA",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "Erdinger",
+    "available": true,
+    "image": "/images/barril/erdinger.webp",
+    "style": "Weissbier",
+    "country": "Alemania",
+    "color": "Rubia",
+    "abv": 5.3,
+    "ibu": 15,
+    "pairing": "Ensaladas, salchichas, platos suaves",
+    "description": "Cerveza de trigo alemana, suave y refrescante, con notas afrutadas.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "3,00€"
+      },
+      {
+        "label": "50cl",
+        "price": "5,00€"
+      }
+    ],
+    "tags": [
+      "TRIGO",
+      "RUBIA",
+      "MEDIA"
+    ]
+  },
+  {
+    "name": "Duvel 666",
+    "available": true,
+    "image": "/images/barril/duvel-666.webp",
+    "style": "Belgian Blonde",
+    "country": "Bélgica",
+    "color": "Rubia",
+    "abv": 6.6,
+    "ibu": 32,
+    "pairing": "Carnes blancas, platos especiados",
+    "description": "Rubia belga potente y aromática, con cuerpo medio y final seco.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "RUBIA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Liefmans",
+    "available": true,
+    "image": "/images/barril/liefmans.webp",
+    "style": "Fruit Beer",
+    "country": "Bélgica",
+    "color": "Roja",
+    "abv": 3.8,
+    "ibu": 10,
+    "pairing": "Postres, quesos suaves",
+    "description": "Cerveza afrutada y refrescante, de perfil dulce y ligero toque ácido.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "3,00€"
+      }
+    ],
+    "tags": [
+      "FRUTAS",
+      "SUAVE"
+    ]
+  },
+  {
+    "name": "Maredsous",
+    "available": false,
+    "image": "/images/barril/maredsous.webp",
+    "style": "Abbey Beer",
+    "country": "Bélgica",
+    "color": "Tostada",
+    "abv": 8,
+    "ibu": 28,
+    "pairing": "Carnes asadas, quesos curados",
+    "description": "Cerveza de abadía belga, equilibrada, con notas maltosas y especiadas.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "TOSTADA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Cherry Chouffe",
+    "available": true,
+    "image": "/images/barril/cherry-chouffe.webp",
+    "style": "Fruit Belgian Ale",
+    "country": "Bélgica",
+    "color": "Roja",
+    "abv": 8,
+    "ibu": 20,
+    "pairing": "Postres, quesos azules",
+    "description": "Cerveza belga con cereza, dulce y afrutada, muy aromática y fácil de beber.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "FRUTAS",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Chouffe Blonde",
+    "available": false,
+    "image": "/images/barril/chouffe-blonde.webp",
+    "style": "Belgian Blonde",
+    "country": "Bélgica",
+    "color": "Rubia",
+    "abv": 8,
+    "ibu": 20,
+    "pairing": "Carnes blancas, quesos suaves",
+    "description": "Rubia belga especiada y ligeramente afrutada, con cuerpo medio y final suave.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "RUBIA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Chouffe Houblon",
+    "available": false,
+    "image": "/images/barril/houblon.webp",
+    "style": "Belgian IPA",
+    "country": "Bélgica",
+    "color": "Rubio dorado",
+    "abv": 9,
+    "ibu": 45,
+    "pairing": "Carnes a la parrilla, burgers potentes, quesos curados",
+    "description": "IPA belga potente y aromática, con intenso carácter lupulado, notas cítricas y resinosas equilibradas por una base maltosa belga.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "RUBIA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Maredsous Triple",
+    "available": true,
+    "image": "/images/barril/maredsous.webp",
+    "style": "Belgian Tripel",
+    "country": "Bélgica",
+    "color": "Tostada",
+    "abv": 10,
+    "ibu": 22,
+    "pairing": "Quesos curados, carnes blancas, platos especiados",
+    "description": "Tripel belga intensa y elegante, con notas afrutadas, especiadas y un final cálido.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "RUBIA",
+      "FUERTE"
+    ]
+  },
+  {
+    "name": "Delirium Tremens",
+    "available": false,
+    "image": "/images/barril/delirium.webp",
+    "style": "Belgian Strong Golden Ale",
+    "country": "Bélgica",
+    "color": "Rubio pálido",
+    "abv": 8.5,
+    "ibu": 26,
+    "pairing": "Carnes blancas, mariscos, quesos semicurados",
+    "description": "Clásica cerveza belga de alta graduación, afrutada y especiada, con final seco, elegante y un punto alcohólico bien integrado.",
+    "prices": [
+      {
+        "label": "33cl",
+        "price": "4,50€"
+      },
+      {
+        "label": "50cl",
+        "price": "6,50€"
+      }
+    ],
+    "tags": [
+      "RUBIA",
+      "FUERTE"
+    ]
+  }
+]

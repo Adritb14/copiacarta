@@ -1,0 +1,101 @@
+
+---
+import Layout from '../../layouts/Layout.astro';
+import BebidasNav from '../../components/BebidasNav.astro';
+import refrescosFeatured from '../../data/refrescosFeatured.json';
+
+const refrescos = refrescosFeatured;
+---
+
+<Layout title="Refrescos - Lucky Luke">
+  <main class="px-5 md:px-6 pb-28 md:pb-24 bg-black overflow-x-hidden">
+
+    <BebidasNav />
+
+    <section class="py-4">
+
+      <div class="flex items-center mb-10">
+        <div class="flex-1 h-px bg-gray-700"></div>
+        <h2 class="font-burford text-3xl md:text-4xl mx-4 text-red-600 text-center">REFRESCOS PREMIUM</h2>
+        <div class="flex-1 h-px bg-gray-700"></div>
+      </div>
+
+      <!-- HERO MONSTER -->
+      <section class="mb-12 relative w-full">
+        <div class="relative overflow-hidden rounded-2xl bg-black border border-lime-500/20 w-full">
+
+          <img
+            src="/images/refrescos/monster-hero.webp"
+            alt="Monster Energy: Original, Ultra, Mango Loco y Strawberry Dreams"
+            class="w-full h-auto block"
+            loading="eager"
+            decoding="async"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/35 pointer-events-none"></div>
+
+          
+
+          <div class="absolute inset-0 rounded-2xl ring-1 ring-lime-500/20 pointer-events-none"></div>
+        </div>
+      </section>
+
+      <!-- HERO COCA-COLA VINTAGE -->
+      <section class="mb-12 relative w-full">
+        <div class="relative overflow-hidden rounded-2xl bg-black w-full h-[220px] md:h-[320px]">
+          <video
+            class="absolute inset-0 h-full w-full object-cover"
+            src="/images/refrescos/COLAVINTAGE.mp4"
+            poster="/images/refrescos/vintage.webp"
+            muted
+            autoplay
+            loop
+            playsinline
+            preload="auto"
+            aria-hidden="true"
+          ></video>
+          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="absolute inset-0" style="background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, rgba(0,0,0,0.65) 100%)"></div>
+          <div class="absolute inset-0 flex flex-col items-center justify-center z-10 text-center px-6">
+            <p class="font-bratton text-xs md:text-sm tracking-[0.3em] uppercase text-red-400/80 mb-2">Edición Especial</p>
+            <h3 class="font-burford text-[clamp(2.8rem,10vw,6rem)] leading-none tracking-[0.1em] text-white drop-shadow-2xl">
+              COCA-COLA<br /><span class="text-red-500">VINTAGE</span>
+            </h3>
+            <p class="font-bratton text-gray-300 text-sm md:text-base mt-4 max-w-xs">
+              El sabor clásico. La estética eterna.
+            </p>
+          </div>
+          <div class="absolute inset-0 rounded-2xl ring-1 ring-red-600/30 pointer-events-none"></div>
+        </div>
+      </section>
+
+      <!-- GRID REFRESCOS -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        {refrescos.map((drink: any) => (
+          <article class="border-western bg-black/40 hover:bg-gray-900 transition p-4 md:p-6 rounded-xl">
+            {drink.image && (
+              <div class="mb-3 overflow-hidden rounded-lg border border-white/10 bg-black">
+                <div class="aspect-[4/3]">
+                  <img
+                    src={drink.image}
+                    alt={drink.name}
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            )}
+            <div class="flex justify-between items-start gap-2 mb-2">
+              <h3 class="font-burford text-lg md:text-2xl text-red-600 leading-tight">{drink.name}</h3>
+              <span class="font-burford text-base md:text-xl text-gray-200">{drink.price}</span>
+            </div>
+            <p class="font-bratton text-gray-300 text-sm md:text-base">{drink.description}</p>
+          </article>
+        ))}
+      </div>
+
+    </section>
+  </main>
+</Layout>
+

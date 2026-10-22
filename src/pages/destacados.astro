@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+// import BottomNavigation from '../components/BottomNavigation.astro';
+
+
+const now = new Date();
+
+// ⚠️ IMPORTANTE: Vercel usa UTC
+const start = new Date('2026-01-04T19:00:00Z'); // 20:00 España (UTC+1)
+const end   = new Date('2026-03-05T00:00:00Z'); // 01:00 España (UTC+1)
+
+const SHOW_BURGERS_FEBRERO = now >= start && now <= end;
+---
+
+<Layout title="Destacados - Lucky Luke">
+
+  <!-- SWIPER (WEB COMPONENT – CDN, 100% compatible Astro) -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <Navigation />
+  
+
+  <!-- Spacing: pt-28 mobile navbar, px-5 mobile óptimo, pb-28 bottom nav -->
+	<main class="pt-10 md:pt-15 px-5 md:px-6 pb-28 md:pb-24">
+		<!-- Spacing: py-12 mobile, py-16 desktop -->
+		<section class="py-8 md:py-16 bg-black">
+      <div class="container mx-auto max-w-7xl">
+
+        <!-- TITULO -->
+        <!-- <div class="flex items-center mb-10">
+          <div class="flex-1 h-px bg-white/15"></div>
+          <h1 class="font-burford text-4xl md:text-5xl mx-4 text-red-600 text-center">
+            DESTACADOS
+          </h1>
+          <div class="flex-1 h-px bg-white/15"></div>
+        </div> -->
+
+        <!-- BURGERS FEBRERO -->
+        {SHOW_BURGERS_FEBRERO && (
+          <section id="burgers-febrero" class="mb-20 -mt-10">
+            <div class="container mx-auto px-4">
+              <div class="rounded-2xl overflow-hidden bg-black/35 p-4 sm:p-6 border border-pink-400/30">
+
+                <div class="flex items-center mb-6">
+                  <div class="flex-1 h-px bg-pink-400/40"></div>
+                  <h2 class="font-burford text-3xl sm:text-4xl mx-4 text-pink-400 text-center">
+                    BURGERS DE FEBRERO<br/>ST VALENTINE <br/>EDITION
+                  </h2>
+                  <div class="flex-1 h-px bg-pink-400/40"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- My Crush -->
+                  <article class="border border-white/15 bg-black/40 rounded-xl overflow-hidden">
+                    <div class="grid grid-cols-2 md:grid-cols-1">
+                      <div class="p-4">
+                        <h3 class="text-lg font-bold text-pink-400 mb-2">My Crush 💗</h3>
+                        <p class="text-sm text-white/80 leading-relaxed mb-3">
+                    Pan rosa, ternera premium 180g, queso brie, mermelada de frambuesa,
+                    cebolla crujiente, pastrami, salsa BBQ y mozzarella stick.
+                  </p>
+                        <span class="font-burford text-xl text-pink-400">13,90€</span>
+                      </div>
+                      <img src="/images/comida/platos/burgers/mycrush.webp"
+                          class="w-full aspect-square object-cover"/>
+                    </div>
+                  </article>
+
+                  <!-- Blue Kiss -->
+                  <article class="border border-white/15 bg-black/40 rounded-xl overflow-hidden">
+                    <div class="grid grid-cols-2 md:grid-cols-1">
+                      <img src="/images/comida/platos/burgers/bluekiss.webp"
+                           class="w-full aspect-square object-cover"/>
+                            <div class="p-4">
+                        <h3 class="text-lg font-bold text-blue-400 mb-2">Blue Kiss 💙</h3>
+                       <p class="text-sm text-white/80 leading-relaxed mb-3">
+                    Pan azul, burger de pollo sweet &amp; chili, lechuga, tomate,
+                    cebolla roja, parmesano en escamas, pulled pork y mayo de lima.
+                  </p>
+                        <span class="font-burford text-xl text-blue-400">13,90€</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        )}
+
+       <!-- LUCKY’S JUNIOR -->
+<section class="mb-15" id="luckys-junior">
+
+  <div class="flex items-center mb-8">
+    <div class="flex-1 h-px bg-white/15"></div>
+    <h2 class="font-burford text-4xl mx-4 text-red-600 text-center">
+      LUCKY’S JUNIOR
+    </h2>
+    <div class="flex-1 h-px bg-white/15"></div>
+  </div>
+
+  <p class="text-white/70 text-center max-w-2xl mx-auto mb-3">
+    3 opciones pensadas para los peques.
+  </p>
+
+  <p class="font-burford text-red-500 text-center text-lg uppercase tracking-wide mb-8">
+    ⚠️ Disponible exclusivamente para público infantil
+  </p>
+          <!-- CARRUSEL -->
+          <div class="max-w-4xl mx-auto mb-10">
+            <swiper-container
+              slides-per-view="1"
+              loop="true"
+              autoplay-delay="2500"
+              speed="600"
+              pagination="true"
+            >
+              <swiper-slide>
+                <img src="/images/comida/platos/luckyjunior/menunuggets.webp"
+                     class="w-full h-72 md:h-96 object-cover rounded-2xl" />
+              </swiper-slide>
+
+              <swiper-slide>
+                <img src="/images/comida/platos/luckyjunior/menucarne.webp"
+                     class="w-full h-72 md:h-96 object-cover rounded-2xl" />
+              </swiper-slide>
+
+              <swiper-slide>
+                <img src="/images/comida/platos/luckyjunior/menupollo.webp"
+                     class="w-full h-72 md:h-96 object-cover rounded-2xl" />
+              </swiper-slide>
+            </swiper-container>
+          </div>
+
+          <!-- OPCIONES -->
+          <div class="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            <article class="border border-white/15 bg-black/40 rounded-2xl p-5">
+              <h3 class="text-white font-semibold">Burger Junior Ternera</h3>
+              <span class="font-burford text-red-500 text-lg">8,90€</span>
+              <p class="text-white/60 text-sm mt-2">Menú de burger de ternera premium 120g y queso, acompañado de patatas fritas, bebida, postre y juguete infantil</p>
+            </article>
+
+            <article class="border border-white/15 bg-black/40 rounded-2xl p-5">
+              <h3 class="text-white font-semibold">Burger Junior Pollo</h3>
+              <span class="font-burford text-red-500 text-lg">8,90€</span>
+              <p class="text-white/60 text-sm mt-2">Menú de burger de pollo con queso, acompañado de patatas fritas, bebida, postre y juguete infantil.</p>
+            </article>
+
+            <article class="border border-white/15 bg-black/40 rounded-2xl p-5">
+              <h3 class="text-white font-semibold">Nuggets Pollo</h3>
+              <span class="font-burford text-red-500 text-lg">8,90€</span>
+              <p class="text-white/60 text-sm mt-2">Menú de nuggets de pollo, patatas fritas, bebida, postre y juguete infantil.</p>
+            </article>
+          </div>
+
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- <BottomNavigation /> -->
+</Layout>

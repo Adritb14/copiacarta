@@ -1,0 +1,431 @@
+---
+// src/components/BarrilBeerSwiper.astro
+interface Price {
+	label: string;
+	price: string;
+}
+
+interface Props {
+	name: string;
+	image?: string;
+	description?: string;
+	prices: Price[];
+	abv?: string;
+	ibu?: string;
+	style?: string;
+	country?: string;
+	color?: string;
+	colorBucket?: number;
+	pairing?: string;
+}
+
+const {
+	name,
+	image,
+	description = "Disponible en barril. Pregunta al personal por detalles.",
+	prices = [],
+	abv,
+	ibu,
+	style,
+	country,
+	color,
+	colorBucket = 0,
+	pairing,
+} = Astro.props;
+---
+
+<div
+	class="swiper-slide barril-slide"
+	data-color={colorBucket}
+	data-style={style}
+	data-country={country}
+>
+	<div
+		class="flip-card barril-flip cursor-pointer"
+		tabindex="0"
+		role="button"
+		aria-pressed="false"
+		aria-label={`Ver detalles de ${name}`}
+	>
+		<div class="flip-inner">
+
+			<!-- PARTE DELANTERA -->
+			<article class="flip-face card-shell p-5 md:p-6 flex flex-col">
+				<div class="mt-0 w-full">
+					<div
+						class="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-red-600/60 bg-black/50"
+					>
+						{
+							image ? (
+								<img
+									src={image}
+									alt={name}
+									class="absolute inset-0 w-full h-full object-cover"
+									loading="lazy"
+								/>
+							) : (
+								<div class="absolute inset-0 flex items-center justify-center text-white/60 text-sm">
+									Imagen no disponible
+								</div>
+							)
+						}
+					</div>
+				</div>
+
+				<div class="text-center mb-2">
+					<h3
+						class="text-xl md:text-2xl font-extrabold text-red-500 leading-tight"
+					>
+						{name}
+					</h3>
+				</div>
+
+				<div
+					class="mt-2 rounded-xl border border-white/10 bg-black/35 overflow-hidden shrink-0"
+				>
+					{
+						prices.map((p, i) => (
+							<div
+								class={`flex items-center justify-between px-3 py-2 ${
+									i !== prices.length - 1
+										? "border-b border-white/5"
+										: ""
+								}`}
+							>
+								<span class="text-xs md:text-sm text-white/70 font-bratton">
+									{p.label}
+								</span>
+
+								<span class="font-extrabold text-sm md:text-base text-white">
+									{p.price}
+								</span>
+							</div>
+						))
+					}
+				</div>
+
+				<div class="mt-auto pt-2 text-center shrink-0">
+					<span class="beer-pill">Toca para ver más</span>
+				</div>
+			</article>
+
+			<!-- PARTE TRASERA -->
+			<article class="flip-face flip-back card-shell p-5 md:p-6 flex flex-col">
+				<div class="flex items-start justify-between gap-3 mb-3">
+					<h3
+						class="text-xl md:text-2xl font-extrabold text-red-500 leading-tight"
+					>
+						{name}
+					</h3>
+
+					<span class="beer-pill">Volver</span>
+				</div>
+
+				<p class="text-sm md:text-base text-white/85 leading-relaxed mb-3">
+					{description}
+				</p>
+
+				<div class="flex flex-wrap gap-2 mb-3">
+					{abv && <span class="beer-chip">ABV: {abv}</span>}
+					{ibu && <span class="beer-chip">IBU: {ibu}</span>}
+					{color && <span class="beer-chip">{color}</span>}
+					{style && <span class="beer-chip">{style}</span>}
+					{country && <span class="beer-chip">{country}</span>}
+				</div>
+
+				{
+					pairing && (
+						<div class="mb-3 p-3 rounded-xl border border-red-600/25 bg-red-950/15">
+							<div class="text-xs font-extrabold text-red-400 tracking-wide mb-2">
+								🍷 MARIDAJE
+							</div>
+
+							<p class="text-sm md:text-base text-white/85 leading-relaxed">
+								{pairing}
+							</p>
+						</div>
+					)
+				}
+
+				<div class="mt-auto shrink-0">
+					<div class="text-xs font-extrabold text-red-400 tracking-wide mb-2">
+						FORMATOS
+					</div>
+
+					<div
+						class="rounded-xl border border-white/10 bg-black/35 overflow-hidden"
+					>
+						{
+							prices.map((p, i) => (
+								<div
+									class={`flex items-center justify-between px-3 py-2 ${
+										i !== prices.length - 1
+											? "border-b border-white/5"
+											: ""
+									}`}
+								>
+									<span class="text-xs md:text-sm text-white/70 font-bratton">
+										{p.label}
+									</span>
+
+									<span class="font-extrabold text-sm md:text-base text-white">
+										{p.price}
+									</span>
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</article>
+
+		</div>
+	</div>
+</div>
+
+<style>
+	.barril-slide {
+		width: 100%;
+		min-width: 0;
+		box-sizing: border-box;
+	}
+
+	@media (min-width: 768px) {
+		.barril-slide {
+			width: 360px;
+		}
+	}
+
+	.flip-card {
+		position: relative;
+		width: 100%;
+		height: 480px;
+		min-width: 0;
+		perspective: 1200px;
+		-webkit-perspective: 1200px;
+		transform: translateZ(0);
+		-webkit-transform: translateZ(0);
+		-webkit-tap-highlight-color: transparent;
+		user-select: none;
+		-webkit-user-select: none;
+	}
+
+	@media (min-width: 768px) {
+		.flip-card {
+			height: 500px;
+		}
+	}
+
+	.flip-inner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+		will-change: transform;
+	}
+
+	.barril-flip.is-flipped .flip-inner {
+		transform: rotateY(180deg);
+		-webkit-transform: rotateY(180deg);
+	}
+
+	.flip-face {
+		position: absolute;
+		inset: 0;
+		border-radius: 16px;
+		overflow: hidden;
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+
+	.flip-back {
+		transform: rotateY(180deg);
+		-webkit-transform: rotateY(180deg);
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.card-shell {
+		border: 2px solid rgba(206, 19, 23, 0.65);
+		background: linear-gradient(
+			135deg,
+			rgba(0, 0, 0, 0.62) 0%,
+			rgba(40, 10, 10, 0.42) 100%
+		);
+		box-shadow:
+			0 18px 55px rgba(0, 0, 0, 0.55),
+			0 0 28px rgba(206, 19, 23, 0.1);
+	}
+
+	.barril-flip:focus-visible {
+		outline: 3px solid rgba(206, 19, 23, 0.9);
+		outline-offset: 4px;
+		border-radius: 16px;
+	}
+
+	.beer-chip {
+		display: inline-flex;
+		align-items: center;
+		padding: 6px 10px;
+		font-size: 12px;
+		border-radius: 999px;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: rgba(0, 0, 0, 0.35);
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.beer-pill {
+		display: inline-flex;
+		align-items: center;
+		padding: 6px 10px;
+		font-size: 11px;
+		letter-spacing: 0.08em;
+		border-radius: 999px;
+		border: 1px solid rgba(206, 19, 23, 0.45);
+		background: rgba(206, 19, 23, 0.12);
+		color: rgba(255, 255, 255, 0.9);
+		font-weight: 800;
+	}
+</style>
+
+<script>
+	function initializeBarrilFlip() {
+		if (
+			document.documentElement.dataset.barrilFlipInitialized === "true"
+		) {
+			return;
+		}
+
+		document.documentElement.dataset.barrilFlipInitialized = "true";
+
+		const pointers = new Map();
+
+		document.addEventListener(
+			"pointerdown",
+			(event) => {
+				if (!(event.target instanceof Element)) return;
+
+				const card = event.target.closest(".barril-flip");
+				if (!card) return;
+
+				pointers.set(event.pointerId, {
+					card,
+					startX: event.clientX,
+					startY: event.clientY,
+					startTime: Date.now(),
+					moved: false,
+				});
+			},
+			{
+				passive: true,
+				capture: true,
+			},
+		);
+
+		document.addEventListener(
+			"pointermove",
+			(event) => {
+				const pointer = pointers.get(event.pointerId);
+				if (!pointer) return;
+
+				const distanceX = Math.abs(
+					event.clientX - pointer.startX,
+				);
+
+				const distanceY = Math.abs(
+					event.clientY - pointer.startY,
+				);
+
+				if (distanceX > 10 || distanceY > 10) {
+					pointer.moved = true;
+				}
+			},
+			{
+				passive: true,
+				capture: true,
+			},
+		);
+
+		document.addEventListener(
+			"pointerup",
+			(event) => {
+				const pointer = pointers.get(event.pointerId);
+				if (!pointer) return;
+
+				pointers.delete(event.pointerId);
+
+				const pressDuration =
+					Date.now() - pointer.startTime;
+
+				if (pointer.moved || pressDuration > 500) {
+					return;
+				}
+
+				pointer.card.classList.toggle("is-flipped");
+
+				pointer.card.setAttribute(
+					"aria-pressed",
+					String(
+						pointer.card.classList.contains(
+							"is-flipped",
+						),
+					),
+				);
+			},
+			{
+				passive: true,
+				capture: true,
+			},
+		);
+
+		document.addEventListener(
+			"pointercancel",
+			(event) => {
+				pointers.delete(event.pointerId);
+			},
+			{
+				passive: true,
+				capture: true,
+			},
+		);
+
+		document.addEventListener("keydown", (event) => {
+			if (!(event.target instanceof Element)) return;
+
+			const card = event.target.closest(".barril-flip");
+			if (!card) return;
+
+			if (
+				event.key !== "Enter" &&
+				event.key !== " "
+			) {
+				return;
+			}
+
+			event.preventDefault();
+
+			card.classList.toggle("is-flipped");
+
+			card.setAttribute(
+				"aria-pressed",
+				String(card.classList.contains("is-flipped")),
+			);
+		});
+	}
+
+	if (document.readyState === "loading") {
+		document.addEventListener(
+			"DOMContentLoaded",
+			initializeBarrilFlip,
+			{ once: true },
+		);
+	} else {
+		initializeBarrilFlip();
+	}
+
+	document.addEventListener(
+		"astro:page-load",
+		initializeBarrilFlip,
+	);
+</script>

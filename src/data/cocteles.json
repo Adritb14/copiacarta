@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Virgin Mojito",
+    "available": true,
+    "image": "",
+    "description": "Lima, menta y azúcar de caña.",
+    "price": "4,50€"
+  },
+  {
+    "name": "Cocolada",
+    "available": true,
+    "image": "/images/cocteles/cocolada.png",
+    "description": "Coco, vainilla, piña y un toque de nata.",
+    "price": "4,50€"
+  },
+  {
+    "name": "Magic Amazon",
+    "available": true,
+    "image": "/images/cocteles/magicamazon.png",
+    "description": "Kiwi, aloe vera, manzana verde, plátano y zumo de naranja.",
+    "price": "4,50€"
+  },
+  {
+    "name": "Passion Tropic",
+    "available": true,
+    "image": "/images/cocteles/passion.png",
+    "description": "Fresa, melocotón, jugo de piña y nata.",
+    "price": "4,50€"
+  },
+  {
+    "name": "Royal Blue",
+    "available": true,
+    "image": "/images/cocteles/royalblue.png",
+    "description": "Jengibre, bergamota, limón, zumo de piña y nata.",
+    "price": "4,50€"
+  },
+  {
+    "name": "Sand Island",
+    "available": true,
+    "image": "/images/cocteles/sand island.png",
+    "description": "Mango, maracuyá, piña y jugo de naranja.",
+    "price": "4,50€"
+  },
+  {
+    "name": "Mojito",
+    "available": true,
+    "image": "/images/cocteles/mojito.png",
+    "description": "Ron, menta, lima y azúcar de caña.",
+    "price": "5,50€"
+  },
+  {
+    "name": "Piña Colada",
+    "available": true,
+    "image": "/images/cocteles/piñacolada.png",
+    "description": "Ron, coco, vainilla, zumo de piña y nata.",
+    "price": "5,50€"
+  },
+  {
+    "name": "Zombie",
+    "available": true,
+    "image": "/images/cocteles/zombie.png",
+    "description": "Ron y vodka, albaricoque, cereza, naranja y jugo de piña.",
+    "price": "5,50€"
+  },
+  {
+    "name": "Caipirinha",
+    "available": true,
+    "image": "",
+    "description": "Cachaça, azúcar de caña y lima.",
+    "price": "5,50€"
+  },
+  {
+    "name": "Mai Tai",
+    "available": true,
+    "image": "/images/cocteles/maitai.png",
+    "description": "Ron, vodka, lima, jugo de naranja y suaves notas de almendra.",
+    "price": "5,50€"
+  },
+  {
+    "name": "Sex on the Beach",
+    "available": true,
+    "image": "/images/cocteles/sex.png",
+    "description": "Vodka, mango, melocotón, fruta de la pasión y jugo de piña.",
+    "price": "5,50€"
+  }
+]

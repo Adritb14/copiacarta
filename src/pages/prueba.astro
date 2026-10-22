@@ -1,0 +1,539 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+---
+
+<Layout title="Carta - Lucky Luke" showMenuButton={false} showMarquee={false}>
+  <Navigation />
+
+  <!-- ── Topbar slim ──────────────────────────────────── -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <!-- izquierda: vacío / espaciador -->
+      <div class="topbar-side"></div>
+
+      <!-- centro: logo + nombre -->
+      <div class="topbar-center">
+        <img
+          src="/images/logos/Lucky_Simple_principal.webp"
+          alt="Lucky Luke"
+          class="topbar-logo"
+        />
+        <div class="topbar-text">
+          <span class="topbar-name">LUCKY LUKE</span>
+          <span class="topbar-sub">Vikingo en el Oeste</span>
+        </div>
+      </div>
+
+      <!-- derecha: vacío / espaciador -->
+      <div class="topbar-side"></div>
+    </div>
+  </header>
+
+  <main class="app-shell">
+
+    <!-- ══════════════════════════════════════════════
+         FONDO HERO
+    ══════════════════════════════════════════════ -->
+    <div class="hero-bg" aria-hidden="true">
+      <div class="bg-noise"></div>
+      <div class="bg-glow"></div>
+
+      <!-- "LUCKY" outline — z-index 1, capa trasera -->
+      <div class="bg-layer bg-layer--back">
+        <p class="bg-word bg-word--back">LUCKY</p>
+      </div>
+
+      <!-- Burger flotante — z-index 2 -->
+      <div class="bg-burger-wrap">
+        <div class="bg-burger-halo"></div>
+        <img
+          src="/images/comida/platos/burgers/angus-sinfondo.png"
+          alt=""
+          class="bg-burger-img"
+        />
+      </div>
+
+      <!-- "LUKE" sólido — z-index 3, capa delantera -->
+      <div class="bg-layer bg-layer--front">
+        <p class="bg-word bg-word--front">LUKE</p>
+      </div>
+    </div>
+
+    <!-- ═══════════════ MÓVIL ═══════════════ -->
+    <div class="view-mobile">
+      <section class="center-stage">
+        <div class="hub">
+          <div class="hub-center pointer-events-none">
+            <img
+              src="/images/logos/Lucky_Simple_principal.webp"
+              alt="Lucky Luke"
+              class="hub-logo"
+            />
+          </div>
+          <nav id="roscoMobile" class="rosco">
+            <a class="dot" style="--i:0"  href="/bebidas"><span class="circle">🍺</span><span class="label">Bebidas</span></a>
+            <a class="dot" style="--i:1"  href="/destacados"><span class="circle">⭐</span><span class="label">Destacados</span></a>
+            <a class="dot" style="--i:2"  href="/fusionbites">
+              <span class="circle"><img src="/images/fusion-bites-icon.png" alt="Fusion Bites" loading="lazy" /></span>
+              <span class="label">Fusion Bites</span>
+            </a>
+            <a class="dot" style="--i:3"  href="/mexicano"><span class="circle">🌯</span><span class="label">Mexicano</span></a>
+            <a class="dot" style="--i:4"  href="/nachos">
+              <span class="circle"><img src="/images/icons8-nachos-100.png" alt="Nachos" loading="lazy" /></span>
+              <span class="label">Nachos</span>
+            </a>
+            <a class="dot" style="--i:5"  href="/patatas"><span class="circle">🍟</span><span class="label">Patatas</span></a>
+            <a class="dot" style="--i:6"  href="/carnes"><span class="circle">🍗</span><span class="label">Carnes</span></a>
+            <a class="dot" style="--i:7"  href="/bocatas">
+              <span class="circle"><img src="/images/icons8-pan-96.png" width="36" height="36" alt="Bocatas" loading="lazy" /></span>
+              <span class="label">Bocatas</span>
+            </a>
+            <a class="dot" style="--i:8"  href="/burgers"><span class="circle">🍔</span><span class="label">Burgers</span></a>
+            <a class="dot" style="--i:9"  href="/ensaladas"><span class="circle">🥗</span><span class="label">Ensaladas</span></a>
+            <a class="dot" style="--i:10" href="/postres"><span class="circle">🍰</span><span class="label">Postres</span></a>
+          </nav>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════════ DESKTOP ═══════════════ -->
+    <div class="view-desktop">
+      <aside class="desk-left">
+        <a href="/burgers" class="desk-banner">
+          <div class="desk-candles">
+            <span style="height:16px"></span>
+            <span style="height:26px"></span>
+            <span style="height:38px"></span>
+            <span style="height:26px"></span>
+            <span style="height:16px"></span>
+          </div>
+          <span class="desk-new">Nueva burger</span>
+          <span class="desk-name">La Nazarena</span>
+          <span class="desk-sub">Edición Semana Santa</span>
+          <span class="desk-sub2">✦ Polvo de oro ✦</span>
+          <span class="desk-cta">PULSA PARA VER 🍔</span>
+        </a>
+
+        <div class="cta-card">
+          <p class="cta-title font-burford">SÍGUENOS EN NUESTRAS REDES</p>
+          <div class="socials">
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-btn">
+              <i data-feather="instagram"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-btn">
+              <i data-feather="facebook"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-btn">
+              <i data-feather="instagram"></i>
+            </a>
+          </div>
+          <div class="cta-hint text-white/55 text-sm">Arrastra el rosco para explorar la carta.</div>
+        </div>
+      </aside>
+    </div>
+
+  </main>
+</Layout>
+
+<style>
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
+  }
+
+  /* ══════════════════════════════════════════════
+     TOPBAR SLIM
+  ══════════════════════════════════════════════ */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 60;
+    height: 60px;
+    background: rgba(8,8,8,0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .topbar-inner {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .topbar-side { /* espaciadores laterales */ }
+
+  .topbar-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .topbar-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.15);
+    flex-shrink: 0;
+  }
+  .topbar-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+  .topbar-name {
+    font-family: 'Burford', 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    color: #fff;
+  }
+  .topbar-sub {
+    font-family: 'Bratton', 'Roboto', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ══════════════════════════════════════════════
+     APP SHELL
+  ══════════════════════════════════════════════ */
+  .app-shell {
+    position: fixed;
+    inset: 0;
+    background: #0c0c0c;
+    overflow: hidden;
+    padding-top: calc(60px + env(safe-area-inset-top));
+    padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  }
+  @media (min-width: 1024px) {
+    html, body { touch-action: auto; }
+    .app-shell {
+      padding-bottom: calc(24px + env(safe-area-inset-bottom));
+    }
+  }
+
+  /* Switch vistas */
+  .view-desktop { display: none; }
+  .view-mobile  { display: block; }
+  @media (min-width: 1024px) {
+    .view-mobile  { display: none; }
+    .view-desktop { display: block; }
+  }
+
+  /* ══════════════════════════════════════════════
+     HERO BACKGROUND
+  ══════════════════════════════════════════════ */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .bg-noise {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+  .bg-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vmax; height: 60vmax;
+    background: radial-gradient(ellipse at center,
+      rgba(160, 30, 10, 0.18) 0%,
+      transparent 65%
+    );
+    animation: glowPulse 5s ease-in-out infinite;
+  }
+  @keyframes glowPulse {
+    0%,100% { opacity: 1; }
+    50%      { opacity: 0.45; }
+  }
+
+  /* Capas de texto — tratadas como marcas de agua sutiles */
+  .bg-layer {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 1vw;
+  }
+  .bg-layer--back  { align-items: flex-end;   z-index: 1; }
+  .bg-layer--front { align-items: flex-start; z-index: 3; }
+
+  .bg-word {
+    font-family: 'Burford', 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 0.82;
+    user-select: none;
+    font-size: clamp(90px, 19vw, 320px);
+    letter-spacing: -0.01em;
+    pointer-events: none;
+  }
+
+  /* LUCKY — solo trazo, muy sutil */
+  .bg-word--back {
+    color: transparent;
+    -webkit-text-stroke: clamp(1px, 0.1vw, 2px) rgba(255,255,255,0.18);
+    transform: translateY(14%);
+  }
+
+  /* LUKE — relleno muy tenue */
+  .bg-word--front {
+    color: rgba(255,255,255,0.1);
+    transform: translateY(-14%);
+  }
+
+  /* En desktop donde no hay rosco encima, podemos subir un poco la opacidad */
+  @media (min-width: 1024px) {
+    .bg-word--back  { -webkit-text-stroke-color: rgba(255,255,255,0.28); }
+    .bg-word--front { color: rgba(255,255,255,0.18); }
+    .bg-burger-img  { opacity: 1 !important; }
+  }
+
+  /* Burger */
+  .bg-burger-wrap {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .bg-burger-halo {
+    position: absolute;
+    width: clamp(200px, 34vw, 500px);
+    height: clamp(200px, 34vw, 500px);
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 50% 55%,
+      rgba(200, 90, 15, 0.18) 0%,
+      transparent 65%
+    );
+    filter: blur(18px);
+    animation: burgerFloat 4s ease-in-out infinite;
+  }
+  .bg-burger-img {
+    position: relative;
+    width: clamp(180px, 28vw, 460px);
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 48px rgba(0,0,0,0.95));
+    /* Móvil: muy sutil para no tapar el rosco */
+    opacity: 0.25;
+    animation: burgerFloat 4s ease-in-out infinite;
+  }
+  @keyframes burgerFloat {
+    0%,100% { transform: translateY(0px) rotate(-0.4deg); }
+    50%      { transform: translateY(-12px) rotate(0.4deg); }
+  }
+
+  /* ══════════════════════════════════════════════
+     MÓVIL — Rosco
+  ══════════════════════════════════════════════ */
+  .view-mobile {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+  }
+  .center-stage {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+  }
+  .hub {
+    position: relative;
+    width:  clamp(300px, 96vw, 560px);
+    height: clamp(300px, 96vw, 560px);
+    overflow: visible;
+  }
+  .hub-center {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 30; pointer-events: none;
+  }
+  .hub-logo {
+    width:  clamp(140px, 36vw, 190px);
+    height: clamp(140px, 36vw, 190px);
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.7);
+    box-shadow: 0 0 60px rgba(220,38,38,0.15);
+    object-fit: cover;
+  }
+  .rosco {
+    --n: 11; --rot: 0deg; --r: clamp(128px, 40vw, 222px);
+    position: absolute; inset: 0;
+    transform: rotate(var(--rot));
+    touch-action: none; cursor: grab; z-index: 20;
+  }
+  .rosco:active { cursor: grabbing; }
+  .dot {
+    position: absolute; left: 50%; top: 50%;
+    transform:
+      translate(-50%,-50%)
+      rotate(calc((360deg / var(--n)) * var(--i)))
+      translate(var(--r))
+      rotate(calc((-360deg / var(--n)) * var(--i) - var(--rot)));
+    display: flex; flex-direction: column; align-items: center;
+    gap: 5px; text-decoration: none; user-select: none;
+  }
+  .circle {
+    width: clamp(52px,13vw,72px); height: clamp(52px,13vw,72px);
+    border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.78);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff; font-size: clamp(20px,5vw,30px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+    backdrop-filter: blur(6px);
+  }
+  .circle img { width: clamp(28px,7vw,42px); height: clamp(28px,7vw,42px); object-fit: contain; }
+  .label {
+    width: clamp(80px,20vw,106px); font-size: clamp(14px,4vw,17px);
+    text-align: center; line-height: 1.2;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 1px 8px rgba(0,0,0,1), 0 0 16px rgba(0,0,0,0.9);
+    font-weight: 600;
+  }
+  .dot:hover .circle { border-color: #dc2626; background: rgba(220,38,38,0.18); }
+
+  @media (max-width: 380px) {
+    .hub { width: 98vw; height: 98vw; }
+    .rosco { --r: clamp(118px,38vw,148px); }
+    .label { font-size: 13px; width: 70px; }
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    .hub { width: clamp(440px,88vw,560px); height: clamp(440px,88vw,560px); }
+    .rosco { --r: clamp(175px,36vw,220px); }
+    .circle { width: 68px; height: 68px; font-size: 28px; }
+    .label { font-size: 17px; width: 96px; }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .hub { width: clamp(500px,70vw,640px); height: clamp(500px,70vw,640px); }
+    .rosco { --r: clamp(200px,28vw,250px); }
+    .circle { width: 72px; height: 72px; font-size: 30px; }
+    .label { font-size: 18px; width: 104px; }
+  }
+  @media (max-width: 1023px) { .hub { transform: none; } }
+
+  /* ══════════════════════════════════════════════
+     DESKTOP
+  ══════════════════════════════════════════════ */
+  .view-desktop { position: relative; height: 100%; width: 100%; z-index: 10; }
+
+  .desk-left {
+    position: absolute;
+    left: 32px; top: 24px; bottom: 24px;
+    width: 300px;
+    display: flex; flex-direction: column; gap: 12px;
+    z-index: 4;
+  }
+  .desk-banner {
+    flex: 1; min-height: 0; width: 100%;
+    box-sizing: border-box;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 10px; padding: 24px 20px;
+    border-radius: 14px;
+    background: rgba(10,4,20,0.75);
+    border: 1px solid rgba(200,160,40,0.35);
+    backdrop-filter: blur(14px);
+    text-decoration: none;
+    transition: border-color 200ms ease, transform 200ms ease;
+  }
+  .desk-banner:hover { border-color: rgba(245,208,96,0.65); transform: translateY(-2px); }
+  .desk-candles { display: flex; align-items: flex-end; gap: 5px; }
+  .desk-candles span { display: block; width: 3px; border-radius: 2px 2px 0 0; background: linear-gradient(to top,#b07808,#f5d060); }
+  .desk-candles span::after { content:""; display:block; width:8px; height:2px; background:#b07808; border-radius:1px; margin-left:-2.5px; }
+  .desk-new  { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(220,180,80,0.7); text-align: center; }
+  .desk-name { font-family: 'Burford','Bebas Neue',sans-serif; font-size: clamp(26px,2.2vw,38px); color: #f5d060; letter-spacing: 0.05em; text-transform: uppercase; line-height: 1; text-align: center; }
+  .desk-sub  { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(220,200,150,0.6); text-align: center; }
+  .desk-sub2 { font-size: 11px; letter-spacing: 0.14em; color: rgba(245,208,96,0.55); text-align: center; }
+  .desk-cta  { margin-top: 8px; font-size: 12px; font-weight: 600; color: rgba(245,208,96,0.85); padding: 5px 18px; border: 1px solid rgba(245,208,96,0.35); border-radius: 20px; }
+
+  .socials { display: flex; align-items: center; gap: 12px; }
+  .social-btn {
+    width: 42px; height: 42px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.55); border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.92); transition: all 180ms ease;
+  }
+  .social-btn:hover { border-color: rgba(220,38,38,0.65); background: rgba(220,38,38,0.14); }
+  .social-btn :global(svg) { width: 18px; height: 18px; }
+
+  .cta-card {
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(14px);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .cta-title { font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase; color: rgba(255,255,255,0.38); }
+</style>
+
+<script is:inline>
+  function setupRosco(roscoId) {
+    const rosco = document.getElementById(roscoId);
+    if (!rosco) return;
+
+    let isDown = false, startAngle = 0, baseRot = 0, currentRot = 0;
+    let auto = true;
+    const AUTO_SPEED = 0.07;
+    let rafId;
+
+    function center() {
+      const r = rosco.getBoundingClientRect();
+      return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    }
+    function angle(x, y) {
+      const c = center();
+      return Math.atan2(y - c.y, x - c.x) * 180 / Math.PI;
+    }
+    function setRot(deg) {
+      currentRot = deg;
+      rosco.style.setProperty('--rot', `${deg}deg`);
+    }
+    function autoLoop() {
+      if (!auto) return;
+      setRot(currentRot + AUTO_SPEED);
+      rafId = requestAnimationFrame(autoLoop);
+    }
+    function stopAuto() {
+      if (!auto) return;
+      auto = false;
+      cancelAnimationFrame(rafId);
+    }
+    function down(x, y) { stopAuto(); isDown = true; startAngle = angle(x, y); baseRot = currentRot; }
+    function move(x, y) { if (!isDown) return; setRot(baseRot + (angle(x, y) - startAngle)); }
+    function up() { isDown = false; }
+
+    rosco.addEventListener('mousedown', e => down(e.clientX, e.clientY));
+    window.addEventListener('mousemove', e => move(e.clientX, e.clientY));
+    window.addEventListener('mouseup', up);
+    rosco.addEventListener('touchstart', e => { const t = e.touches[0]; down(t.clientX, t.clientY); }, { passive: true });
+    rosco.addEventListener('touchmove',  e => { const t = e.touches[0]; move(t.clientX, t.clientY); }, { passive: true });
+    rosco.addEventListener('touchend', up);
+    rosco.addEventListener('touchcancel', up);
+
+    autoLoop();
+  }
+
+  if (window.feather) window.feather.replace();
+  setupRosco('roscoMobile');
+  setupRosco('roscoDesktop');
+</script>

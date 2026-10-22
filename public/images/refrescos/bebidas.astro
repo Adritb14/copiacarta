@@ -1,0 +1,732 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+
+import Sidebar from '../components/Sidebar.astro';
+import DrinkItem from '../components/DrinkItem.astro';
+import BeerCard from '../components/BeerCard.astro';
+import BarrilBeerSwiper from '../components/BarrilBeerSwiper.astro';
+import barrilData from '../data/barril.json';
+import beersData from '../data/beers.json';
+import refrescosData from '../data/refrescos.json';
+
+// Filtrar solo las cervezas disponibles
+const cervezasBarrilData = barrilData.filter((beer: any) => beer.available !== false);
+const cervezasBotella = beersData.filter((beer: any) => beer.available !== false);
+const refrescos = refrescosData;
+
+// Extraer todos los tags únicos para los filtros
+const allTags = [...new Set(cervezasBotella.flatMap(beer => beer.tags || []))];
+const colorTags = allTags.filter(tag => ["RUBIA", "TOSTADA", "NEGRA"].includes(tag));
+const intensityTags = allTags.filter(tag => ["TRIGO", "FRUTAS", "SUAVE", "MEDIA", "FUERTE"].includes(tag));
+const countryTags = allTags.filter(tag => tag.startsWith("PAIS_")).sort();
+---
+
+<Layout title="Carta - Lucky Luke">
+	
+	<Navigation />
+	
+	<Sidebar />
+	
+	 <!-- Spacing: pt-28 mobile navbar, px-5 mobile óptimo, pb-28 bottom nav -->
+	<main class="pt-10 md:pt-15 px-5 md:px-6 pb-28 md:pb-24 lg:pl-64">
+		<!-- Spacing: py-12 mobile, py-16 desktop -->
+		<section class="py-0 md:py-16 bg-black">
+			<!-- Spacing: max-w-7xl para limitar ancho en desktop -->
+			<div class="container mx-auto max-w-7xl">
+				
+				<!-- Refrescos - Spacing: mb-16 mobile (64px), mb-20 desktop (80px) entre secciones -->
+				<div id="refrescos" class="mb-0 md:mb-20">
+					<!-- Spacing: mb-10 (40px) para título, mejor jerarquía visual -->
+					<div class="flex items-center mb-10">
+						<div class="flex-1 h-px bg-gray-700"></div>
+						<!-- Typography: text-3xl mobile (30px), text-4xl desktop, mx-4 (16px) -->
+						<h2 class="font-burford text-3xl md:text-4xl mx-4 text-red-600 text-center">REFRESCOS PREMIUM</h2>
+						
+						<div class="flex-1 h-px bg-gray-700"></div>
+					</div>
+					
+
+{/* COCA-COLA VINTAGE · VIDEO */}
+{/* COCA-COLA VINTAGE · VIDEO OVERLAY */}
+<section class="mt-10 relative w-full max-w-sm mx-auto">
+  <div class="relative aspect-[9/16] overflow-hidden">
+
+    <video
+      class="absolute inset-0 h-full w-full object-cover"
+      src="/refrescos/COLAVINTAGE.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    />
+
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="absolute inset-0 flex flex-col justify-end p-5 z-10">
+      <h3 class="font-burford text-3xl text-red-600 drop-shadow-lg">
+        Coca-Cola Vintage
+      </h3>
+      <p class="font-bratton text-gray-200 text-sm mt-1">
+        El sabor clásico. La estética eterna.
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- HERO COCA-COLA VINTAGE (SIMPLE) -->
+<section class="mt-20 mb-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-2 lg:grid-cols-[1fr_1.5fr] items-center rounded-2xl border-2 border-red-600 bg-red-600 p-8 md:p-10">
+
+
+      <!-- TÍTULO IZQUIERDA -->
+      <div>
+        <p class="font-burford tracking-widest text-xs text-black">
+          CLÁSICO VINTAGE
+        </p>
+
+        <h3 class="font-burford text-3xl md:text-4xl text-black leading-tight mt-1">
+          COCA-COLA VINTAGE
+        </h3>
+		<p class="font-bratton text-black/90 mt-3 text-sm md:text-base max-w-sm">
+  Coca-Cola bien fría con helado de vainilla.
+  Cremosa, burbujeante y con sabor de toda la vida.
+</p>
+
+      </div>
+
+      <!-- IMAGEN DERECHA -->
+      <div class="flex justify-end">
+       <!-- IMAGEN DERECHA -->
+<div class="flex justify-end items-center w-full">
+  <img
+    src="/images/refrescos/vintage3.webp"
+    alt="Coca-Cola Vintage con helado de vainilla"
+    class="w-[120%] md:w-[120%] lg:w-[120%] max-w-none object-contain
+           drop-shadow-[0_20px_30px_rgba(0,0,0,2)]"
+  >
+</div>
+	  </div>
+	</div>
+  </div>
+</section>
+
+
+
+
+
+
+
+					
+					<!-- Spacing: space-y-3 mobile (12px), space-y-4 desktop (16px) entre items -->
+					<div class="space-y-3 md:space-y-4">
+						{refrescos.map(drink => (
+							<DrinkItem name={drink.name} price={drink.price} />
+						))}
+					</div>
+				</div>
+
+				<!-- Cervezas de Barril - Spacing: mb-16 mobile, mb-20 desktop -->
+				<div id="barril" class="mb-16 md:mb-20 pb-24">
+
+					<!-- Spacing: mb-10 (40px) título -->
+					<div class="flex items-center mb-10">
+						<div class="flex-1 h-px bg-gray-700"></div>
+						<h2 class="font-burford text-3xl md:text-4xl mx-4 text-red-600 text-center">CERVEZAS DE BARRIL</h2>
+						<div class="flex-1 h-px bg-gray-700"></div>
+					</div>
+					
+					<!-- Swiper Container -->
+					<div class="barril-swiper relative">
+						<div class="swiper" id="barrilSwiper">
+							<div class="swiper-wrapper">
+  {cervezasBarrilData.map((beer: any) => (
+    <div class="swiper-slide">
+      <BarrilBeerSwiper 
+        name={beer.name}
+        image={beer.image}
+        description={beer.description}
+        prices={beer.prices}
+        abv={beer.abv?.toString()}
+        ibu={beer.ibu?.toString()}
+        style={beer.style}
+        country={beer.country}
+        color={beer.color}
+        pairing={beer.pairing}
+      />
+    </div>
+  ))}
+</div>
+
+							
+						</div>
+					</div>
+				</div>
+
+				<!-- Cervezas de Botella - Spacing: mb-16 mobile, mb-20 desktop -->
+				<div id="cervezas" class="mb-16 md:mb-20">
+					<!-- Spacing: mb-10 título -->
+					<div class="flex items-center mb-10">
+						<div class="flex-1 h-px bg-gray-700"></div>
+						<h2 class="font-burford text-3xl md:text-4xl mx-4 text-red-600 text-center">CERVEZAS DE BOTELLA</h2>
+						<div class="flex-1 h-px bg-gray-700"></div>
+					</div>
+
+					<!-- Filtros - Spacing: mb-8 (32px) separación de carousel -->
+					<!-- <div class="mb-8"> -->
+						<!-- Tabs - Spacing: gap-3 (12px) entre botones, mb-6 (24px) antes de subtabs -->
+						<!-- <div class="flex gap-3 mb-6 overflow-x-auto pb-2 -mx-5 px-5 md:mx-0 md:px-0"> -->
+							<!-- Touch target: min-h-12 (48px), px-6 py-3 para área táctil -->
+							<!-- <button 
+								class="filter-tab active px-6 py-3 min-h-12 rounded-lg font-burford text-sm whitespace-nowrap transition-all duration-300 flex items-center justify-center"
+								data-category="all"
+								type="button"
+							>
+								🍺 TODAS
+							</button>
+							<button 
+								class="filter-tab px-6 py-3 min-h-12 rounded-lg font-burford text-sm whitespace-nowrap transition-all duration-300"
+								data-category="colores"
+								type="button"
+							>
+								🎨 COLORES
+							</button>
+							<button 
+								class="filter-tab px-6 py-3 min-h-12 rounded-lg font-burford text-sm whitespace-nowrap transition-all duration-300"
+								data-category="intensidad"
+								type="button"
+							>
+								💪 INTENSIDAD
+							</button>
+							<button 
+								class="filter-tab px-6 py-3 min-h-12 rounded-lg font-burford text-sm whitespace-nowrap transition-all duration-300"
+								data-category="paises"
+								type="button"
+							>
+								🌍 PAÍSES
+							</button> -->
+						<!-- </div> -->
+
+						<!-- Contenedor de filtros -->
+						<!-- <div class="filter-content-container"> -->
+							<!-- Filtros de colores -->
+							<!-- <div class="filter-content active" data-category="colores">
+								<div class="flex flex-wrap gap-3 justify-center">
+									{colorTags.map(tag => (
+										<button 
+											class="beer-filter px-5 py-3 text-sm rounded-xl border-2 font-bratton whitespace-nowrap transition-all duration-300 min-h-12 min-w-25"
+											data-filter={tag}
+											data-category="colores"
+											type="button"
+										>
+											{tag}
+										</button>
+									))}
+								</div> -->
+							</div>
+
+							<!-- Filtros de intensidad -->
+							<!-- <div class="filter-content" data-category="intensidad"> -->
+								<!-- <div class="flex flex-wrap gap-3 justify-center">
+									{intensityTags.map(tag => (
+										<button 
+											class="beer-filter px-5 py-3 text-sm rounded-xl border-2 font-bratton whitespace-nowrap transition-all duration-300 min-h-12 min-w-25"
+											data-filter={tag}
+											data-category="intensidad"
+											type="button"
+										>
+											{tag}
+										</button>
+									))}
+								</div> -->
+							<!-- </div> -->
+
+							<!-- Filtros de países -->
+							<!-- <div class="filter-content" data-category="paises"> -->
+								<!-- <div class="flex flex-wrap gap-3 justify-center">
+									{countryTags.map(tag => (
+										<button 
+											class="beer-filter px-5 py-3 text-sm rounded-xl border-2 font-bratton whitespace-nowrap transition-all duration-300 min-h-12 min-w-25"
+											data-filter={tag}
+											data-category="paises"
+											type="button"
+										>
+											{tag.replace('PAIS_', '').replace(/_/g, ' ')}
+										</button>
+									))}
+								</div>
+								</div>
+							</div>
+						</div> -->
+					<!-- </div> -->
+
+					<!-- Swiper Container -->
+					<div class="botella-swiper relative">
+						<div class="swiper" id="beerSwiper">
+							<div class="swiper-wrapper" id="beerWrapper">
+								{cervezasBotella.map(beer => (
+									<BeerCard 
+										name={beer.name}
+										format={beer.format}
+										price={beer.price}
+										image={beer.image}
+										description={beer.description}
+										abv={beer.abv?.toString()}
+										ibu={beer.ibu?.toString()}
+										style={beer.style}
+										country={beer.country}
+										tags={beer.tags}
+									/>
+								))}
+							</div>
+						
+						</div>
+						<p id="beerError" class="hidden mt-4 text-center text-sm text-red-400"></p>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+	</main>
+	
+	<!-- <BottomNavigation /> -->
+</Layout>
+
+<style>
+
+	.swiper {
+		width: 100%;
+		padding: 40px 0;
+	}
+
+	.swiper-slide {
+		width: 300px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		color: #dc2626;
+		background: rgba(0, 0, 0, 0.5);
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+	}
+
+	.swiper-button-prev:after,
+	.swiper-button-next:after {
+		font-size: 20px;
+	}
+
+	.swiper-pagination {
+		bottom: 0 !important;
+		--swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.7);
+		--swiper-pagination-bullet-inactive-opacity: 1;
+	}
+
+	.swiper-pagination-bullet {
+		background: rgba(255, 255, 255, 0.7) !important;
+		border: 2px solid rgba(220, 38, 38, 0.8) !important;
+		opacity: 1 !important;
+		width: 10px !important;
+		height: 10px !important;
+	}
+
+	.swiper-pagination-bullet-active {
+		background: #dc2626 !important;
+		border-color: #dc2626 !important;
+		transform: scale(1.2);
+	}
+
+	/* Estilos para filtros mejorados */
+	.filter-tab {
+		background: rgba(20, 20, 20, 0.6);
+		border: 2px solid rgba(107, 114, 128, 0.5);
+		color: rgba(229, 231, 235, 0.8);
+	}
+
+	.filter-tab.active {
+		background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+		border-color: #dc2626;
+		color: white;
+		box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+	}
+
+	.filter-content {
+		display: none;
+		animation: fadeIn 0.3s ease-in-out;
+	}
+
+	.filter-content.active {
+		display: block;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(-10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.beer-filter {
+		background: rgba(20, 20, 20, 0.8);
+		border-color: rgba(107, 114, 128, 0.6);
+		color: rgba(229, 231, 235, 0.9);
+		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.beer-filter:active {
+		transform: scale(0.95);
+	}
+
+	.beer-filter.active {
+		background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+		border-color: #dc2626;
+		color: white;
+		box-shadow: 0 4px 16px rgba(220, 38, 38, 0.5);
+		font-weight: 600;
+	}
+
+	#reset-filters {
+		transform: scale(1);
+	}
+
+	#reset-filters:active {
+		transform: scale(0.95);
+	}
+
+	.active-filter-chip {
+		background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 9999px;
+		font-size: 0.75rem;
+		font-weight: 600;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		border: 2px solid #dc2626;
+		box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+	}
+
+	.active-filter-chip button {
+		background: rgba(255, 255, 255, 0.2);
+		border: none;
+		border-radius: 50%;
+		width: 18px;
+		height: 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: background 0.2s;
+	}
+
+	.active-filter-chip button:hover {
+		background: rgba(255, 255, 255, 0.3);
+	}
+	#barrilSwiper .swiper-slide {
+  width: 85%;
+}
+@media (min-width: 768px){
+  #barrilSwiper .swiper-slide {
+    width: 420px;
+  }
+}
+
+</style>
+
+<script>
+	import Swiper from 'swiper';
+	import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+	import 'swiper/css';
+	import 'swiper/css/navigation';
+	import 'swiper/css/pagination';
+	import 'swiper/css/effect-coverflow';
+
+	// Beer data from Astro (passed through data attributes)
+	const beerData = Array.from(document.querySelectorAll('#beerWrapper .swiper-slide')).map((slide) => {
+		const cardElement = slide.querySelector('.beer-flip') as HTMLElement;
+		return {
+			element: slide as HTMLElement,
+			tags: cardElement?.dataset.tags?.split(',') || []
+		};
+	});
+
+	// Filtros activos acumulativos (objeto con categoría: filtro)
+	const activeFilters: Record<string, string> = {};
+	let activeCategory = 'colores';
+	let beerSwiper: Swiper | null = null;
+
+	// Gestión de tabs de categorías
+	function switchCategory(category: string) {
+		activeCategory = category;
+
+		// Update tab styles
+		document.querySelectorAll('.filter-tab').forEach(tab => {
+			const tabCategory = (tab as HTMLElement).dataset.category;
+			if (tabCategory === category) {
+				tab.classList.add('active');
+			} else {
+				tab.classList.remove('active');
+			}
+		});
+
+		// Show/hide filter content
+		document.querySelectorAll('.filter-content').forEach(content => {
+			const contentCategory = (content as HTMLElement).dataset.category;
+			if (contentCategory === category) {
+				content.classList.add('active');
+			} else {
+				content.classList.remove('active');
+			}
+		});
+	}
+
+	// Actualizar contador de cervezas visibles
+	function updateCounter() {
+		const visibleCount = beerData.filter(beer => beer.element.style.display !== 'none').length;
+		const counter = document.getElementById('beer-count');
+		if (counter) {
+			counter.textContent = visibleCount.toString();
+		}
+	}
+
+	// Renderizar chips de filtros activos
+	function renderActiveFilters() {
+		const container = document.getElementById('active-filters');
+		const chipsContainer = document.getElementById('active-filters-chips');
+		
+		if (!container || !chipsContainer) return;
+
+		const filterCount = Object.keys(activeFilters).length;
+		
+		if (filterCount === 0) {
+			container.classList.add('hidden');
+			return;
+		}
+
+		container.classList.remove('hidden');
+		chipsContainer.innerHTML = '';
+
+		Object.entries(activeFilters).forEach(([category, filter]) => {
+			const chip = document.createElement('div');
+			chip.className = 'active-filter-chip';
+			
+			let displayText = filter;
+			if (filter.startsWith('PAIS_')) {
+				displayText = filter.replace('PAIS_', '').replace(/_/g, ' ');
+			}
+			
+			chip.innerHTML = `
+				<span>${displayText}</span>
+				<button type="button" data-remove-filter="${category}">✕</button>
+			`;
+			
+			chipsContainer.appendChild(chip);
+		});
+
+		// Event listeners para remover filtros individuales
+		chipsContainer.querySelectorAll('[data-remove-filter]').forEach(btn => {
+			btn.addEventListener('click', (e) => {
+				const category = (e.target as HTMLElement).dataset.removeFilter;
+				if (category) {
+					removeFilter(category);
+				}
+			});
+		});
+	}
+
+	// Remover un filtro específico
+	function removeFilter(category: string) {
+		delete activeFilters[category];
+		
+		// Actualizar botones visuales
+		document.querySelectorAll(`.beer-filter[data-category="${category}"]`).forEach(btn => {
+			btn.classList.remove('active');
+		});
+		
+		applyFilters();
+		renderActiveFilters();
+	}
+
+	// Resetear todos los filtros
+	function resetAllFilters() {
+		Object.keys(activeFilters).forEach(key => delete activeFilters[key]);
+		
+		// Desactivar todos los botones
+		document.querySelectorAll('.beer-filter').forEach(btn => {
+			btn.classList.remove('active');
+		});
+		
+		applyFilters();
+		renderActiveFilters();
+	}
+
+	function initSwiper() {
+		if (beerSwiper) {
+			beerSwiper.destroy(true, true);
+		}
+
+		beerSwiper = new Swiper('#beerSwiper', {
+			modules: [Navigation, Pagination, EffectCoverflow],
+			effect: 'coverflow',
+			grabCursor: true,
+			centeredSlides: true,
+			slidesPerView: 'auto',
+			spaceBetween: 20,
+			loop: true,
+			speed: 800,
+			coverflowEffect: {
+				rotate: 18,
+				stretch: 0,
+				depth: 160,
+				modifier: 1.15,
+				slideShadows: true
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev'
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true
+			}
+		});
+	}
+
+	// Aplicar filtros acumulativos (AND entre categorías)
+	function applyFilters() {
+		beerData.forEach(beer => {
+			// Si no hay filtros activos, mostrar todas
+			if (Object.keys(activeFilters).length === 0) {
+				beer.element.style.display = '';
+				return;
+			}
+
+			// Verificar que la cerveza cumple TODOS los filtros activos
+			const matchesAllFilters = Object.values(activeFilters).every(filter => 
+				beer.tags.includes(filter)
+			);
+
+			beer.element.style.display = matchesAllFilters ? '' : 'none';
+		});
+
+		// Actualizar contador y Swiper
+		updateCounter();
+		if (beerSwiper) {
+			beerSwiper.update();
+		}
+	}
+
+	// // Toggle de filtro (activar/desactivar)
+	// function toggleFilter(filter: string, category: string, button: HTMLElement) {
+	// 	// Si el filtro ya está activo en esta categoría, lo quitamos
+	// 	if (activeFilters[category] === filter) {
+	// 		delete activeFilters[category];
+	// 		button.classList.remove('active');
+	// 	} else {
+	// 		// Si había otro filtro en esta categoría, quitamos el botón activo anterior
+	// 		if (activeFilters[category]) {
+	// 			const previousButton = document.querySelector(
+	// 				`.beer-filter[data-filter="${activeFilters[category]}"][data-category="${category}"]`
+	// 			);
+	// 			previousButton?.classList.remove('active');
+	// 		}
+			
+	// 		// Activamos el nuevo filtro
+	// 		activeFilters[category] = filter;
+	// 		button.classList.add('active');
+	// 	}
+
+	// 	applyFilters();
+	// 	renderActiveFilters();
+	// }
+
+	document.addEventListener('astro:page-load', () => {
+		// Initialize Swiper
+		initSwiper();
+		
+		// Inicializar contador
+		updateCounter();
+
+		// Setup category tabs
+		document.querySelectorAll('.filter-tab').forEach(tab => {
+			tab.addEventListener('click', (e) => {
+				const category = (e.target as HTMLButtonElement).dataset.category;
+				if (category) {
+					switchCategory(category);
+				}
+			});
+		});
+
+		// Setup filter buttons
+		document.querySelectorAll('.beer-filter').forEach(btn => {
+			btn.addEventListener('click', (e) => {
+				const target = e.target as HTMLButtonElement;
+				const filter = target.dataset.filter;
+				const category = target.dataset.category;
+				
+				if (filter && category) {
+					toggleFilter(filter, category, target);
+				}
+			});
+		});
+
+		// Setup reset button
+		const resetBtn = document.getElementById('reset-filters');
+		if (resetBtn) {
+			resetBtn.addEventListener('click', resetAllFilters);
+		}
+	});
+</script>
+
+<script>
+	import Swiper from 'swiper';
+	import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+	import type { SwiperOptions } from 'swiper/types';
+
+	// Initialize Barril Swiper
+	document.addEventListener('astro:page-load', () => {
+		const barrilSwiper = new Swiper('#barrilSwiper', {
+			modules: [EffectCoverflow, Navigation, Pagination],
+			effect: 'coverflow',
+			grabCursor: true,
+			centeredSlides: true,
+			slidesPerView: 'auto',
+			spaceBetween: 18,
+			loop: true,
+			coverflowEffect: {
+				rotate: 16,
+				stretch: 0,
+				depth: 140,
+				modifier: 1.1,
+				slideShadows: true,
+			},
+			navigation: {
+				nextEl: '#barrilSwiper .swiper-button-next',
+				prevEl: '#barrilSwiper .swiper-button-prev',
+			},
+			pagination: {
+				el: '#barrilSwiper .swiper-pagination',
+				clickable: true,
+			},
+		} as SwiperOptions);
+
+		// Flip card functionality
+		document.querySelectorAll('.barril-flip').forEach(card => {
+			card.addEventListener('click', () => {
+				card.classList.toggle('is-flipped');
+			});
+		});
+	});
+</script>

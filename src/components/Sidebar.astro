@@ -1,0 +1,58 @@
+---
+const currentPath = Astro.url.pathname;
+
+interface NavItem {
+	id: string;
+	label: string;
+	icon: string;
+	href: string;
+}
+
+const navItems: NavItem[] = [
+  { id: 'bebidas',     label: 'Bebidas',      icon: '🍺', href: '/bebidas' },
+  { id: 'destacados',  label: 'Destacados',   icon: '⭐', href: '/destacados' },
+  { id: 'fusionbites', label: 'Fusion Bites', icon: '🍟', href: '/fusionbites' },
+  { id: 'mexicano',    label: 'Mexicano',     icon: '🌯', href: '/mexicano' },
+  { id: 'nachos',      label: 'Nachos',       icon: '🧀', href: '/nachos' },
+  { id: 'patatas',     label: 'Patatas',      icon: '🥔', href: '/patatas' },
+  { id: 'carnes',      label: 'Carnes',       icon: '🍗', href: '/carnes' },
+  { id: 'bocatas',     label: 'Bocatas',      icon: '🥪', href: '/bocatas' },
+  { id: 'burgers',     label: 'Burgers',      icon: '🍔', href: '/burgers' },
+  { id: 'ensaladas',   label: 'Ensaladas',    icon: '🥗', href: '/ensaladas' },
+  { id: 'postres',     label: 'Postres',      icon: '🍰', href: '/postres' },
+];
+---
+
+<aside
+  class="hidden lg:flex fixed left-0 bottom-0 w-64 flex-col bg-black/95 backdrop-blur-md border-r border-red-600/30 z-40"
+  style="top: 58px;"
+  transition:persist
+>
+	<nav class="flex flex-col h-full py-6 px-3 overflow-y-auto">
+		<h2 class="font-burford text-xl text-red-600 mb-6 px-3 tracking-widest">CARTA</h2>
+
+		<div class="flex flex-col space-y-1">
+			{navItems.map((item) => (
+				<a
+					href={item.href}
+					class:list={[
+						"flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-200 font-bratton uppercase tracking-wider text-sm",
+						currentPath === item.href
+							? "bg-red-600/20 text-red-500 border-l-4 border-red-600"
+							: "text-gray-400 hover:text-red-400 hover:bg-red-600/10 border-l-4 border-transparent"
+					]}
+				>
+					<span class="text-2xl leading-none">{item.icon}</span>
+					<span>{item.label}</span>
+				</a>
+			))}
+		</div>
+	</nav>
+</aside>
+
+<style>
+	aside a {
+		-webkit-tap-highlight-color: transparent;
+		user-select: none;
+	}
+</style>

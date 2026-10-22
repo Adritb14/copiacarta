@@ -1,0 +1,84 @@
+[
+  {
+    "id": "patatas",
+    "title": "PATATAS",
+    "available": true,
+    "items": [
+      {
+        "available": true,
+        "name": "Rancheras",
+        "featured": true,
+        "image": "/images/comida/platos/patatas/RANCHERAS.webp",
+        "price": "12,90€",
+        "description": "Mezcla de quesos, bacon crispy y salsa ranchera.",
+        "allergens": [
+          "Huevo",
+          "Lácteos",
+          "Sulfitos",
+          "Soja"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Baconeras",
+        "featured": true,
+        "image": "/images/comida/platos/patatas/baconeras.webp",
+        "price": "12,90€",
+        "description": "Mezcla de quesos, bacon y salsa del Tío Sam (mahonesa de bacon).",
+        "allergens": [
+          "Huevo",
+          "Lácteos",
+          "Sulfitos",
+          "Soja",
+          "Mostaza"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Luisiana",
+        "featured": true,
+        "image": "/images/comida/platos/patatas/luisiana.webp",
+        "price": "12,90€",
+        "description": "Mezcla de quesos, pollo a la parrilla y salsa miel y mostaza.",
+        "allergens": [
+          "Huevo",
+          "Lácteos",
+          "Sulfitos",
+          "Soja",
+          "Mostaza",
+          "Gluten",
+          "Apio"
+        ]
+      },
+      {
+        "available": true,
+        "name": "JUMPERS FRIES",
+        "featured": true,
+        "image": "/images/comida/platos/patatas/jumperfries.webp",
+        "price": "12,90€",
+        "description": "Patatas con mezcla de quesos, salsa Jumpers y pulled pork.",
+        "allergens": [
+          "Huevo",
+          "Lácteos",
+          "Sulfitos",
+          "Apio"
+        ]
+      },
+      {
+        "available": true,
+        "name": "MAC & CHEESE FRIES",
+        "featured": true,
+        "image": "/images/comida/platos/patatas/maccheesefries.webp",
+        "price": "12,90€",
+        "description": "Patatas con mezcla de quesos, Mac & Cheese y bacon crujiente.",
+        "allergens": [
+          "Huevo",
+          "Lácteos",
+          "Sulfitos",
+          "Mostaza",
+          "Gluten"
+        ]
+      }
+    ]
+  }
+]

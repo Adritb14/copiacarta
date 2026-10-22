@@ -1,0 +1,196 @@
+---
+// src/components/BeerCard.astro
+interface Props {
+	name: string;
+	format?: string;
+	price: string;
+	image?: string;
+	description?: string;
+	abv?: string;
+	ibu?: string;
+	style?: string;
+	country?: string;
+	tags?: string[];
+	featured?: boolean;
+}
+
+const {
+	name,
+	format = '',
+	price,
+	image,
+	description = 'Sin descripción disponible.',
+	abv,
+	ibu,
+	style,
+	country,
+	tags = [],
+	featured = false,
+} = Astro.props;
+---
+
+<div class="swiper-slide !w-[240px] sm:!w-[260px]">
+	<div class="flip-card beer-flip cursor-pointer" data-tags={tags.join(',')}>
+		<div class="flip-inner">
+			<!-- FRONT -->
+			<article class={`flip-face card-shell flex flex-col ${featured ? 'featured-front' : 'p-5 md:p-6'}`}>
+				{featured && image ? (
+					<>
+						<img
+							src={image}
+							alt={name}
+							class="featured-bg-img"
+							loading="lazy"
+						/>
+						<div class="featured-overlay"></div>
+						<div class="featured-content">
+							<h3 class="text-xl font-extrabold text-white leading-tight">{name}</h3>
+							{format && <div class="text-sm text-white/70 mt-1">{format}</div>}
+							<div class="text-2xl font-black text-red-400 mt-2">{price}</div>
+							<span class="beer-pill mt-3 inline-flex">Toca para ver detalles</span>
+						</div>
+					</>
+				) : (
+					<>
+						<div class="text-center">
+							<h3 class="text-xl md:text-2xl font-extrabold text-red-500 leading-tight">{name}</h3>
+						</div>
+						<div class="flex-1 flex items-center justify-center my-4">
+							{image ? (
+								<img
+									src={image}
+									alt={name}
+									class="max-h-64 w-auto object-contain drop-shadow-[0_18px_30px_rgba(0,0,0,.55)]"
+									loading="lazy"
+								/>
+							) : (
+								<div class="text-white/60 text-sm">Imagen no disponible</div>
+							)}
+						</div>
+						<div class="text-center mt-auto">
+							{format && <div class="text-sm md:text-base text-white/90">{format}</div>}
+							<div class="text-lg md:text-xl font-black text-white mt-2">{price}</div>
+							<span class="beer-pill mt-4 inline-flex">Toca para ver detalles</span>
+						</div>
+					</>
+				)}
+			</article>
+
+			<!-- BACK -->
+			<article class="flip-face flip-back card-shell p-5 md:p-6 flex flex-col">
+				<div class="flex items-start justify-between gap-3">
+					<h3 class="text-xl md:text-2xl font-extrabold text-red-500 leading-tight">{name}</h3>
+					<span class="beer-pill">Volver</span>
+				</div>
+
+				<p class="mt-3 text-sm md:text-base text-white/85 leading-relaxed">
+					{description}
+				</p>
+
+				<!-- Datos -->
+				<div class="mt-4 space-y-2 text-sm md:text-base">
+					{abv && (
+						<div class="flex justify-between gap-4">
+							<span class="text-red-400 font-extrabold">ABV</span>
+							<span class="text-white/90 font-medium">{abv}</span>
+						</div>
+					)}
+					{ibu && (
+						<div class="flex justify-between gap-4">
+							<span class="text-red-400 font-extrabold">IBU</span>
+							<span class="text-white/90 font-medium">{ibu}</span>
+						</div>
+					)}
+					{style && (
+						<div class="flex justify-between gap-4">
+							<span class="text-red-400 font-extrabold">Estilo</span>
+							<span class="text-white/90 font-medium">{style}</span>
+						</div>
+					)}
+					{country && (
+						<div class="flex justify-between gap-4">
+							<span class="text-red-400 font-extrabold">País</span>
+							<span class="text-white/90 font-medium">{country}</span>
+						</div>
+					)}
+				</div>
+
+				<div class="mt-auto pt-4 text-center">
+					{format && <div class="text-sm md:text-base text-white/90">{format}</div>}
+					<div class="text-lg md:text-xl font-black text-white mt-2">{price}</div>
+				</div>
+			</article>
+		</div>
+	</div>
+</div>
+
+<style>
+	/* Card featured: imagen de fondo */
+	.featured-front {
+		position: relative;
+		overflow: hidden;
+	}
+	.featured-bg-img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: center 20%;
+		transform: scale(0.88);
+	}
+	.featured-overlay {
+		position: absolute; inset: 0;
+		background: linear-gradient(
+			to bottom,
+			rgba(0,0,0,0.15) 0%,
+			rgba(0,0,0,0.1) 40%,
+			rgba(0,0,0,0.75) 75%,
+			rgba(0,0,0,0.92) 100%
+		);
+	}
+	.featured-content {
+		position: absolute;
+		bottom: 0; left: 0; right: 0;
+		padding: 20px;
+		display: flex; flex-direction: column; align-items: flex-start;
+	}
+
+	/* Flip premium unificado */
+	.flip-card{
+  height: 500px;   /* antes 500/520/420 → más compacta */
+}
+.flip-inner{ position:relative; width:100%; height:100%; transform-style:preserve-3d; transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+	.beer-flip.is-flipped .flip-inner{ transform: rotateY(180deg); }
+	.flip-face{ position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; border-radius:16px; overflow:hidden; }
+	.flip-back{ transform: rotateY(180deg); }
+
+	.card-shell{ border: 2px solid rgba(206,19,23,.55); background: rgba(0,0,0,.55); }
+
+
+	.beer-pill{
+		padding: 6px 10px;
+		font-size: 11px;
+		letter-spacing: .08em;
+		border-radius: 999px;
+		border: 1px solid rgba(206,19,23,.45);
+		background: rgba(206,19,23,.12);
+		color: rgba(255,255,255,.9);
+		font-weight: 800;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+</style>
+
+<script>
+	// Un solo listener (delegación) para evitar duplicar por card y asegurar que funcione tras navegación Astro
+	const bindBeerFlip = () => {
+		document.addEventListener('click', (e) => {
+			const card = (e.target as HTMLElement | null)?.closest?.('.beer-flip');
+			if (!card) return;
+			card.classList.toggle('is-flipped');
+		}, { passive: true });
+	};
+	document.addEventListener('astro:page-load', bindBeerFlip, { once: true });
+</script>

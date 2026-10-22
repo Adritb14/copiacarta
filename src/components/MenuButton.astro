@@ -1,0 +1,62 @@
+---
+const { label = "Menú", href = "/" } = Astro.props;
+---
+
+<a href={href} class="back-btn" aria-label="Volver al menú">
+  <span class="icon">←</span>
+  <span class="text">{label}</span>
+</a>
+
+<style>
+  .back-btn{
+    position: fixed;
+    top: calc(18px + env(safe-area-inset-top));
+    right: 18px;
+    z-index: 100;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+    border-radius: 999px;
+
+    background: #dc2626; /* ROJO PROTAGONISTA */
+    border: 1px solid rgba(255,255,255,.35);
+    color: #fff;
+
+    font-family: 'Burford', sans-serif;
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+
+    box-shadow:
+      0 10px 30px rgba(220,38,38,.35),
+      0 0 18px rgba(220,38,38,.45);
+
+    transition: all .18s ease;
+  }
+
+  .back-btn:hover{
+    background: #ef4444;
+    transform: translateY(-1px);
+    box-shadow:
+      0 14px 38px rgba(239,68,68,.45),
+      0 0 22px rgba(239,68,68,.6);
+  }
+
+  .icon{
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  /* 📱 Ajuste móvil (un pelín más abajo) */
+  @media (max-width: 640px){
+    .back-btn{
+      top: calc(14px + env(safe-area-inset-top));
+      right: 14px;
+      padding: 9px 14px;
+      font-size: 11px;
+    }
+  }
+</style>

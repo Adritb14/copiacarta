@@ -1,0 +1,84 @@
+---
+const normalize = (p: string) => {
+  let x = (p || "/").trim().toLowerCase();
+  x = x.split("?")[0].split("#")[0];
+  if (x.endsWith(".html")) x = x.slice(0, -5);
+  x = x.replace(/\/+$/, "");
+  if (x === "" || x === "/index") x = "/";
+  return x;
+};
+
+const currentPath = normalize(Astro.url.pathname);
+
+interface NavItem {
+  id: string;
+  label: string;
+  icon: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { id: "bebidas", label: "Bebidas", icon: "🍺", href: "/bebidas" },
+  {id: "destacados",label: "Destacados",icon: "⭐",href: "/destacados",},
+  {id: "fusionbites",label: "Fusion Bites",icon: "🍟",href: "/fusionbites"},
+  { id: "mexicano", label: "Mexicano", icon: "🌯", href: "/mexicano" },
+   { id: "nachos", label: "Nachos", icon: "🌮", href: "/nachos" },
+  { id: "patatas", label: "Patatas", icon: "🥔", href: "/patatas" },
+  { id: "carnes", label: "Carnes", icon: "🥩", href: "/carnes" },
+  { id: "bocatas", label: "Bocatas", icon: "🥪", href: "/bocatas" },
+  { id: "burgers", label: "Burgers", icon: "🍔", href: "/burgers" },
+  { id: "ensaladas", label: "Ensaladas", icon: "🥗", href: "/ensaladas" },
+  { id: "postres", label: "Postres", icon: "🍰", href: "/postres" },
+];
+
+const isActive = (href: string) => normalize(href) === currentPath;
+---
+
+<nav
+  class="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-md border-t border-red-600/30 z-50 lg:hidden"
+>
+  <div
+    id="bottomNavScroll"
+    class="overflow-x-auto no-scrollbar momentum-scroll"
+  >
+    <div class="flex items-center gap-3 px-3 h-16 min-w-max">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "flex flex-col items-center justify-center px-3 py-2 h-14 shrink-0 transition-colors duration-200",
+              isActive(item.href)
+                ? "text-red-600"
+                : "text-gray-400 hover:text-red-500",
+            ]}
+            aria-current={isActive(item.href) ? "page" : undefined}
+          >
+            <span class="text-2xl mb-1">{item.icon}</span>
+            <span class="text-[10px] font-bratton uppercase tracking-wider whitespace-nowrap">
+              {item.label}
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+
+<style>
+  nav a {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .momentum-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
+</style>

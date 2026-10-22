@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+// import BottomNavigation from '../components/BottomNavigation.astro';
+
+import MenuSection from '../components/MenuSection.astro';
+import MenuItem from '../components/MenuItem.astro';
+import FeaturedCard from '../components/FeaturedCard.astro';
+import postresSectionsData from '../data/postres.json';
+
+const sections = postresSectionsData;
+---
+
+<Layout title="Postres - Lucky Luke">
+	<Navigation />
+	
+
+	<!-- Spacing: pt-28 mobile navbar, px-5 mobile óptimo, pb-28 bottom nav -->
+	<main class="pt-10 md:pt-15 px-5 md:px-6 pb-28 md:pb-24">
+		<!-- Spacing: py-12 mobile, py-16 desktop -->
+		<section class="py-0 md:py-16 bg-black">
+			<div class="container mx-auto max-w-7xl">
+
+				{sections
+					.filter((section: any) => section.available !== false)
+					.map(section => (
+
+					<MenuSection id={section.id} title={section.title}>
+						{(() => {
+							const visibleItems = (section.items || []).filter((item: any) => item.available !== false);
+
+							const featuredItems = visibleItems.filter((item: any) => item.featured === true && item.image);
+							const regularItems  = visibleItems.filter((item: any) => !(item.featured === true && item.image));
+
+							return (
+								<>
+									{/* VIDEO SUELTO (solo en POSTRES) */}
+									{section.id === "postres" && (
+  <div class="relative mb-10 rounded-xl overflow-hidden border-2 border-red-600/80 shadow-[0_0_25px_rgba(220,38,38,0.35)]">
+    
+    <!-- VIDEO 16:9 -->
+    <div class="relative aspect-video">
+      <video
+        src="/images/comida/platos/postres/tartas-video.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        class="absolute inset-0 w-full h-full object-cover brightness-75"
+      ></video>
+
+      <!-- OVERLAY OSCURO -->
+      <div class="absolute inset-0 bg-black/35"></div>
+
+      <!-- TEXTO -->
+      <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+        <h2 class="font-burford text-3xl md:text-4xl text-red-500 drop-shadow-lg">
+          NUESTRAS TARTAS
+        </h2>
+      </div>
+    </div>
+  </div>
+)}
+
+
+									{featuredItems.length > 0 && (
+										<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 mb-8 col-span-full">
+											{featuredItems.map((item: any) => (
+												 <FeaturedCard
+  name={item.name}
+  price={item.price}
+  description={item.description}
+  image={item.image}
+  emoji={item.emoji}
+  color={item.color}
+  allergens={item.allergens || []}
+  options={item.options || []}
+/>
+											))}
+										</div>
+									)}
+
+									{regularItems.map((item: any) => (
+										<MenuItem
+											name={item.name}
+											price={item.price}
+											description={item.description}
+											allergens={item.allergens || []}
+										/>
+									))}
+								</>
+							);
+						})()}
+					</MenuSection>
+				))}
+			</div>
+		</section>
+	</main>
+
+	<!-- <BottomNavigation /> -->
+</Layout>

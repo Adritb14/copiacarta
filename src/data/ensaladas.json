@@ -1,0 +1,55 @@
+[
+  {
+    "id": "ensaladas",
+    "title": "ENSALADAS",
+    "available": true,
+    "items": [
+      {
+        "available": true,
+        "name": "California",
+        "featured": true,
+        "image": "images/comida/platos/COMING-SOON.webp",
+        "price": "10,90€",
+        "description": "Mezclum de lechugas, tomate cherry, parmesano, croutons, pollo empanado y a la parrilla, bacon crispy y salsa miel y mostaza.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Soja",
+          "Lácteos",
+          "Mostaza",
+          "Sulfitos",
+          "Sésamo"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Mimosa",
+        "featured": true,
+        "image": "images/comida/platos/COMING-SOON.webp",
+        "price": "10,90€",
+        "description": "Mezclum de lechugas, tomate cherry, rulo de cabra, mix de frutos secos y miel.",
+        "allergens": [
+          "Lácteos",
+          "Sulfitos",
+          "Frutos secos"
+        ]
+      },
+      {
+        "available": true,
+        "name": "Mexicana",
+        "featured": true,
+        "image": "images/comida/platos/COMING-SOON.webp",
+        "price": "10,90€",
+        "description": "Mezclum de lechugas, tomate cherry, cebolla morada, maíz, nachos, pollo a la parrilla y salsa pico de gallo.",
+        "allergens": [
+          "Gluten",
+          "Huevo",
+          "Soja",
+          "Lácteos",
+          "Sulfitos",
+          "Apio"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,374 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import MenuSection from "../components/MenuSection.astro";
+import MenuItem from "../components/MenuItem.astro";
+import burgersData from "../data/burgers.json";
+import FeaturedCard from "../components/FeaturedCard.astro";
+
+const now = new Date();
+
+const start = new Date("2026-01-04T19:00:00Z");
+const end = new Date("2026-03-06T00:00:00Z");
+
+const SHOW_BURGERS_FEBRERO = now >= start && now <= end;
+const sections = burgersData;
+---
+
+<style>
+  /* ── La Nazarena · card temática ── */
+  .nazarena-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(155deg, #1a0830 0%, #2e0a0a 55%, #1a0830 100%);
+    border: 1.5px solid #7c4a1a;
+    grid-column: 1 / -1;
+    margin-bottom: 0.5rem;
+  }
+
+  /* destellos de fondo */
+  .nazarena-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(180,120,20,0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 90% 100%, rgba(120,0,50,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .nazarena-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 18px 8px;
+    border-bottom: 1px solid rgba(200,160,40,0.25);
+    background: linear-gradient(90deg, transparent, rgba(180,130,20,0.12), transparent);
+  }
+
+  .nazarena-candles {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+  }
+  .nazarena-candles span {
+    display: block;
+    width: 3px;
+    border-radius: 2px 2px 0 0;
+    background: linear-gradient(to top, #b07808, #f5d060);
+  }
+  .nazarena-candles span::after {
+    content: "";
+    display: block;
+    width: 7px;
+    height: 2px;
+    background: #b07808;
+    border-radius: 1px;
+    margin-left: -2px;
+  }
+
+  .nazarena-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(220,180,80,0.75);
+    font-weight: 500;
+  }
+
+  .nazarena-body {
+    padding: 16px 18px 0;
+  }
+
+  .nazarena-title {
+    font-family: var(--font-burford, serif);
+    font-size: clamp(26px, 6vw, 36px);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #f5d060;
+    line-height: 1.05;
+    margin: 0 0 6px;
+  }
+
+  .nazarena-divider {
+    height: 1.5px;
+    background: linear-gradient(90deg, #c0860a, rgba(200,140,20,0.25), transparent);
+    border-radius: 1px;
+    margin-bottom: 14px;
+  }
+
+  .nazarena-content {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .nazarena-img {
+    width: 130px;
+    min-width: 130px;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    border: 1px solid rgba(200,160,40,0.2);
+    object-fit: cover;
+    object-position: center;
+    background: linear-gradient(135deg, #2d1a3e, #3d1010);
+  }
+
+  .nazarena-img-placeholder {
+    width: 130px;
+    min-width: 130px;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    border: 1px solid rgba(200,160,40,0.2);
+    background: linear-gradient(135deg, #2d1a3e, #3d1010);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nazarena-desc {
+    font-size: 13px;
+    color: rgba(220,200,160,0.85);
+    line-height: 1.55;
+    margin: 0 0 12px;
+  }
+
+  .nazarena-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .nazarena-badge-gold {
+    font-size: 10px;
+    background: rgba(180,120,20,0.25);
+    border: 0.5px solid rgba(200,160,40,0.4);
+    color: rgba(240,200,100,0.9);
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .nazarena-badge-purple {
+    font-size: 10px;
+    background: rgba(90,20,100,0.4);
+    border: 0.5px solid rgba(160,80,200,0.4);
+    color: rgba(220,180,255,0.85);
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .nazarena-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 14px 18px 0;
+    padding: 10px 14px;
+    background: rgba(0,0,0,0.25);
+    border-radius: 10px;
+    border: 0.5px solid rgba(200,160,40,0.12);
+  }
+
+  .nazarena-price {
+    font-family: var(--font-burford, serif);
+    font-size: 24px;
+    font-weight: 700;
+    color: #f5d060;
+    letter-spacing: 0.02em;
+  }
+
+  .nazarena-tagline {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(200,160,60,0.4);
+    text-align: center;
+    padding: 10px 18px 14px;
+  }
+
+  @media (max-width: 480px) {
+    .nazarena-content { flex-direction: column; }
+    .nazarena-img, .nazarena-img-placeholder {
+      width: 100%;
+      min-width: unset;
+      aspect-ratio: 1 / 1;
+      height: auto;
+    }
+  }
+</style>
+
+<Layout title="Burgers - Lucky Luke">
+  <Navigation />
+
+  <main class="pt-10 md:pt-15 px-5 md:px-6 pb-28 md:pb-24">
+    <section class="py-0 md:py-16 bg-black">
+      {
+        sections
+          .filter((section: any) => section.available !== false)
+          .map((section: any) => (
+            <MenuSection id={section.id} title={section.title}>
+              {section.id === "burgers" && (
+                <div class="burger-upgrade border-western p-6 md:p-8 mb-10 text-center rounded-xl bg-black/40 shadow-xl col-span-full">
+                  <h3 class="font-burford text-red-600 text-3xl md:text-5xl mb-3 tracking-wide leading-tight">
+                    🔥 PERSONALIZA TU BURGER
+                  </h3>
+
+                  <p class="font-burford text-white/70 text-base md:text-lg uppercase tracking-widest mb-5">
+                    Solo para valientes
+                  </p>
+
+                  <div class="flex flex-col sm:flex-row justify-center gap-8 text-base md:text-lg">
+                    <div class="upgrade-item max-w-xs">
+                      <span class="font-burford text-yellow-400 text-2xl md:text-3xl">
+                        HAZLA CRAZY +2,50€
+                      </span>
+                      <p class="text-white/70 text-sm md:text-base mt-2 leading-relaxed">
+                        Bañada en cheddar fundido estilo Crazy Cheese.
+                      </p>
+                    </div>
+
+                    <div class="upgrade-item max-w-xs">
+                      <span class="font-burford text-white text-2xl md:text-3xl">
+                        HAZLA SMASH +1,50€
+                      </span>
+                      <p class="text-white/70 text-sm md:text-base mt-2 leading-relaxed">
+                        Doble prensado crujiente, más jugosa y potente.
+                      </p>
+                    </div>
+                    <div class="upgrade-item max-w-xs">
+                      <span class="font-burford text-pink-400 text-2xl md:text-3xl">
+                        HAZLA SWEET +1,00€
+                      </span>
+                      <p class="text-white/70 text-sm md:text-base mt-2 leading-relaxed">
+                        Cambia el pan por croissant y llévala al lado más dulce
+                        y brutal.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {(() => {
+                const visibleItems = (section.items || []).filter(
+                  (item: any) => item.available !== false,
+                );
+
+                const featuredItems = visibleItems.filter(
+                  (item: any) => item.featured === true && item.image,
+                );
+
+                const regularItems = visibleItems.filter(
+                  (item: any) => !(item.featured === true && item.image),
+                );
+
+                return (
+                  <>
+                    {featuredItems.length > 0 && (
+                      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-8 col-span-full">
+                        {featuredItems.map((item: any) =>
+                          item.theme === "nazarena" ? (
+                            <div class="nazarena-card">
+                              {/* Cabecera con cirios */}
+                              <div class="nazarena-header">
+                                <div class="nazarena-candles">
+                                  <span style="height:20px"></span>
+                                  <span style="height:28px"></span>
+                                  <span style="height:20px"></span>
+                                </div>
+                                <span class="nazarena-label">Edición Especial · Semana Santa</span>
+                                <div class="nazarena-candles">
+                                  <span style="height:20px"></span>
+                                  <span style="height:28px"></span>
+                                  <span style="height:20px"></span>
+                                </div>
+                              </div>
+
+                              {/* Cuerpo */}
+                              <div class="nazarena-body">
+                                <p class="nazarena-title">{item.name}</p>
+                                <div class="nazarena-divider"></div>
+
+                                <div class="nazarena-content">
+                                  {item.image ? (
+                                    <img
+                                      src={item.image}
+                                      alt={item.name}
+                                      class="nazarena-img"
+                                    />
+                                  ) : (
+                                    <div class="nazarena-img-placeholder">
+                                      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <ellipse cx="24" cy="38" rx="16" ry="6" fill="rgba(90,20,100,0.4)"/>
+                                        <rect x="16" y="16" width="16" height="20" rx="3" fill="#4a1060"/>
+                                        <rect x="18" y="18" width="12" height="16" rx="2" fill="#6a1880" stroke="#c0860a" stroke-width="0.5"/>
+                                        <path d="M24 14 L24 8" stroke="#c0860a" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M21 11 L27 11" stroke="#c0860a" stroke-width="1.5" stroke-linecap="round"/>
+                                        <ellipse cx="24" cy="15" rx="2.5" ry="3" fill="#f5d8b0"/>
+                                      </svg>
+                                    </div>
+                                  )}
+
+                                  <div style="flex:1; min-width:0;">
+                                    <p class="nazarena-desc">{item.description}</p>
+                                    <div class="nazarena-badges">
+                                      <span class="nazarena-badge-gold">✦ Polvo de oro</span>
+                                      <span class="nazarena-badge-purple">Edición limitada</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Footer con precio */}
+                              <div class="nazarena-footer">
+                                <div class="nazarena-candles" style="gap:4px;">
+                                  <span style="height:16px"></span>
+                                  <span style="height:22px"></span>
+                                  <span style="height:16px"></span>
+                                </div>
+                                <span class="nazarena-price">{item.price}</span>
+                                <div class="nazarena-candles" style="gap:4px;">
+                                  <span style="height:16px"></span>
+                                  <span style="height:22px"></span>
+                                  <span style="height:16px"></span>
+                                </div>
+                              </div>
+                              <p class="nazarena-tagline">✦ Solo disponible en Semana Santa ✦</p>
+                            </div>
+                          ) : (
+                            <FeaturedCard
+                              name={item.name}
+                              price={item.price}
+                              description={item.description}
+                              image={item.image}
+                              emoji={item.emoji}
+                              color={item.color}
+                              allergens={item.allergens || []}
+                            />
+                          )
+                        )}
+                      </div>
+                    )}
+
+                    {regularItems.map((item: any) => (
+                      <MenuItem
+                        name={item.name}
+                        price={item.price}
+                        description={item.description}
+                        allergens={item.allergens || []}
+                      />
+                    ))}
+                  </>
+                );
+              })()}
+            </MenuSection>
+          ))
+      }
+    </section>
+  </main>
+
+  {/* <BottomNavigation /> */}
+</Layout>

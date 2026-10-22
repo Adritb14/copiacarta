@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Coca-Cola Vainilla",
+    "price": "2.70€",
+    "image": "/images/refrescos/cola-vainilla.webp",
+    "description": "El clásico con un toque dulce y cremoso de vainilla."
+  },
+  {
+    "name": "Fanta Frambuesa",
+    "price": "2.50€",
+    "image": "/images/refrescos/fanta-frambuesa.webp",
+    "description": "Refresco afrutado y refrescante con un sabor intenso a frambuesa."
+  },
+  {
+    "name": "Fuze Mango Piña",
+    "price": "2.70€",
+    "image": "/images/refrescos/fuze-mp.webp",
+    "description": "Explosión tropical refrescante y ligera."
+  },
+  {
+    "name": "AQ Melocotón",
+    "price": "2.70€",
+    "image": "/images/refrescos/aq-melocoton.webp",
+    "description": "Refresco suave con auténtico sabor a melocotón."
+  },
+  {
+    "name": "Dr Pepper",
+    "price": "2.70€",
+    "image": "/images/refrescos/drpepper.webp",
+    "description": "El original americano. 23 sabores únicos en cada sorbo."
+  }
+]

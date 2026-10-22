@@ -1,0 +1,29 @@
+[
+  {
+    "id": "navidad",
+    "title": "BURGERS DE NAVIDAD",
+    "available": true,
+    "items": [
+      {
+        "available": true,
+        "name": "Sweety Santa",
+        "featured": true,
+        "price": "13,90 €",
+        "description": "Brioche rojo artesanal, mayonesa de trufa, smash fino con gouda fundido, mermelada de bacon y cebolla pochada. Doble capa y garrapiñado picado.",
+        "image": "/images/navidad/SWEETSANTA.jpeg",
+        "emoji": "🎅🏻",
+        "color": "text-red-600"
+      },
+      {
+        "available": true,
+        "name": "Ginger Grinch",
+        "featured": true,
+        "price": "13,90 €",
+        "description": "Brioche verde artesanal, mayo japonesa, pollo crujiente, cheddar y Monterey Jack, bacon ahumado, cebolla caramelizada y Lotus picado por encima",
+        "image": "/images/navidad/GINGERGRINCH.jpeg",
+        "emoji": "🎄",
+        "color": "text-green-600"
+      }
+    ]
+  }
+]
