@@ -49,35 +49,41 @@ const cervezasBotella = beersData.filter((beer: any) => beer.available !== false
                   {beer.description}
                 </p>
 
-                <div class="mb-4 grid grid-cols-2 gap-2 text-sm">
-                  {beer.style && (
-                    <p>
-                      <span class="font-semibold text-white">Estilo:</span>{' '}
-                      <span class="text-gray-400">{beer.style}</span>
-                    </p>
-                  )}
+                <details class="mb-4">
+                  <summary class="cursor-pointer select-none text-sm font-semibold text-red-500">
+                    Ver detalles
+                  </summary>
 
-                  {beer.country && (
-                    <p>
-                      <span class="font-semibold text-white">País:</span>{' '}
-                      <span class="text-gray-400">{beer.country}</span>
-                    </p>
-                  )}
+                  <div class="mt-2 grid grid-cols-2 gap-2 text-sm">
+                    {beer.style && (
+                      <p>
+                        <span class="font-semibold text-white">Estilo:</span>{' '}
+                        <span class="text-gray-400">{beer.style}</span>
+                      </p>
+                    )}
 
-                  {beer.abv !== undefined && (
-                    <p>
-                      <span class="font-semibold text-white">Alcohol:</span>{' '}
-                      <span class="text-gray-400">{beer.abv}%</span>
-                    </p>
-                  )}
+                    {beer.country && (
+                      <p>
+                        <span class="font-semibold text-white">País:</span>{' '}
+                        <span class="text-gray-400">{beer.country}</span>
+                      </p>
+                    )}
 
-                  {beer.ibu !== undefined && beer.ibu !== null && (
-                    <p>
-                      <span class="font-semibold text-white">IBU:</span>{' '}
-                      <span class="text-gray-400">{beer.ibu}</span>
-                    </p>
-                  )}
-                </div>
+                    {beer.abv !== undefined && (
+                      <p>
+                        <span class="font-semibold text-white">Alcohol:</span>{' '}
+                        <span class="text-gray-400">{beer.abv}%</span>
+                      </p>
+                    )}
+
+                    {beer.ibu !== undefined && beer.ibu !== null && (
+                      <p>
+                        <span class="font-semibold text-white">IBU:</span>{' '}
+                        <span class="text-gray-400">{beer.ibu}</span>
+                      </p>
+                    )}
+                  </div>
+                </details>
 
                 {beer.prices?.length > 0 && (
                   <div class="flex flex-wrap gap-2">
