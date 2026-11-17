@@ -1,0 +1,51 @@
+---
+// Una sección por cada CATEGORÍA nueva de Control Financiero (la rellena scripts/traer-carta.mjs en cada build). Misma presentación que el resto de secciones.
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import MenuSection from "../../components/MenuSection.astro";
+import MenuItem from "../../components/MenuItem.astro";
+import FeaturedCard from "../../components/FeaturedCard.astro";
+import nuevas from "../../data/categorias-cf.json";
+
+export function getStaticPaths() {
+  return (nuevas as any[])
+    .filter((s) => (s.items || []).some((i: any) => i.available !== false))
+    .map((s) => ({ params: { slug: s.id }, props: { section: s } }));
+}
+
+const { section } = Astro.props as { section: any };
+const visibleItems = (section.items || []).filter((item: any) => item.available !== false);
+const featuredItems = visibleItems.filter((item: any) => item.featured === true && item.image);
+const regularItems = visibleItems.filter((item: any) => !(item.featured === true && item.image));
+---
+
+<Layout title={`${section.title} - Lucky Luke`}>
+  <Navigation />
+
+  <main class="pt-10 md:pt-15 px-5 md:px-6 pb-28 md:pb-24">
+    <section class="py-0 md:py-16 bg-black">
+      <div class="container mx-auto max-w-7xl">
+        <MenuSection id={section.id} title={section.title}>
+          {featuredItems.length > 0 && (
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 mb-8 col-span-full">
+              {featuredItems.map((item: any) => (
+                <FeaturedCard
+                  name={item.name}
+                  price={item.price}
+                  description={item.description}
+                  image={item.image}
+                  emoji={item.emoji}
+                  color={item.color}
+                  allergens={item.allergens || []}
+                />
+              ))}
+            </div>
+          )}
+          {regularItems.map((item: any) => (
+            <MenuItem name={item.name} price={item.price} description={item.description} allergens={item.allergens || []} />
+          ))}
+        </MenuSection>
+      </div>
+    </section>
+  </main>
+</Layout>

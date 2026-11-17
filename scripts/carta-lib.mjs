@@ -5,6 +5,10 @@
 //  · Control Financiero manda en nombre, precio, descripción, alérgenos, etiquetas, ficha de cerveza, formatos, foto y si se ve (available).
 //  · Lo que el plato no tiene en Control Financiero (theme, special, badge de diseño…) se conserva del fichero.
 //  · Un artículo del fichero que Control Financiero no conoce se conserva (salvo modo estricto, y salvo en las secciones «libres», p. ej. la tienda): así una carta a medio migrar no pierde platos.
+//  · La clasificación es SIEMPRE la CATEGORÍA del plato en Control Financiero (la misma que usa el TPV): si se llama «Burger» allí, se llama «Burger» aquí.
+//    Una categoría cuyo nombre coincide con una sección de la web (por su id o su título, sin mayúsculas, tildes ni plural) va a esa sección; una categoría que no existe sale
+//    como SECCIÓN NUEVA (fichero generado src/data/categorias-cf.json, que pinta la página /c/<sección>). Lo escrito en la antigua «sección» de la ficha sólo sirve de pista
+//    para no duplicar secciones que ya existen con otro nombre.
 //  · Un plato de Control Financiero cuya sección existe en los ficheros se añade al final de ella; si la sección no existe se avisa.
 
 const SIN_FOTO = /COMING-SOON/i;
@@ -19,6 +23,87 @@ export const clave = (s) =>
 
 /** 13.9 → "13,90€" (el formato que ya usan los ficheros). */
 export const textoPrecio = (n) => `${Number(n).toFixed(2).replace('.', ',')}€`;
+
+/** Fichero (sin .json) que genera el script con las secciones NUEVAS (categorías de Control Financiero que la web aún no tenía). */
+export const ARCHIVO_NUEVAS = 'categorias-cf';
+
+/** Clave para comparar el nombre de una categoría con una sección: sin tildes, mayúsculas, espacios ni signos, y sin la «s» final («Burger» = «BURGERS»). */
+export const claveSeccion = (s) => clave(s).replace(/ /g, '').replace(/s$/, '');
+
+/** «Platos Fuertes» → «platos-fuertes» (el id de una sección nueva y su dirección /c/<id>). */
+export const slug = (s) => clave(s).replace(/ /g, '-') || 'categoria';
+
+/**
+ * Decide en qué sección va cada CATEGORÍA de Control Financiero. `existentes` = [{ id, title }] de las secciones que ya hay en la web.
+ * Por este orden: (1) misma clave que el id o el título de una sección → esa; (2) pista de la antigua «sección» de la ficha (la más repetida entre sus platos, si es una
+ * sección que existe) → esa, y cada plato conserva la suya si es otra que existe; (3) si no, sección NUEVA (sólo si alguno de sus platos se ve).
+ * Devuelve { seccionDe(plato) → id | null, nuevas: [{ id, title, categoria }], informe: [{ categoria, seccion, como }], sinCategoria }.
+ */
+export function mapearCategorias(platos, existentes) {
+  const porClave = new Map();
+  for (const s of existentes) {
+    porClave.set(claveSeccion(s.id), s.id);
+    if (s.title) porClave.set(claveSeccion(s.title), s.id);
+  }
+  const ids = new Set(existentes.map((s) => s.id));
+  const categorias = new Map();
+  let sinCategoria = 0;
+  for (const p of platos) {
+    const nombre = String(p.categoria ?? '').trim();
+    if (!nombre) {
+      sinCategoria++;
+      continue;
+    }
+    const k = claveSeccion(nombre);
+    if (!categorias.has(k)) categorias.set(k, { nombre, platos: [] });
+    categorias.get(k).platos.push(p);
+  }
+  const asignada = new Map();
+  const modo = new Map();
+  const nuevas = [];
+  const informe = [];
+  const usados = new Set(ids);
+  for (const [k, cat] of categorias) {
+    if (porClave.has(k)) {
+      asignada.set(k, porClave.get(k));
+      modo.set(k, 'nombre');
+      informe.push({ categoria: cat.nombre, seccion: porClave.get(k), como: 'por su nombre' });
+      continue;
+    }
+    const cuenta = new Map();
+    for (const p of cat.platos) {
+      const s = String(p.carta?.seccion ?? '').trim();
+      if (ids.has(s)) cuenta.set(s, (cuenta.get(s) || 0) + 1);
+    }
+    const pista = [...cuenta].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0]?.[0];
+    if (pista) {
+      asignada.set(k, pista);
+      modo.set(k, 'ficha');
+      informe.push({ categoria: cat.nombre, seccion: pista, como: 'por la sección antigua de la ficha' });
+      continue;
+    }
+    if (!cat.platos.some((p) => p.visible !== false)) {
+      informe.push({ categoria: cat.nombre, seccion: null, como: 'todos sus platos están ocultos: no se crea' });
+      continue;
+    }
+    let id = slug(cat.nombre);
+    while (usados.has(id)) id += '-cf';
+    usados.add(id);
+    nuevas.push({ id, title: cat.nombre.toUpperCase(), categoria: cat.nombre });
+    asignada.set(k, id);
+    modo.set(k, 'nueva');
+    informe.push({ categoria: cat.nombre, seccion: id, como: 'SECCIÓN NUEVA' });
+  }
+  const seccionDe = (p) => {
+    const nombre = String(p.categoria ?? '').trim();
+    if (!nombre) return null;
+    const k = claveSeccion(nombre);
+    const propia = String(p.carta?.seccion ?? '').trim();
+    if (modo.get(k) === 'ficha' && ids.has(propia)) return propia; // categoría repartida entre varias secciones antiguas: cada plato sigue donde estaba
+    return asignada.get(k) ?? null;
+  };
+  return { seccionDe, nuevas, informe, sinCategoria };
+}
 
 /** Sección a la que pertenece cada contenedor de un fichero: el `id` de la sección o, en una lista plana, el nombre del fichero. */
 export function contenedores(json, base) {
@@ -61,11 +146,11 @@ export function camposDePlato(p, existente) {
  * Devuelve { json, resumen } con el fichero actualizado (el original no se modifica).
  * `platos` = respuesta de /api/carta/platos; `base` = nombre del fichero sin .json; `fotoDe(plato)` = ruta de la foto ya guardada en disco (o undefined).
  */
-export function aplicarPlatos(json, base, platos, { estricta = false, libres = [], fotoDe = () => undefined } = {}) {
+export function aplicarPlatos(json, base, platos, { estricta = false, libres = [], fotoDe = () => undefined, seccionDe = (p) => String(p.carta?.seccion || '') } = {}) {
   const copia = structuredClone(json);
   const resumen = { actualizados: 0, nuevos: 0, sinCambioDeControl: 0, quitados: 0, quitadosNombres: [], sinFoto: [] };
   for (const cont of contenedores(copia, base)) {
-    const suyos = platos.filter((p) => String(p.carta?.seccion || '') === cont.seccion);
+    const suyos = platos.filter((p) => seccionDe(p) === cont.seccion);
     const porClave = new Map(suyos.map((p) => [clave(p.nombre), p]));
     const usados = new Set();
     const nuevoItems = [];

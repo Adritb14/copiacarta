@@ -1,6 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
+import nuevasCategorias from "../data/categorias-cf.json";
+
+// Categorías nuevas de Control Financiero: un botón más en el rosco (la sección se pinta en /c/<sección>).
+const extras = (nuevasCategorias as any[]).filter((s) => (s.items || []).some((i: any) => i.available !== false));
 ---
 
 <Layout title="Carta - Lucky Luke" showMenuButton={false} showMarquee={false}>
@@ -41,7 +45,7 @@ import Navigation from "../components/Navigation.astro";
             <img src="/images/logos/Lucky_Simple_principal.webp" alt="Lucky Luke"
               class="w-40 h-40 sm:w-48 sm:h-48 rounded-full border border-white/25 bg-black shadow-[0_0_60px_rgba(220,38,38,0.12)]" />
           </div>
-          <nav id="roscoMobile" class="rosco">
+          <nav id="roscoMobile" class="rosco" style={`--n:${11 + extras.length}`}>
             <a class="dot" style="--i:0" href="/bebidas"><span class="circle">🍺</span><span class="label">Bebidas</span></a>
             <a class="dot" style="--i:1" href="/destacados"><span class="circle">⭐</span><span class="label">Destacados</span></a>
             <a class="dot" style="--i:2" href="/fusionbites">
@@ -62,6 +66,9 @@ import Navigation from "../components/Navigation.astro";
             <a class="dot" style="--i:8" href="/burgers"><span class="circle">🍔</span><span class="label">Burgers</span></a>
             <a class="dot" style="--i:9" href="/ensaladas"><span class="circle">🥗</span><span class="label">Ensaladas</span></a>
             <a class="dot" style="--i:10" href="/postres"><span class="circle">🍰</span><span class="label">Postres</span></a>
+            {extras.map((s: any, k: number) => (
+              <a class="dot" style={`--i:${11 + k}`} href={`/c/${s.id}`}><span class="circle">🍽️</span><span class="label">{s.title}</span></a>
+            ))}
           </nav>
         </div>
       </section>

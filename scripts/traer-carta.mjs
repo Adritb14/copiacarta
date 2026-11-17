@@ -10,7 +10,7 @@ import { existsSync } from 'node:fs';
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { aplicarPlatos, contenedores, seccionesHuerfanas } from './carta-lib.mjs';
+import { ARCHIVO_NUEVAS, aplicarPlatos, contenedores, mapearCategorias, seccionesHuerfanas } from './carta-lib.mjs';
 
 const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 const datos = join(raiz, 'src', 'data');
@@ -58,18 +58,27 @@ async function main() {
   if (fotosDeControl) for (const p of platos) if (p.visible && !p.carta?.foto && p.imagen) rutas.set(p.id, await guardarFoto(p));
   const fotoDe = (p) => rutas.get(p.id);
 
-  const ficheros = (await readdir(datos)).filter((f) => f.endsWith('.json'));
+  // Los ficheros de la web (sin el generado) y qué secciones tienen: la CATEGORÍA de cada plato decide su sección (o crea una nueva).
+  const nombreNuevas = `${ARCHIVO_NUEVAS}.json`;
+  const entradas = [];
+  for (const f of (await readdir(datos)).filter((x) => x.endsWith('.json') && x !== nombreNuevas)) entradas.push({ f, original: JSON.parse(await readFile(join(datos, f), 'utf8')) });
+  const existentes = entradas.flatMap(({ f, original }) => contenedores(original, f.replace(/\.json$/, '')).map((c) => ({ id: c.seccion, title: c.bloque?.title })));
+  const { seccionDe, nuevas, informe, sinCategoria } = mapearCategorias(platos, existentes);
+  for (const i of informe) aviso(`Categoría «${i.categoria}» → ${i.seccion ? `sección ${i.seccion}` : 'ninguna'} (${i.como})`);
+  if (sinCategoria) aviso(`${sinCategoria} plato(s) SIN categoría en Control Financiero: no salen en la carta.`);
+  const rutaNuevas = join(datos, nombreNuevas);
+  const previoNuevas = existsSync(rutaNuevas) ? JSON.parse(await readFile(rutaNuevas, 'utf8')) : [];
+  entradas.push({ f: nombreNuevas, original: nuevas.map((n) => ({ id: n.id, title: n.title, available: true, items: [] })), previo: previoNuevas });
   const secciones = [];
   let cambiados = 0;
   const total = { actualizados: 0, nuevos: 0, sinCambioDeControl: 0, quitados: 0 };
   const quitadosNombres = [];
   const sinFoto = [];
   const fotosQueFaltan = [];
-  for (const f of ficheros) {
+  for (const { f, original, previo } of entradas) {
     const base = f.replace(/\.json$/, '');
-    const original = JSON.parse(await readFile(join(datos, f), 'utf8'));
     for (const c of contenedores(original, base)) secciones.push(c.seccion);
-    const { json, resumen } = aplicarPlatos(original, base, platos, { estricta, libres, fotoDe });
+    const { json, resumen } = aplicarPlatos(original, base, platos, { estricta, libres, fotoDe, seccionDe });
     for (const k of Object.keys(total)) total[k] += resumen[k];
     for (const c of contenedores(json, base)) {
       for (const it of c.items) {
@@ -80,7 +89,7 @@ async function main() {
     quitadosNombres.push(...resumen.quitadosNombres);
     sinFoto.push(...resumen.sinFoto);
     const texto = `${JSON.stringify(json, null, 2)}\n`;
-    if (JSON.stringify(json) !== JSON.stringify(original)) {
+    if (JSON.stringify(json) !== JSON.stringify(previo ?? original)) {
       if (!simular) await writeFile(join(datos, f), texto);
       cambiados++;
     }
@@ -90,7 +99,7 @@ async function main() {
   aviso(`${platos.length} platos recibidos · ${total.actualizados} actualizados · ${total.nuevos} nuevos · ${total.sinCambioDeControl} que Control Financiero aún no tiene (se conservan)${estricta ? ` · ${total.quitados} quitados` : ''} · ${cambiados} ficheros ${simular ? 'cambiarían (SIMULACIÓN: no se ha escrito nada)' : 'reescritos'}.`);
   const cuenta = (lista) => lista.reduce((m, s) => ((m[s] = (m[s] || 0) + 1), m), {});
   const texto2 = (m) => Object.entries(m).map(([s, n]) => `${s} ${n}`).join(' · ') || 'ninguna';
-  aviso(`Por sección · SALEN (desde Control Financiero): ${texto2(cuenta(platos.map((p) => String(p.carta?.seccion || '(sin sección)'))))}`);
+  aviso(`Por sección · SALEN (desde Control Financiero): ${texto2(cuenta(platos.map((p) => seccionDe(p) || '(sin sección)')))}`);
   if (quitadosNombres.length) {
     aviso(`Por sección · SE QUITAN (no están en Control Financiero): ${texto2(cuenta(quitadosNombres.map((n) => n.split(':')[0])))}`);
     if (simular) {

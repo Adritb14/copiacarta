@@ -1,7 +1,7 @@
 // node --test tests/*.test.mjs
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { aplicarPlatos, camposDePlato, clave, seccionesHuerfanas, textoPrecio } from '../scripts/carta-lib.mjs';
+import { aplicarPlatos, camposDePlato, clave, mapearCategorias, seccionesHuerfanas, slug, textoPrecio } from '../scripts/carta-lib.mjs';
 
 const burgers = () => [
   { id: 'burgers', title: 'BURGERS', description: 'Sólo la mejor carne', allergenNotice: { text: 'TODAS CONTIENEN:', allergens: ['Gluten'] }, available: true,
@@ -98,4 +98,45 @@ test('«Foto en la carta» desmarcado en Control Financiero: el plato sale sin f
   assert.deepEqual(sin.resumen.sinFoto, []); // es a propósito: no se avisa de que falta
   const con = aplicarPlatos(burgers(), 'burgers', [plato(1, 'Ribs Burger', 12.9, { seccion: 'burgers' })]);
   assert.equal(con.json[0].items[0].image, 'images/ribs.webp');
+});
+
+test('categorías: la del plato decide la sección (por nombre, sin tildes ni plural); lo que no existe sale como sección nueva', () => {
+  const existentes = [{ id: 'burgers', title: 'BURGERS' }, { id: 'bocatas', title: 'BOCATAS' }, { id: 'beers', title: undefined }, { id: 'fusionbites', title: 'FUSION BITES' }];
+  const pl = (id, categoria, extra = {}) => plato(id, `Plato ${id}`, 10, extra.carta ?? {}, { categoria, ...extra });
+  const platos = [
+    pl(1, 'Burger'), // «Burger» = «BURGERS»
+    pl(2, 'Fusion Bites'),
+    pl(3, 'Postres Caseros'), // no existe: sección nueva
+    pl(4, 'Postres Caseros'),
+    pl(5, 'Cervezas', { carta: { seccion: 'beers' } }), // otro nombre, pero la ficha antigua dice beers: se usa de pista
+    pl(6, 'Ocultos', { visible: false }), // todos ocultos: no se crea
+    pl(7, ''), // sin categoría
+    pl(8, 'Bocata', { carta: { seccion: 'burgers' } }), // el nombre manda sobre lo que diga la ficha
+  ];
+  const { seccionDe, nuevas, informe, sinCategoria } = mapearCategorias(platos, existentes);
+  assert.deepEqual(platos.map(seccionDe), ['burgers', 'fusionbites', 'postres-caseros', 'postres-caseros', 'beers', null, null, 'bocatas']);
+  assert.deepEqual(nuevas, [{ id: 'postres-caseros', title: 'POSTRES CASEROS', categoria: 'Postres Caseros' }]);
+  assert.equal(sinCategoria, 1);
+  assert.deepEqual(informe.map((i) => [i.categoria, i.como]), [['Burger', 'por su nombre'], ['Fusion Bites', 'por su nombre'], ['Postres Caseros', 'SECCIÓN NUEVA'], ['Cervezas', 'por la sección antigua de la ficha'], ['Ocultos', 'todos sus platos están ocultos: no se crea'], ['Bocata', 'por su nombre']]);
+  assert.equal(slug('Platos Fuertes'), 'platos-fuertes');
+});
+
+test('categoría repartida entre varias secciones antiguas: cada plato sigue en la suya; una categoría con el nombre de una sección existente no la duplica', () => {
+  const existentes = [{ id: 'beers' }, { id: 'refrescos' }, { id: 'ensaladas' }];
+  const pl = (id, categoria, seccion) => plato(id, `P${id}`, 5, { seccion }, { categoria });
+  const platos = [pl(1, 'Bebidas', 'beers'), pl(2, 'Bebidas', 'refrescos'), pl(3, 'Bebidas', 'beers'), pl(4, 'Ensalada', ''), pl(5, 'Otra', '')];
+  const { seccionDe, nuevas } = mapearCategorias(platos, existentes);
+  assert.deepEqual(platos.map(seccionDe), ['beers', 'refrescos', 'beers', 'ensaladas', 'otra']);
+  assert.deepEqual(nuevas.map((n) => n.id), ['otra']);
+  // «Beer Club» y «beer-club» son la misma categoría (misma clave): no se duplica
+  assert.equal(mapearCategorias([plato(1, 'x', 1, {}, { categoria: 'Beer Club' })], [{ id: 'beer-club' }]).nuevas.length, 0);
+});
+
+test('con seccionDe, aplicarPlatos coloca por categoría y crea los artículos de una sección nueva (sin tocar la «sección» de la ficha)', () => {
+  const nueva = [{ id: 'postres-caseros', title: 'POSTRES CASEROS', available: true, items: [] }];
+  const platos = [plato(1, 'Flan', 4.5, {}, { categoria: 'Postres Caseros' }), plato(2, 'Tarta', 5, { seccion: 'burgers' }, { categoria: 'Postres Caseros' }), plato(3, 'Oculta', 5, {}, { categoria: 'Postres Caseros', visible: false })];
+  const { seccionDe } = mapearCategorias(platos, []);
+  const { json, resumen } = aplicarPlatos(nueva, 'categorias-cf', platos, { seccionDe });
+  assert.deepEqual(json[0].items.map((i) => [i.name, i.price, i.available]), [['Flan', '4,50€', true], ['Tarta', '5,00€', true], ['Oculta', '5,00€', false]]);
+  assert.equal(resumen.nuevos, 3);
 });

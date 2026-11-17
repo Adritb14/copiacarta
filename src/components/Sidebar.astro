@@ -1,4 +1,6 @@
 ---
+import nuevasCategorias from '../data/categorias-cf.json';
+
 const currentPath = Astro.url.pathname;
 
 interface NavItem {
@@ -21,6 +23,10 @@ const navItems: NavItem[] = [
   { id: 'ensaladas',   label: 'Ensaladas',    icon: '🥗', href: '/ensaladas' },
   { id: 'postres',     label: 'Postres',      icon: '🍰', href: '/postres' },
 ];
+// Categorías nuevas de Control Financiero: una sección más (la página la pinta /c/<sección>).
+for (const s of nuevasCategorias as any[]) {
+  if ((s.items || []).some((i: any) => i.available !== false)) navItems.push({ id: s.id, label: s.title, icon: '🍽️', href: `/c/${s.id}` });
+}
 ---
 
 <aside
