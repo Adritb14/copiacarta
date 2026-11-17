@@ -91,3 +91,11 @@ test('modo estricto: las secciones libres (la tienda) no se tocan', () => {
   assert.deepEqual(aplicarPlatos(shop, 'shop', [], { estricta: true, libres: ['shop'] }).json, shop);
   assert.deepEqual(aplicarPlatos(shop, 'shop', [], { estricta: true }).json, []);
 });
+
+test('«Foto en la carta» desmarcado en Control Financiero: el plato sale sin foto aunque la web ya tuviera una; sin desmarcar, se conserva', () => {
+  const sin = aplicarPlatos(burgers(), 'burgers', [plato(1, 'Ribs Burger', 12.9, { seccion: 'burgers', sinFoto: true })]);
+  assert.equal(sin.json[0].items[0].image, undefined);
+  assert.deepEqual(sin.resumen.sinFoto, []); // es a propósito: no se avisa de que falta
+  const con = aplicarPlatos(burgers(), 'burgers', [plato(1, 'Ribs Burger', 12.9, { seccion: 'burgers' })]);
+  assert.equal(con.json[0].items[0].image, 'images/ribs.webp');
+});

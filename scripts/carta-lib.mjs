@@ -52,7 +52,8 @@ export function camposDePlato(p, existente) {
   if (cv.formato) campos.format = cv.formato;
   // Las fotos son las de la web de la carta: la ruta de la ficha, si no la que ya tenía el artículo y, sólo como último recurso, la subida a la ficha.
   const foto = [c.foto, existente?.image, p.fotoGuardada].find((f) => f && !SIN_FOTO.test(f));
-  if (foto) campos.image = foto;
+  if (c.sinFoto === true) campos.image = undefined; // «Foto en la carta» desmarcado en Control Financiero: el plato sale sin foto
+  else if (foto) campos.image = foto;
   return campos;
 }
 
@@ -90,14 +91,14 @@ export function aplicarPlatos(json, base, platos, { estricta = false, libres = [
       else if (campos.price !== undefined && !p.carta?.formatos?.length) delete fusion.prices;
       nuevoItems.push(fusion);
       resumen.actualizados++;
-      if (fusion.available !== false && !fusion.image && cont.seccion !== 'cocteles') resumen.sinFoto.push(`${cont.seccion}: ${fusion.name}`);
+      if (fusion.available !== false && !fusion.image && !p.carta?.sinFoto && cont.seccion !== 'cocteles') resumen.sinFoto.push(`${cont.seccion}: ${fusion.name}`);
     }
     for (const p of suyos) {
       if (usados.has(p)) continue;
       const nuevo = camposDePlato({ ...p, fotoGuardada: fotoDe(p) }, undefined);
       nuevoItems.push(nuevo);
       resumen.nuevos++;
-      if (nuevo.available !== false && !nuevo.image) resumen.sinFoto.push(`${cont.seccion}: ${nuevo.name}`);
+      if (nuevo.available !== false && !nuevo.image && !p.carta?.sinFoto) resumen.sinFoto.push(`${cont.seccion}: ${nuevo.name}`);
     }
     cont.items.splice(0, cont.items.length, ...nuevoItems);
   }
